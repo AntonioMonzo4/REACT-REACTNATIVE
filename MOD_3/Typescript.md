@@ -16,3 +16,6 @@ Si lo haxcemos con React se instalara solo
 
 Pare ejecutarlo: 
 pnpm tsc index.ts
+
+Para configurar TS:  
+tsc --init 
