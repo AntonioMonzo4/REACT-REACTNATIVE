@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 
 export default function ComponenteHooks() {
 
-    // useState es un hook que nos permite agregar estado a un componente funcional.
+    // useState es un hook que nos permite agregar estado a un componente funcional. Puede existir vRIOA EN EL MISMO COMPONENTE FUNCIONAL VARIOS useState, cada uno con su propio estado. Cada vez que se actualiza el estado, el componente se vuelve a renderizar.
     // useEffect es un hook que nos permite realizar efectos secundarios en un componente funcional.
     // useContext es un hook que nos permite acceder al contexto de un componente funcional.
 

@@ -43,3 +43,18 @@ const Props = (props) => {
 }
 
 export default Props
+
+//Para usar key en un componente hijo, se debe pasar como prop al componente hijo, de la siguiente manera:
+import React from "react";
+
+const Props = (props) => {
+    const { title, description, key } = props;
+    return (
+        <div key={key}>
+            <h1>{title}</h1>
+            <p>{description}</p>
+        </div>
+    )
+}
+
+export default Props
