@@ -46,8 +46,8 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
 | 4 | React desde Cero | ✅ | [`MOD_4/EJEMPLO_REACT/`](MOD_4/EJEMPLO_REACT/) — componentes (Props, Eventos, Hooks, useMemo), custom hook, estilos; `pnpm lint` y `pnpm build` OK. Ver también [`docs/extra.md`](MOD_4/EJEMPLO_REACT/docs/extra.md) |
-| 5 | React Intermedio | ❌ | — |
-| 6 | React Avanzado | ❌ | — |
+| 5 | React Intermedio | ✅ | [`MOD_5/`](MOD_5/) — teoría (`docs/`: useRef, useReducer, useCallback, useLayoutEffect, formularios, comunicación) + [`EJEMPLO_REACT_INTERMEDIO/`](MOD_5/EJEMPLO_REACT_INTERMEDIO/) (`pnpm lint` / `pnpm build` OK). Pendiente: CRUD completo |
+| 6 | React Avanzado | ✅ | [`MOD_6/`](MOD_6/) — teoría (`docs/`: Context, custom hooks, portals, lazy/Suspense, error boundaries, optimización) + [`EJEMPLO_REACT_AVANZADO/`](MOD_6/EJEMPLO_REACT_AVANZADO/) con chunk `HeavyPanel` separado. Pendiente: Dashboard |
 | 7 | React Router | ❌ | — |
 | 8 | Consumo de APIs | ❌ | — |
 | 9 | Gestión de Estado | ❌ | — |
@@ -96,8 +96,8 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 
 ## Faltantes consolidados
 
-- **Sin carpeta ni material:** módulos 0–1 (externos), 5–15, 17–24.
-- **Parcial:** módulo 16 — solo intro a Expo, componentes base de la plantilla y docs; faltan secciones del checklist del README (FlatList, navegación, estado, cámara/GPS, etc.).
+- **Sin carpeta ni material:** módulos 0–1 (externos), 7–15, 17–24.
+- **Parcial:** módulo 16 — solo intro a Expo, componentes base de la plantilla y docs; faltan secciones del checklist del README (FlatList, navegación, estado, cámara/GPS, etc.). Módulos 5 y 6: checklists de hooks/forms/avanzado cubiertos, faltan los **proyectos** (CRUD y Dashboard).
 - **Nuevos en el roadmap (añadidos tras revisar huecos):** M14 TypeScript + React y M15 Next.js/React Moderno — checklist en el README, sin material aún.
 - **Proyectos del roadmap sin empezar:** Calculadora (M4), CRUD (M5), Dashboard (M6), etc. — ver checklist en [`README.md`](README.md).
 - **Enlaces pendientes:** repositorios de los módulos 0 y 1 en el README.
@@ -126,6 +126,18 @@ pnpm run build   # compila a dist/
 
 # Módulo 4 — React (Vite)
 cd MOD_4/EJEMPLO_REACT
+pnpm install
+pnpm lint
+pnpm build
+
+# Módulo 5 — React Intermedio
+cd MOD_5/EJEMPLO_REACT_INTERMEDIO
+pnpm install
+pnpm lint
+pnpm build
+
+# Módulo 6 — React Avanzado
+cd MOD_6/EJEMPLO_REACT_AVANZADO
 pnpm install
 pnpm lint
 pnpm build

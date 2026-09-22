@@ -132,47 +132,51 @@ Incluye:
 
 ### Hooks
 
-- [ ] useEffect
-- [ ] useRef
-- [ ] useMemo
-- [ ] useCallback
-- [ ] useReducer
-- [ ] useLayoutEffect
-- [ ] forwardRef
-- [ ] ref callback
+- [x] useEffect
+- [x] useRef
+- [x] useMemo
+- [x] useCallback
+- [x] useReducer
+- [x] useLayoutEffect
+- [x] forwardRef
+- [x] ref callback
 
 ### Formularios
 
-- [ ] Formularios controlados
-- [ ] Validaciones
+- [x] Formularios controlados
+- [x] Validaciones
 
 ### Comunicación entre componentes
 
-- [ ] Padre → Hijo
-- [ ] Hijo → Padre
-- [ ] Hermanos
+- [x] Padre → Hijo
+- [x] Hijo → Padre
+- [x] Hermanos
 
 **Proyecto**
 
 - [ ] CRUD completo
 
+📖 Material: [`MOD_5/`](MOD_5/)
+
 ---
 
 ## Módulo 6 - React Avanzado
 
-- [ ] Context API
-- [ ] Custom Hooks
-- [ ] Portals
-- [ ] Lazy Loading
-- [ ] Suspense
-- [ ] Error Boundaries
-- [ ] Optimización
-- [ ] React.memo
-- [ ] Code Splitting
+- [x] Context API
+- [x] Custom Hooks
+- [x] Portals
+- [x] Lazy Loading
+- [x] Suspense
+- [x] Error Boundaries
+- [x] Optimización
+- [x] React.memo
+- [x] Code Splitting
 
 **Proyecto**
 
 - [ ] Dashboard empresarial
+
+📖 Material: [`MOD_6/`](MOD_6/)
 
 ---
 
@@ -547,6 +551,8 @@ Al finalizar este roadmap, el portfolio incluirá:
 | 2 - Node.js | [`MOD_2/Node.js/`](MOD_2/Node.js/) | 16 unidades (`Unidad_01.md` … `Unidad_16.md`) |
 | 3 - TypeScript | [`MOD_3/`](MOD_3/) | `Typescript.md` + proyecto `hello-world/` |
 | 4 - React desde Cero | [`MOD_4/EJEMPLO_REACT/`](MOD_4/EJEMPLO_REACT/) | Ejemplo Vite + React (components, hooks, CSS) |
+| 5 - React Intermedio | [`MOD_5/`](MOD_5/) | 6 unidades de teoría + `EJEMPLO_REACT_INTERMEDIO/` (hooks, forms, comunicación) |
+| 6 - React Avanzado | [`MOD_6/`](MOD_6/) | 6 unidades de teoría + `EJEMPLO_REACT_AVANZADO/` (Context, portals, lazy, errors, memo) |
 | 16 - React Native | [`MOD_16/ReactNative/`](MOD_16/ReactNative/) | Docs Expo SDK 57 + app `MiAplicacion/` (antes `MOD_5`, luego `MOD_14`) |
 
 > **Nota:** este roadmap tiene **24 módulos** (se añadieron M14 TS+React y M15 Next.js/React moderno). La carpeta de React Native, antes `MOD_5`/`MOD_14`, es ahora `MOD_16` para coincidir con la numeración.
@@ -564,8 +570,8 @@ Al finalizar este roadmap, el portfolio incluirá:
 | Node.js | 🟢 |
 | TypeScript | 🟢 |
 | React Básico | 🟢 |
-| React Intermedio | ⬜ |
-| React Avanzado | ⬜ |
+| React Intermedio | 🟢 |
+| React Avanzado | 🟢 |
 | React Router | ⬜ |
 | APIs | ⬜ |
 | Estado Global | ⬜ |
