@@ -1,474 +1,385 @@
-npm: Historia, funcionamiento y primeros pasos
+Node.js vs Navegador
 
 Objetivo
 
-Comprender por qué nació npm, qué problema resolvió, cómo funciona internamente y aprender a utilizar sus comandos fundamentales.
+Comprender las diferencias entre ejecutar JavaScript en un navegador y ejecutarlo en Node.js, qué APIs ofrece cada entorno y cómo afecta esto al desarrollo con React y React Native.
 
 Índice
-El problema antes de npm
-¿Qué es un gestor de paquetes?
-El nacimiento de npm
-¿Qué es realmente npm?
-El registro de npm (npm Registry)
-¿Cómo funciona una instalación?
-npm y Node.js
-Instalación global vs local
-Primer proyecto con npm
-Comandos fundamentales
-¿Cómo resuelve npm las dependencias?
+El mismo lenguaje, distintos entornos
+APIs del navegador
+APIs de Node.js
+APIs compartidas
+¿Por qué React necesita ambos?
+Casos prácticos
 Buenas prácticas
 Resumen
-Introducción
+Ejercicios
+1. El mismo lenguaje, distintos entornos
 
-Cuando empiezas con JavaScript es normal pensar que todo consiste en escribir código.
+Uno de los errores más comunes es pensar que:
 
-Sin embargo, los proyectos profesionales utilizan cientos o incluso miles de librerías externas.
+JavaScript = Navegador
 
-Por ejemplo, una aplicación React recién creada puede depender de más de 300 paquetes de forma directa o indirecta.
+No.
 
-La pregunta es:
+JavaScript es solo un lenguaje.
 
-¿Cómo descargamos todas esas librerías?
+Puede ejecutarse en muchos entornos diferentes:
 
-Hoy la respuesta parece obvia:
+              JavaScript
+                    │
+     ┌──────────────┼──────────────┐
+     │              │              │
+     ▼              ▼              ▼
+ Navegador       Node.js          Bun
+     │              │
+     ▼              ▼
+ APIs Web       APIs Node
 
-npm
+El código que escribes es JavaScript.
 
-Pero hace años no existía.
+Lo que cambia son las herramientas disponibles.
 
-Y desarrollar aplicaciones era mucho más complicado.
+Una analogía
 
-El problema antes de npm
+Imagina que sabes conducir.
 
-Imagina que estamos en 2008.
+Ese conocimiento es el mismo.
 
-Quieres utilizar una librería para manipular fechas.
+Pero no es igual conducir:
 
-No existe npm.
+un coche,
+una moto,
+un camión.
 
-El proceso sería algo parecido a esto.
+El conductor eres tú.
 
-Internet
+El vehículo cambia.
 
-↓
+Con JavaScript ocurre exactamente igual.
 
-Buscar la librería
+2. El navegador
 
-↓
+Un navegador está pensado para trabajar con páginas web.
 
-Entrar en la página web
+Por eso ofrece herramientas relacionadas con ellas.
 
-↓
+Manipular HTML
+document.querySelector("h1");
+Modificar estilos
+document.body.style.background = "black";
+Almacenamiento
+localStorage.setItem("usuario", "Antonio");
+Cookies
+document.cookie
+Historial
+history.back();
+Geolocalización
+navigator.geolocation
+Cámara
+navigator.mediaDevices
+Drag & Drop
+document.addEventListener(...)
+Canvas
+canvas.getContext("2d");
+WebSocket
+new WebSocket(...)
 
-Descargar un ZIP
+Todo esto existe porque un navegador trabaja con una interfaz gráfica.
 
-↓
+3. Node.js
 
-Descomprimir
+Node no tiene una página web.
 
-↓
+Por tanto:
 
-Copiar archivos al proyecto
+No existe
 
-↓
+document
 
-Repetir para la siguiente librería
+No existe
 
-Ahora imagina que utilizas veinte librerías.
+window
 
-Tendrías veinte carpetas distintas.
+No existe
 
-Actualizar cualquiera de ellas sería un proceso manual.
+localStorage
 
-Otro problema
+Porque no tendría sentido.
 
-Imagina este proyecto.
+En cambio dispone de otras APIs.
 
-Proyecto
+Sistema de archivos
+import fs from "node:fs";
 
-├── jquery.js
-├── lodash.js
-├── moment.js
-├── axios.js
-├── validator.js
-├── ...
+Leer archivos.
 
-¿Qué ocurre cuando sale una nueva versión?
+Crear archivos.
 
-Había que:
+Eliminar archivos.
 
-Buscarla.
-Descargarla.
-Sustituir archivos.
-Comprobar que nada se rompía.
+Sistema operativo
+import os from "node:os";
 
-Era un mantenimiento lento y propenso a errores.
+Conocer:
 
-El problema de las dependencias
+CPU
+RAM
+Usuarios
+Plataforma
+Rutas
+import path from "node:path";
 
-Aquí aparece un concepto muy importante.
+Construir rutas compatibles entre Windows, Linux y macOS.
 
-Supongamos que instalamos una librería.
+Variables de entorno
+process.env
+Procesos
+process
+HTTP
+import http from "node:http";
 
-Mi aplicación
+Crear servidores.
 
-↓
+Streams
+import stream from "node:stream";
 
-Axios
+Procesar grandes cantidades de datos.
 
-Todo parece sencillo.
+Comparativa
+Navegador	Node.js
+document	fs
+window	process
+localStorage	path
+navigator	os
+history	http
+Canvas	streams
+DOM	sistema operativo
+4. APIs compartidas
 
-Pero Axios también necesita otras librerías.
-
-Mi aplicación
-
-↓
-
-Axios
-
-↓
-
-Librería A
-
-↓
-
-Librería B
-
-Y la Librería B depende de otra.
-
-Mi aplicación
-
-↓
-
-Axios
-
-↓
-
-Librería A
-
-↓
-
-Librería B
-
-↓
-
-Librería C
-
-Sin un gestor de paquetes tendríamos que descargar todo esto manualmente.
-
-Sería prácticamente imposible mantener proyectos grandes.
-
-¿Qué es una dependencia?
-
-Una dependencia es un paquete que nuestro proyecto necesita para funcionar.
+Algunas APIs existen en ambos.
 
 Por ejemplo:
 
-import axios from "axios";
+Console
+console.log()
+JSON
+JSON.parse()
+Promise
+Promise.resolve()
+Array
+const numeros = [1,2,3];
+Math
+Math.random()
+Date
+new Date()
+Fetch
 
-En ese momento, Axios pasa a formar parte de nuestro proyecto.
+Hace unos años esto era exclusivo del navegador.
 
-Es una dependencia.
+Hoy en día, Node.js moderno también incorpora fetch() de forma nativa.
 
-¿Qué es un gestor de paquetes?
+Por eso este código funciona tanto en el navegador como en versiones recientes de Node.js:
 
-Un gestor de paquetes es un programa que automatiza todo el proceso relacionado con las librerías.
+const respuesta = await fetch("https://api.example.com");
 
-Su trabajo consiste en:
+const datos = await respuesta.json();
+5. ¿Por qué React necesita ambos?
 
-Descargar paquetes.
-Instalarlos.
-Actualizarlos.
-Eliminar paquetes.
-Resolver dependencias automáticamente.
-Comprobar versiones compatibles.
+Aquí está la gran pregunta.
 
-Podemos imaginarlo como una tienda inteligente.
+Cuando desarrollas una aplicación React intervienen dos entornos distintos.
 
-Proyecto
+Durante el desarrollo
+
+Trabajas con:
+
+VS Code
 
 ↓
 
+Node.js
+
+↓
+
+Vite
+
+↓
+
+React
+
+Node ejecuta:
+
+Vite
+ESLint
+TypeScript
+Babel
 npm
+pnpm
 
-↓
+Todo esto ocurre fuera del navegador.
 
-Busca el paquete
+Cuando el usuario abre la web
 
-↓
-
-Descarga el paquete
-
-↓
-
-Descarga sus dependencias
-
-↓
-
-Las instala
-
-↓
-
-Actualiza package.json
-
-Todo ello con un único comando.
-
-El nacimiento de npm
-
-En 2009 apareció Node.js.
-
-Muy pronto la comunidad comenzó a publicar librerías reutilizables.
-
-El número de paquetes crecía rápidamente.
-
-Era evidente que hacía falta una forma sencilla de compartir código.
-
-Así nació npm (Node Package Manager).
-
-Aunque originalmente significaba Node Package Manager, hoy en día el proyecto se identifica simplemente como npm.
-
-Con el tiempo se convirtió en el registro de paquetes más grande del mundo.
-
-Actualmente contiene millones de paquetes publicados por desarrolladores y empresas.
-
-¿Qué es realmente npm?
-
-Cuando decimos "npm" solemos referirnos a tres cosas distintas.
-
-1. La herramienta de línea de comandos
-
-Es el programa que ejecutamos.
-
-npm install
-2. El registro (Registry)
-
-Es el servidor donde están almacenados los paquetes.
-
-Cuando escribes:
-
-npm install react
-
-npm busca React en su registro oficial.
-
-Tu ordenador
-
-↓
-
-npm
-
-↓
-
-Registry
-
-↓
-
-Descarga React
-
-↓
-
-Instala React
-3. El ecosistema
-
-Millones de paquetes publicados por la comunidad.
-
-React.
-
-Vite.
-
-ESLint.
-
-Prettier.
-
-TypeScript.
-
-Express.
-
-NestJS.
-
-Y muchos más.
-
-¿Qué ocurre cuando ejecutas npm install react?
-
-Aunque parece un único comando, internamente suceden muchos pasos.
+Solo existe:
 
 Usuario
 
 ↓
 
-npm install react
+Google Chrome
 
 ↓
 
-Busca React en el Registry
+React
 
 ↓
 
-Obtiene la versión adecuada
+DOM
 
-↓
+Node.js ya no participa.
 
-Comprueba dependencias
+El navegador descarga los archivos generados durante el proceso de compilación y ejecuta el JavaScript resultante.
 
-↓
+Ejemplo real
 
-Descarga todos los paquetes necesarios
+Supongamos este proyecto.
 
-↓
+mi-app/
 
-Crea node_modules
+src/
 
-↓
-
-Actualiza package.json
-
-↓
-
-Actualiza package-lock.json
-
-Todo este proceso dura normalmente solo unos segundos.
-
-npm y Node.js
-
-Una duda muy frecuente.
-
-¿Tengo que instalar npm aparte?
-
-La respuesta es no.
-
-Cuando instalas Node.js, también se instala npm.
-
-Puedes comprobarlo con:
-
-node -v
-npm -v
-
-Por ejemplo:
-
-Node.js
-
-v24.2.0
-
-npm
-
-11.5.1
-
-(Las versiones pueden variar con el tiempo.)
-
-Instalación local vs instalación global
-
-npm puede instalar paquetes de dos formas.
-
-Instalación local
-npm install react
-
-El paquete solo estará disponible dentro del proyecto actual.
-
-Es la forma recomendada para la mayoría de librerías.
-
-Instalación global
-npm install -g typescript
-
-El paquete queda disponible para todo el sistema.
-
-Podrás ejecutarlo desde cualquier carpeta.
-
-Normalmente se reserva para herramientas de desarrollo que necesitas usar desde la terminal.
-
-Tu primer proyecto con npm
-
-Creamos una carpeta vacía.
-
-mi-proyecto/
-
-Entramos en ella.
-
-cd mi-proyecto
-
-Inicializamos npm.
-
-npm init
-
-npm hará varias preguntas:
-
-Package name?
-
-Version?
-
-Description?
-
-Entry point?
-
-Author?
-
-License?
-
-Al finalizar aparecerá un nuevo archivo.
+public/
 
 package.json
 
-Este archivo será el "DNI" del proyecto.
+Cuando ejecutas:
 
-Lo estudiaremos en profundidad en la siguiente unidad.
+pnpm dev
 
-Comandos fundamentales
-Crear un proyecto
-npm init
+Sucede esto:
 
-Versión rápida:
+Terminal
 
-npm init -y
+↓
 
-Acepta todos los valores por defecto.
+Node.js
 
-Instalar un paquete
-npm install react
+↓
 
-También puedes usar la forma corta:
+Vite
 
-npm i react
-Eliminar un paquete
-npm uninstall react
-Actualizar un paquete
-npm update
-Mostrar paquetes instalados
-npm list
-Comprobar vulnerabilidades conocidas
-npm audit
-Intentar corregirlas automáticamente
-npm audit fix
-Ver paquetes desactualizados
-npm outdated
-¿Cómo resuelve npm las dependencias?
+↓
 
-Supongamos que instalas React.
+Compila React
 
-npm install react
+↓
 
-React necesita otros paquetes para funcionar.
+Levanta un servidor local
 
-npm analiza esas dependencias y las descarga automáticamente.
+↓
 
-Podemos representarlo así:
+http://localhost:5173
 
-Tu proyecto
-│
-└── React
-    │
-    ├── Paquete A
-    │   └── Paquete C
-    │
-    └── Paquete B
+Después abres esa dirección.
 
-No tienes que instalar cada una manualmente. npm construye ese árbol de dependencias por ti y se asegura de que las versiones sean compatibles siempre que sea posible.
+Ahora el navegador descarga:
 
-Buenas prácticas
-Instala los paquetes localmente salvo que realmente necesites una herramienta global.
-No copies carpetas node_modules entre proyectos; utiliza npm install para recrearlas.
-Revisa periódicamente las actualizaciones y vulnerabilidades con npm outdated y npm audit.
-Mantén tu versión de Node.js actualizada para aprovechar mejoras de rendimiento y compatibilidad.
+HTML
+
+↓
+
+CSS
+
+↓
+
+JavaScript
+
+↓
+
+React
+
+A partir de ese momento, React vive en el navegador.
+
+Error muy común
+
+Muchos principiantes intentan hacer esto dentro de un componente React:
+
+import fs from "node:fs";
+
+Y obtienen un error.
+
+¿Por qué?
+
+Porque ese componente se ejecuta en el navegador.
+
+El navegador no puede acceder directamente a tu disco duro por motivos de seguridad.
+
+Si una aplicación web pudiera leer cualquier archivo de tu ordenador, sería un enorme riesgo.
+
+Entonces, ¿cómo lee React un archivo?
+
+React no lo hace directamente.
+
+Normalmente el flujo es:
+
+React
+
+↓
+
+Petición HTTP
+
+↓
+
+Servidor (Node, FastAPI...)
+
+↓
+
+Lee archivo
+
+↓
+
+Devuelve datos
+
+↓
+
+React muestra los datos
+
+React solicita la información a un servidor, y es el servidor quien tiene permisos para acceder al sistema de archivos.
+
+¿Y React Native?
+
+Aquí aparece un tercer entorno.
+
+JavaScript
+
+↓
+
+React Native
+
+↓
+
+Android
+
+o
+
+iOS
+
+React Native no trabaja con el DOM.
+
+En su lugar, comunica el código JavaScript con componentes nativos del sistema operativo mediante un puente (bridge) o, en las versiones más recientes, mediante la nueva arquitectura basada en JSI y Fabric.
+
+Por eso tampoco existen objetos como:
+
+document
+
+ni
+
+window.document
 Conceptos clave
-npm nació para resolver el problema de gestionar librerías y sus dependencias.
-Un gestor de paquetes descarga, instala, actualiza y elimina paquetes automáticamente.
-npm hace referencia a la herramienta de línea de comandos, al registro de paquetes y al ecosistema de librerías.
-Node.js y npm se instalan juntos.
-La mayoría de las dependencias de un proyecto deben instalarse localmente.
+JavaScript es el mismo lenguaje en todos los entornos.
+El navegador ofrece APIs relacionadas con la web y el DOM.
+Node.js ofrece APIs relacionadas con el sistema operativo y el servidor.
+React se desarrolla con Node.js, pero se ejecuta principalmente en el navegador.
+React Native se ejecuta sobre Android o iOS y dispone de un conjunto diferente de APIs.
+

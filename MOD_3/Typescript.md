@@ -12,9 +12,9 @@ Desventajas:
 Para utilizarlo tenemos que descargar Node.js e instalar Typescript 
 pnpm add -D typescript 
 
-Si lo haxcemos con React se instalara solo 
+Si lo hacemos con React se instalará solo 
 
-Pare ejecutarlo: 
+Para ejecutarlo: 
 pnpm tsc index.ts
 
 Para configurar TS:  

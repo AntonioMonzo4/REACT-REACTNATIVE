@@ -1,401 +1,144 @@
 Introducción
 
-Si alguna vez has creado un proyecto React, seguramente habrás visto esto:
-
-mi-proyecto/
-
-├── node_modules/
-├── package.json
-├── package-lock.json
-└── src/
-
-Y probablemente alguien te dijo:
-
-"No entres ahí."
-
-O peor aún:
-
-"No toques esa carpeta."
-
-Pero...
-
-¿Qué hay realmente dentro?
-
-¿Qué es node_modules?
-
-Es la carpeta donde el gestor de paquetes instala todas las dependencias del proyecto.
-
-Por ejemplo:
-
-npm install react
-
-Después aparecerá:
-
-node_modules/
-
-└── react/
-
-Pero React no viene solo.
-
-También instala otras librerías.
-
-node_modules/
-
-├── react/
-├── scheduler/
-├── loose-envify/
-├── js-tokens/
-└── ...
-Una analogía
-
-Imagina que construyes una casa.
-
-Necesitas:
-
-ladrillos
-cemento
-puertas
-ventanas
-
-Cuando compras el material lo guardas en un almacén.
-
-Ese almacén sería:
-
-node_modules
-
-Mientras construyes, vas utilizando ese material.
-
-¿Cuándo se crea?
-
-No existe desde el principio.
-
-Supongamos este proyecto.
-
-mi-proyecto/
+Cada proyecto moderno de JavaScript tiene un archivo llamado:
 
 package.json
 
-Ejecutamos:
-
-npm install
-
-Entonces ocurre:
-
-package.json
-
-↓
-
-npm
-
-↓
-
-Descarga paquetes
-
-↓
-
-Crea node_modules
-¿Quién la crea?
-
-Nunca la creamos nosotros.
-
-La crean automáticamente:
-
-npm
-pnpm
-Yarn
-
-Nosotros únicamente ejecutamos comandos.
-
-¿Qué contiene?
-
-Aquí aparece un error muy común.
-
-Muchos creen que solo contiene las librerías que instalaron.
-
-Por ejemplo:
-
-npm install axios
-
-Piensan que aparecerá únicamente:
-
-node_modules/
-
-└── axios/
-
-Pero no.
-
-Dependencias transitivas
-
-Axios depende de otras librerías.
-
-Axios
-
-↓
-
-follow-redirects
-
-Así que npm instala ambas.
-
-node_modules/
-
-├── axios/
-└── follow-redirects/
-
-Ahora imagina una aplicación React.
+Lo encontrarás en proyectos de:
 
 React
+React Native
+Next.js
+Vue
+Angular
+Node.js
+Express
+NestJS
+Vite
+TypeScript
 
-↓
+Prácticamente cualquier proyecto del ecosistema JavaScript lo incluye.
 
-Paquete A
+La pregunta es:
 
-↓
+¿Por qué?
 
-Paquete B
+El problema antes de package.json
 
-↓
+Imagina que desarrollas una aplicación React.
 
-Paquete C
+Utilizas:
 
-Cuando instalas React realmente estás instalando un árbol de dependencias.
+React
+React DOM
+Vite
+TypeScript
+ESLint
+Prettier
+Axios
 
-Dependencias directas
+Ahora envías el proyecto a un compañero.
 
-Son las que tú instalas.
+¿Cómo sabe qué librerías tiene que instalar?
 
-Ejemplo:
+Antes no existía una respuesta estándar.
 
-npm install react axios
-Proyecto
+Cada proyecto podía depender de una documentación manual, lo que provocaba errores y diferencias entre entornos.
 
-├── React
-└── Axios
-Dependencias transitivas
+La solución
 
-Son las dependencias de tus dependencias.
+Necesitamos un archivo que responda preguntas como:
 
-Proyecto
+¿Cómo se llama el proyecto?
+¿Qué versión tiene?
+¿Qué dependencias necesita?
+¿Qué scripts existen?
+¿Qué versión de Node.js requiere?
+¿Es un proyecto privado?
+¿Qué licencia tiene?
 
-├── React
-│
-│   ├── Scheduler
-│
-│   └── Loose-envify
-│
-└── Axios
-    │
-    └── Follow-redirects
-
-Tú nunca escribiste:
-
-npm install scheduler
-
-Sin embargo, está instalado.
-
-Porque React lo necesita.
-
-¿Cómo encuentra Node.js un módulo?
-
-Supongamos este código.
-
-import React from "react";
-
-¿Cómo sabe Node.js dónde está React?
-
-No existe una ruta.
-
-No escribimos:
-
-import React from "./node_modules/react";
-
-Entonces...
-
-¿cómo lo encuentra?
-
-Module Resolution
-
-Node.js sigue un algoritmo muy preciso.
-
-Supongamos esta estructura.
-
-mi-proyecto/
-
-│
-
-├── node_modules/
-
-│      └── react/
-
-│
-
-└── src/
-
-       └── App.js
-
-Cuando encuentra:
-
-import React from "react";
-
-hace algo parecido a esto:
-
-¿Existe node_modules?
-
-↓
-
-Sí
-
-↓
-
-¿Existe react?
-
-↓
-
-Sí
-
-↓
-
-Lo carga
-¿Y si no lo encuentra?
-
-Sube un nivel.
-
-Proyecto
-
-↓
-
-node_modules
-
-↓
-
-No existe
-
-↓
-
-Sube una carpeta
-
-↓
-
-Busca otro node_modules
-
-Este comportamiento permite reutilizar dependencias en algunas estructuras de proyectos, como los monorepos.
-
-¿Qué archivo carga?
-
-Supongamos:
-
-react/
-
-├── package.json
-├── index.js
-└── ...
-
-Node primero abre:
+Ese archivo es:
 
 package.json
+¿Qué es package.json?
 
-Busca:
+package.json es el archivo de configuración principal de un proyecto JavaScript.
 
-{
-    "main": "index.js"
-}
+Podemos imaginarlo como el DNI o el pasaporte del proyecto.
+
+Contiene toda la información necesaria para que las herramientas del ecosistema sepan cómo trabajar con él.
+
+Una analogía
+
+Piensa en una persona.
+
+Tiene:
+
+Nombre.
+Fecha de nacimiento.
+Nacionalidad.
+Dirección.
+Profesión.
+
+Todo eso aparece en un documento de identidad.
+
+Un proyecto también necesita un documento equivalente.
+
+Proyecto
+│
+├── Nombre
+├── Versión
+├── Dependencias
+├── Scripts
+├── Licencia
+└── Configuración
+
+Ese documento es package.json.
+
+¿Quién crea este archivo?
+
+Normalmente se crea mediante:
+
+npm init
 
 o
 
-{
-    "exports": { ... }
-}
+npm init -y
 
-Y entonces sabe cuál es el archivo de entrada de esa librería.
+También puede generarlo automáticamente una herramienta como Vite:
 
-¿Por qué pesa tanto?
+npm create vite@latest
 
-Esta es probablemente la pregunta más frecuente.
+o
 
-Imagina esto.
+pnpm create vite
 
-Instalas:
+En cualquier caso, el resultado es un package.json.
 
-npm install react
+¿Quién lee este archivo?
 
-No ocupa únicamente React.
+No solo lo lee npm.
 
-Instalas:
+Muchas herramientas lo utilizan.
 
-React.
-Sus dependencias.
-Las dependencias de esas dependencias.
-Las dependencias de esas dependencias...
+                 package.json
+                       │
+      ┌────────────────┼────────────────┐
+      ▼                ▼                ▼
+     npm             pnpm             Yarn
+      │                │                │
+      ├────────────┬───┴────────────┐
+      ▼            ▼                ▼
+    Vite      TypeScript       ESLint
+      │
+      ▼
+    React
 
-El árbol puede crecer rápidamente.
+Es el punto de encuentro del ecosistema.
 
-Por ejemplo:
+¿Cuándo se utiliza?
 
-Proyecto
-
-↓
-
-React
-
-↓
-
-20 paquetes
-
-↓
-
-100 paquetes
-
-↓
-
-250 paquetes
-
-Cada uno contiene:
-
-JavaScript.
-Archivos de configuración.
-Tipos de TypeScript.
-Licencias.
-Documentación.
-Recursos adicionales.
-Un ejemplo real
-
-Un proyecto recién creado con Vite y React puede contener cientos de paquetes en node_modules, aunque tú solo hayas instalado unas pocas dependencias de forma explícita.
-
-No significa que hayas hecho algo mal: es consecuencia del árbol de dependencias que necesita el ecosistema moderno.
-
-¿Por qué no se sube a Git?
-
-Supongamos:
-
-Proyecto
-
-│
-
-├── node_modules/
-
-└── package.json
-
-Si haces:
-
-git add .
-
-Subirías miles de archivos.
-
-Esto tiene varios problemas:
-
-El repositorio crecería enormemente.
-Los clones serían mucho más lentos.
-Se versionarían archivos generados automáticamente.
-Cualquier desarrollador puede recrearlos con npm install o pnpm install.
-
-Por eso node_modules aparece casi siempre en .gitignore.
-
-¿Qué pasa si la borramos?
-
-Nada grave.
-
-Puedes eliminarla completamente.
-
-Después ejecutar:
+Cada vez que ejecutas un comando como:
 
 npm install
 
@@ -403,31 +146,162 @@ o
 
 pnpm install
 
-Y el gestor volverá a crearla a partir de la información de package.json y del archivo de bloqueo (package-lock.json o pnpm-lock.yaml).
+el gestor de paquetes abre package.json para responder preguntas como:
 
-Esto demuestra que node_modules es un artefacto generado, no una parte del código fuente.
+¿Qué dependencias debo instalar?
+¿Qué versiones?
+¿Hay scripts disponibles?
+¿Es un proyecto ESM o CommonJS?
+Anatomía básica
 
-¿Qué problemas tiene node_modules?
+Un package.json típico puede ser así:
 
-Aunque funciona muy bien, tiene algunas limitaciones.
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}
+
+A primera vista parece un simple objeto JSON.
+
+Pero cada propiedad tiene un propósito muy concreto.
+
+¿Por qué JSON?
+
+Antes de analizar los campos, debemos entender el formato.
+
+package.json está escrito en JSON (JavaScript Object Notation).
+
+JSON es un formato de intercambio de datos basado en pares clave-valor.
+
+Ejemplo:
+
+{
+  "nombre": "Antonio",
+  "edad": 25
+}
+
+En este caso:
+
+"nombre" es la clave.
+"Antonio" es el valor.
+
+package.json sigue exactamente la misma estructura.
+
+Primer campo: name
+{
+  "name": "mi-proyecto"
+}
+
+Indica el nombre del proyecto o paquete.
+
+Si publicas tu proyecto en el registro de npm, este será el nombre con el que otros desarrolladores podrán instalarlo.
 
 Por ejemplo:
 
-Puede ocupar mucho espacio en disco.
-Dos proyectos distintos pueden almacenar copias de la misma dependencia.
-La estructura puede llegar a ser muy grande.
+npm install react
 
-Precisamente estos problemas motivaron la aparición de gestores como pnpm, que estudiaremos más adelante.
+react es el valor del campo name del paquete publicado.
+
+Campo version
+{
+  "version": "1.0.0"
+}
+
+Representa la versión actual del proyecto.
+
+Sigue las reglas de Versionado Semántico (SemVer), que estudiaremos más adelante.
+
+Por ahora basta con saber que:
+
+1.0.0
+│ │ │
+│ │ └── PATCH
+│ └──── MINOR
+└────── MAJOR
+Campo description
+{
+  "description": "Aplicación para gestionar tareas"
+}
+
+Es una breve descripción del proyecto.
+
+No afecta al funcionamiento, pero es muy útil si el paquete se publica.
+
+Campo private
+{
+  "private": true
+}
+
+Cuando vale true, npm impide publicar el paquete por error.
+
+Es muy recomendable en aplicaciones que no están destinadas a ser librerías públicas.
+
+Campo license
+{
+  "license": "MIT"
+}
+
+Indica bajo qué licencia se distribuye el proyecto.
+
+En proyectos personales o internos suele mantenerse el valor por defecto o adaptarse según las necesidades de la organización.
+
+Campo author
+{
+  "author": "Antonio Monzó"
+}
+
+Identifica al autor o equipo responsable del proyecto.
+
+Campo type
+
+Uno de los campos más importantes.
+
+{
+  "type": "module"
+}
+
+Determina cómo interpreta Node.js los archivos JavaScript del proyecto.
+
+Si usamos:
+
+{
+  "type": "module"
+}
+
+podemos escribir:
+
+import fs from "node:fs";
+
+Si el proyecto utiliza CommonJS (o no define type), la sintaxis habitual es:
+
+const fs = require("node:fs");
+
+En proyectos modernos con React y Vite se utiliza casi siempre:
+
+"type": "module"
 
 Buenas prácticas
-No modifiques archivos dentro de node_modules; cualquier reinstalación sobrescribirá esos cambios.
-No subas node_modules al repositorio Git.
-Si aparecen errores extraños relacionados con dependencias, una solución habitual es borrar node_modules y reinstalar.
-Recuerda que la carpeta se genera automáticamente y no forma parte del código fuente.
+Mantén private: true en aplicaciones que no vayas a publicar en npm.
+Utiliza type: "module" en proyectos modernos para trabajar con import/export.
+Rellena description y author si el proyecto se va a publicar.
+No edites package.json a mano para instalar dependencias; usa npm install o pnpm add, que lo actualizan automáticamente.
+Evita introducir comentarios o comas finales: el formato JSON es estricto.
 Conceptos clave
-node_modules contiene todas las dependencias necesarias para el proyecto.
-Incluye tanto dependencias directas como transitivas.
-Node.js utiliza un algoritmo de resolución de módulos para encontrar los paquetes.
-El archivo package.json de cada paquete indica cuál es su punto de entrada.
-El gran tamaño de node_modules se debe al árbol completo de dependencias.
-Es una carpeta generada automáticamente y no debe versionarse con Git.
+package.json es el archivo de configuración principal de un proyecto JavaScript.
+Se crea con npm init o automáticamente con herramientas como Vite.
+Lo leen npm, pnpm, Yarn y también herramientas como Vite, TypeScript o ESLint.
+name, version, description, private, license y author describen el proyecto.
+type determina si el proyecto usa ESM (import/export) o CommonJS (require).
+En el siguiente capítulo estudiamos en detalle sus dependencias y campos avanzados.

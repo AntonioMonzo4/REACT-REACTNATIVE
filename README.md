@@ -482,15 +482,30 @@ Al finalizar este roadmap, el portfolio incluirá:
 
 ---
 
+# 📂 Materiales en este repositorio
+
+| Módulo | Carpeta | Contenido |
+|--------|---------|-----------|
+| 2 - Node.js | [`MOD_2/Node.js/`](MOD_2/Node.js/) | 16 unidades (`Unidad_01.md` … `Unidad_16.md`) |
+| 3 - TypeScript | [`MOD_3/`](MOD_3/) | `Typescript.md` + proyecto `hello-world/` |
+| 4 - React desde Cero | [`MOD_4/EJEMPLO_REACT/`](MOD_4/EJEMPLO_REACT/) | Ejemplo Vite + React (components, hooks, CSS) |
+| 14 - React Native | [`MOD_14/ReactNative/`](MOD_14/ReactNative/) | Docs Expo SDK 57 + app `MiAplicacion/` (antes carpeta `MOD_5`) |
+
+> **Nota:** la carpeta que era `MOD_5` (React Native) se renombró a `MOD_14` para coincidir con la numeración de este roadmap.
+
+📖 **Guía de estudio completa:** [`GUIA_ESTUDIO.md`](GUIA_ESTUDIO.md)
+
+---
+
 # 📈 Progreso
 
 | Módulo | Estado |
 |---------|--------|
 | Fundamentos Web | ⬜ |
 | Git | ⬜ |
-| Node.js | ⬜ |
-| TypeScript | ⬜ |
-| React Básico | ⬜ |
+| Node.js | 🟢 |
+| TypeScript | 🟢 |
+| React Básico | 🟢 |
 | React Intermedio | ⬜ |
 | React Avanzado | ⬜ |
 | React Router | ⬜ |
@@ -500,7 +515,7 @@ Al finalizar este roadmap, el portfolio incluirá:
 | Arquitectura | ⬜ |
 | Diseño | ⬜ |
 | Patrones | ⬜ |
-| React Native | ⬜ |
+| React Native | 🟡 |
 | Backend para Frontend | ⬜ |
 | Docker | ⬜ |
 | CI/CD | ⬜ |
@@ -509,3 +524,5 @@ Al finalizar este roadmap, el portfolio incluirá:
 | Seguridad | ⬜ |
 | Proyecto Final | ⬜ |
 | Preparación Profesional | ⬜ |
+
+🟢 = material en el repo · 🟡 = material parcial · ⬜ = pendiente

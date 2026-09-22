@@ -1,88 +1,191 @@
-¿Qué son los scripts?
+npm: Historia, funcionamiento y primeros pasos
 
-Cuando empezamos con JavaScript solemos ejecutar comandos largos.
+Objetivo
+
+Comprender por qué nació npm, qué problema resolvió, cómo funciona internamente y aprender a utilizar sus comandos fundamentales.
+
+Índice
+El problema antes de npm
+¿Qué es un gestor de paquetes?
+El nacimiento de npm
+¿Qué es realmente npm?
+El registro de npm (npm Registry)
+¿Cómo funciona una instalación?
+npm y Node.js
+Instalación global vs local
+Primer proyecto con npm
+Comandos fundamentales
+¿Cómo resuelve npm las dependencias?
+Buenas prácticas
+Resumen
+Introducción
+
+Cuando empiezas con JavaScript es normal pensar que todo consiste en escribir código.
+
+Sin embargo, los proyectos profesionales utilizan cientos o incluso miles de librerías externas.
+
+Por ejemplo, una aplicación React recién creada puede depender de más de 300 paquetes de forma directa o indirecta.
+
+La pregunta es:
+
+¿Cómo descargamos todas esas librerías?
+
+Hoy la respuesta parece obvia:
+
+npm
+
+Pero hace años no existía.
+
+Y desarrollar aplicaciones era mucho más complicado.
+
+El problema antes de npm
+
+Imagina que estamos en 2008.
+
+Quieres utilizar una librería para manipular fechas.
+
+No existe npm.
+
+El proceso sería algo parecido a esto.
+
+Internet
+
+↓
+
+Buscar la librería
+
+↓
+
+Entrar en la página web
+
+↓
+
+Descargar un ZIP
+
+↓
+
+Descomprimir
+
+↓
+
+Copiar archivos al proyecto
+
+↓
+
+Repetir para la siguiente librería
+
+Ahora imagina que utilizas veinte librerías.
+
+Tendrías veinte carpetas distintas.
+
+Actualizar cualquiera de ellas sería un proceso manual.
+
+Otro problema
+
+Imagina este proyecto.
+
+Proyecto
+
+├── jquery.js
+├── lodash.js
+├── moment.js
+├── axios.js
+├── validator.js
+├── ...
+
+¿Qué ocurre cuando sale una nueva versión?
+
+Había que:
+
+Buscarla.
+Descargarla.
+Sustituir archivos.
+Comprobar que nada se rompía.
+
+Era un mantenimiento lento y propenso a errores.
+
+El problema de las dependencias
+
+Aquí aparece un concepto muy importante.
+
+Supongamos que instalamos una librería.
+
+Mi aplicación
+
+↓
+
+Axios
+
+Todo parece sencillo.
+
+Pero Axios también necesita otras librerías.
+
+Mi aplicación
+
+↓
+
+Axios
+
+↓
+
+Librería A
+
+↓
+
+Librería B
+
+Y la Librería B depende de otra.
+
+Mi aplicación
+
+↓
+
+Axios
+
+↓
+
+Librería A
+
+↓
+
+Librería B
+
+↓
+
+Librería C
+
+Sin un gestor de paquetes tendríamos que descargar todo esto manualmente.
+
+Sería prácticamente imposible mantener proyectos grandes.
+
+¿Qué es una dependencia?
+
+Una dependencia es un paquete que nuestro proyecto necesita para funcionar.
 
 Por ejemplo:
 
-vite
+import axios from "axios";
 
-o
+En ese momento, Axios pasa a formar parte de nuestro proyecto.
 
-vite build
+Es una dependencia.
 
-o
+¿Qué es un gestor de paquetes?
 
-eslint .
+Un gestor de paquetes es un programa que automatiza todo el proceso relacionado con las librerías.
 
-o
+Su trabajo consiste en:
 
-tsc
+Descargar paquetes.
+Instalarlos.
+Actualizarlos.
+Eliminar paquetes.
+Resolver dependencias automáticamente.
+Comprobar versiones compatibles.
 
-Imagina un proyecto grande.
+Podemos imaginarlo como una tienda inteligente.
 
-Tendríamos que memorizar decenas de comandos.
-
-Además, distintos desarrolladores podrían ejecutar comandos diferentes para hacer la misma tarea.
-
-Necesitamos una forma de darles un nombre.
-
-Ahí aparecen los scripts.
-
-El campo scripts
-
-Un ejemplo sencillo:
-
-{
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build"
-  }
-}
-
-Aquí ocurre algo muy interesante.
-
-La izquierda:
-
-"dev"
-
-es simplemente un nombre.
-
-La derecha:
-
-"vite"
-
-es el comando real que se ejecutará.
-
-Podemos imaginarlo así:
-
-dev
- │
- ▼
-vite
-
-Y:
-
-build
- │
- ▼
-vite build
-¿Qué ocurre cuando ejecutamos un script?
-
-Supongamos este package.json.
-
-{
-  "scripts": {
-    "dev": "vite"
-  }
-}
-
-Ahora escribimos:
-
-npm run dev
-
-Internamente ocurre algo parecido a esto:
-
-Terminal
+Proyecto
 
 ↓
 
@@ -90,600 +193,282 @@ npm
 
 ↓
 
-Abre package.json
+Busca el paquete
 
 ↓
 
-Busca "dev"
+Descarga el paquete
 
 ↓
 
-Encuentra "vite"
+Descarga sus dependencias
 
 ↓
 
-Ejecuta vite
-
-Es decir:
-
-npm run dev
-
-es equivalente a ejecutar:
-
-vite
-
-La ventaja es que todos los miembros del equipo utilizan siempre el mismo comando.
-
-¿Por qué no escribir directamente vite?
-
-Porque muchas veces la herramienta ni siquiera está instalada de forma global.
-
-Supongamos:
-
-Proyecto
-
-├── package.json
-├── node_modules
-
-Dentro de node_modules existe:
-
-vite
-
-Cuando ejecutamos:
-
-npm run dev
-
-npm añade automáticamente:
-
-node_modules/.bin
-
-al PATH temporal del proceso.
-
-Gracias a eso encuentra vite aunque no esté instalado globalmente.
-
-Este comportamiento es una de las razones por las que es preferible usar scripts frente a ejecutar binarios directamente.
-
-Scripts más habituales
-Desarrollo
-{
-  "scripts": {
-    "dev": "vite"
-  }
-}
-
-Se ejecuta con:
-
-npm run dev
-
-o
-
-pnpm dev
-Compilar
-{
-  "scripts": {
-    "build": "vite build"
-  }
-}
-
-Genera la versión optimizada para producción.
-
-Vista previa
-{
-  "scripts": {
-    "preview": "vite preview"
-  }
-}
-
-Permite probar la aplicación ya compilada.
-
-Linter
-{
-  "scripts": {
-    "lint": "eslint ."
-  }
-}
-
-Busca errores y problemas de estilo.
-
-Tests
-{
-  "scripts": {
-    "test": "vitest"
-  }
-}
-
-Ejecuta las pruebas automáticas.
-
-Scripts personalizados
-
-No existe ninguna lista cerrada de nombres.
-
-Podemos crear los que queramos.
-
-{
-  "scripts": {
-    "hola": "echo Hola Mundo"
-  }
-}
-
-Después:
-
-npm run hola
-
-Resultado:
-
-Hola Mundo
-
-Esto convierte a package.json en un pequeño "centro de automatización" del proyecto.
-
-¿Qué son las dependencias?
-
-Una dependencia es cualquier paquete que nuestro proyecto necesita.
-
-Por ejemplo:
-
-import React from "react";
-
-Como utilizamos React, debemos instalarlo.
-
-Campo dependencies
-
-Ejemplo:
-
-{
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "axios": "^1.8.0"
-  }
-}
-
-Estas librerías son necesarias para que la aplicación funcione.
-
-Si eliminamos React de una aplicación React, el proyecto dejará de funcionar.
-
-¿Qué ocurre al instalar una dependencia?
-
-Supongamos:
-
-npm install axios
-
-Internamente npm hace varias cosas:
-
-Descarga Axios
+Las instala
 
 ↓
 
-Lo instala en node_modules
+Actualiza package.json
+
+Todo ello con un único comando.
+
+El nacimiento de npm
+
+En 2009 apareció Node.js.
+
+Muy pronto la comunidad comenzó a publicar librerías reutilizables.
+
+El número de paquetes crecía rápidamente.
+
+Era evidente que hacía falta una forma sencilla de compartir código.
+
+Así nació npm (Node Package Manager).
+
+Aunque originalmente significaba Node Package Manager, hoy en día el proyecto se identifica simplemente como npm.
+
+Con el tiempo se convirtió en el registro de paquetes más grande del mundo.
+
+Actualmente contiene millones de paquetes publicados por desarrolladores y empresas.
+
+¿Qué es realmente npm?
+
+Cuando decimos "npm" solemos referirnos a tres cosas distintas.
+
+1. La herramienta de línea de comandos
+
+Es el programa que ejecutamos.
+
+npm install
+2. El registro (Registry)
+
+Es el servidor donde están almacenados los paquetes.
+
+Cuando escribes:
+
+npm install react
+
+npm busca React en su registro oficial.
+
+Tu ordenador
 
 ↓
 
-Añade Axios a dependencies
+npm
+
+↓
+
+Registry
+
+↓
+
+Descarga React
+
+↓
+
+Instala React
+3. El ecosistema
+
+Millones de paquetes publicados por la comunidad.
+
+React.
+
+Vite.
+
+ESLint.
+
+Prettier.
+
+TypeScript.
+
+Express.
+
+NestJS.
+
+Y muchos más.
+
+¿Qué ocurre cuando ejecutas npm install react?
+
+Aunque parece un único comando, internamente suceden muchos pasos.
+
+Usuario
+
+↓
+
+npm install react
+
+↓
+
+Busca React en el Registry
+
+↓
+
+Obtiene la versión adecuada
+
+↓
+
+Comprueba dependencias
+
+↓
+
+Descarga todos los paquetes necesarios
+
+↓
+
+Crea node_modules
+
+↓
+
+Actualiza package.json
 
 ↓
 
 Actualiza package-lock.json
 
-Todo automáticamente.
+Todo este proceso dura normalmente solo unos segundos.
 
-El resultado:
+npm y Node.js
 
-{
-  "dependencies": {
-    "axios": "^1.8.0"
-  }
-}
-¿Qué es devDependencies?
+Una duda muy frecuente.
 
-No todas las librerías son necesarias cuando la aplicación ya está funcionando en producción.
+¿Tengo que instalar npm aparte?
 
-Ejemplo:
+La respuesta es no.
 
-ESLint.
-Prettier.
-TypeScript.
-Vite.
-Vitest.
+Cuando instalas Node.js, también se instala npm.
 
-Estas herramientas solo se utilizan durante el desarrollo.
+Puedes comprobarlo con:
 
-Por eso van aquí.
+node -v
+npm -v
 
-{
-  "devDependencies": {
-    "vite": "^7.0.0",
-    "eslint": "^9.0.0"
-  }
-}
-Analogía
+Por ejemplo:
 
-Imagina que eres carpintero.
+Node.js
 
-Para fabricar una mesa necesitas:
+v24.2.0
 
-madera,
-tornillos,
-cola.
+npm
 
-Esos serían:
+11.5.1
 
-dependencies
+(Las versiones pueden variar con el tiempo.)
 
-Pero también utilizas:
+Instalación local vs instalación global
 
-martillo,
-sierra,
-taladro.
+npm puede instalar paquetes de dos formas.
 
-Esas herramientas son necesarias para construir la mesa, pero no forman parte de la mesa terminada.
+Instalación local
+npm install react
 
-Eso serían las:
+El paquete solo estará disponible dentro del proyecto actual.
 
-devDependencies
-Comparativa
-dependencies	devDependencies
-Necesarias para ejecutar la aplicación	Necesarias para desarrollarla
-Se utilizan en producción	Solo durante el desarrollo
-Ejemplos: React, Axios, React Router	Ejemplos: Vite, ESLint, TypeScript, Vitest
-¿Cómo se instalan?
+Es la forma recomendada para la mayoría de librerías.
 
-Dependencias normales:
+Instalación global
+npm install -g typescript
+
+El paquete queda disponible para todo el sistema.
+
+Podrás ejecutarlo desde cualquier carpeta.
+
+Normalmente se reserva para herramientas de desarrollo que necesitas usar desde la terminal.
+
+Tu primer proyecto con npm
+
+Creamos una carpeta vacía.
+
+mi-proyecto/
+
+Entramos en ella.
+
+cd mi-proyecto
+
+Inicializamos npm.
+
+npm init
+
+npm hará varias preguntas:
+
+Package name?
+
+Version?
+
+Description?
+
+Entry point?
+
+Author?
+
+License?
+
+Al finalizar aparecerá un nuevo archivo.
+
+package.json
+
+Este archivo será el "DNI" del proyecto.
+
+Lo estudiaremos en profundidad en la siguiente unidad.
+
+Comandos fundamentales
+Crear un proyecto
+npm init
+
+Versión rápida:
+
+npm init -y
+
+Acepta todos los valores por defecto.
+
+Instalar un paquete
+npm install react
+
+También puedes usar la forma corta:
+
+npm i react
+Eliminar un paquete
+npm uninstall react
+Actualizar un paquete
+npm update
+Mostrar paquetes instalados
+npm list
+Comprobar vulnerabilidades conocidas
+npm audit
+Intentar corregirlas automáticamente
+npm audit fix
+Ver paquetes desactualizados
+npm outdated
+¿Cómo resuelve npm las dependencias?
+
+Supongamos que instalas React.
 
 npm install react
 
-o
+React necesita otros paquetes para funcionar.
 
-pnpm add react
+npm analiza esas dependencias y las descarga automáticamente.
 
-Dependencias de desarrollo:
+Podemos representarlo así:
 
-npm install --save-dev eslint
-
-Forma corta:
-
-npm install -D eslint
-
-Con pnpm:
-
-pnpm add -D eslint
-Error muy común
-
-Muchos desarrolladores meten todo en dependencies.
-
-No es lo correcto.
-
-Por ejemplo:
-
-{
-  "dependencies": {
-    "eslint": "...",
-    "prettier": "...",
-    "vite": "..."
-  }
-}
-
-Aunque la aplicación funcione, estás indicando que esas herramientas son necesarias en producción, cuando en realidad solo las utilizas para desarrollar.
-
-Mantener una separación clara ayuda a entender el proyecto y evita instalar paquetes innecesarios en algunos entornos.
-
-Buenas prácticas
-Utiliza nombres de scripts claros (dev, build, test, lint son convenciones ampliamente aceptadas).
-Coloca en dependencies únicamente las librerías necesarias para ejecutar la aplicación.
-Coloca en devDependencies las herramientas de desarrollo.
-Evita crear scripts duplicados o con nombres ambiguos.
-Aprovecha los scripts para que todo el equipo ejecute las mismas tareas de la misma forma.
-Conceptos clave
-scripts permite asignar nombres sencillos a comandos complejos.
-npm run o pnpm run buscan el script correspondiente en package.json y lo ejecutan.
-dependencies contiene las librerías necesarias para que la aplicación funcione.
-devDependencies contiene herramientas utilizadas únicamente durante el desarrollo.
-Una buena organización del package.json facilita el mantenimiento del proyecto.
-
-¿Por qué existen campos avanzados?
-
-Hasta ahora hemos visto campos que aparecen en casi cualquier proyecto:
-
-name
-version
-scripts
-dependencies
-devDependencies
-
-Pero si inspeccionas el package.json de React, Vite o cualquier librería popular, encontrarás muchos más.
-
-¿Por qué?
-
-Porque package.json no solo describe aplicaciones, también describe librerías que otros desarrolladores instalarán.
-
-peerDependencies
-
-Este es uno de los conceptos más difíciles para los principiantes.
-
-Supongamos que desarrollas una librería llamada:
-
-mi-react-ui
-
-Internamente utiliza React.
-
-mi-react-ui
-
-↓
-
-React
-
-Una primera idea sería instalar React como dependencia.
-
-{
-  "dependencies": {
-    "react": "^19.0.0"
-  }
-}
-
-Parece correcto.
-
-Pero aparece un problema.
-
-El problema
-
-Imagina esta aplicación.
-
-Mi aplicación
-
-↓
-
-React 19
-
-↓
-
-mi-react-ui
-
-↓
-
-React 19
-
-Ahora existen dos instalaciones distintas de React.
-
-Eso puede provocar errores muy difíciles de depurar, especialmente porque React mantiene estado interno y espera ser una única instancia compartida.
-
-La solución
-
-En lugar de instalar React directamente, la librería dice:
-
-"Yo necesito React, pero espero que quien instale mi librería ya lo tenga."
-
-Eso se expresa así:
-
-{
-  "peerDependencies": {
-    "react": "^19.0.0"
-  }
-}
-
-Ahora el árbol queda así:
-
-Aplicación
-
+Tu proyecto
 │
+└── React
+    │
+    ├── Paquete A
+    │   └── Paquete C
+    │
+    └── Paquete B
+
+No tienes que instalar cada una manualmente. npm construye ese árbol de dependencias por ti y se asegura de que las versiones sean compatibles siempre que sea posible.
 
-├── React
-
-└── mi-react-ui
-
-Solo existe una copia de React.
-
-¿Cuándo usar peerDependencies?
-
-Normalmente en librerías.
-
-Ejemplos:
-
-Componentes React.
-Plugins de ESLint.
-Plugins de Vite.
-Plugins de Webpack.
-Plugins de Babel.
-
-No suele utilizarse en aplicaciones normales.
-
-optionalDependencies
-
-Algunas dependencias no son imprescindibles.
-
-Si no pueden instalarse, la aplicación puede seguir funcionando con funcionalidades reducidas.
-
-Ejemplo:
-
-{
-  "optionalDependencies": {
-    "sharp": "^0.34.0"
-  }
-}
-
-Si sharp falla durante la instalación, npm continúa sin detener el proceso.
-
-Esto es útil para paquetes que dependen de características específicas del sistema operativo o de compilaciones nativas.
-
-engines
-
-Este campo indica qué versiones de herramientas son compatibles con el proyecto.
-
-Ejemplo:
-
-{
-  "engines": {
-    "node": ">=20",
-    "npm": ">=10"
-  }
-}
-
-Con esto comunicamos que el proyecto está pensado para ejecutarse con Node.js 20 o superior y npm 10 o superior.
-
-Algunos gestores de paquetes mostrarán una advertencia si no se cumple este requisito.
-
-¿Por qué es importante?
-
-Imagina este equipo.
-
-Ana
-
-Node 24
-
-↓
-
-Funciona
-
---------------------
-
-Luis
-
-Node 16
-
-↓
-
-Error
-
-Definir engines ayuda a reducir este tipo de diferencias entre entornos.
-
-main
-
-Cuando publicas una librería, debes indicar cuál es su punto de entrada principal.
-
-Ejemplo:
-
-{
-  "main": "index.js"
-}
-
-Si alguien instala esa librería y hace:
-
-import miLibreria from "mi-libreria";
-
-Node.js buscará el archivo indicado en main (o utilizará exports, que veremos a continuación).
-
-En aplicaciones creadas con React y Vite normalmente no tendrás que modificar este campo.
-
-exports
-
-exports es una evolución de main.
-
-Permite controlar exactamente qué archivos de una librería son públicos.
-
-Ejemplo:
-
-{
-  "exports": {
-    ".": "./dist/index.js"
-  }
-}
-
-Con este campo puedes impedir que los usuarios importen archivos internos que no forman parte de la API pública.
-
-Es muy utilizado en librerías modernas.
-
-files
-
-Cuando publicas un paquete en npm, no siempre quieres subir todos los archivos del proyecto.
-
-Con files puedes indicar cuáles se incluirán.
-
-{
-  "files": [
-    "dist",
-    "README.md"
-  ]
-}
-
-De este modo puedes excluir:
-
-Código fuente.
-Pruebas.
-Configuraciones internas.
-Archivos temporales.
-private
-
-Ya vimos este campo brevemente, pero merece una mención adicional.
-
-{
-  "private": true
-}
-
-Con este valor npm bloqueará cualquier intento de publicar el proyecto en el registro oficial.
-
-En aplicaciones React, Next.js o React Native suele ser recomendable mantenerlo activado, ya que normalmente no queremos publicar la aplicación como una librería reutilizable.
-
-Otros campos útiles
-
-Existen muchos más campos que puedes encontrar en proyectos reales.
-
-Por ejemplo:
-
-{
-  "homepage": "...",
-  "repository": "...",
-  "bugs": "...",
-  "keywords": [
-    "react",
-    "ui"
-  ]
-}
-
-Estos campos proporcionan información adicional para quienes utilizan o mantienen el proyecto.
-
-Un package.json profesional
-
-Un proyecto profesional puede tener un aspecto parecido a este:
-
-{
-  "name": "frontend-profesional",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "engines": {
-    "node": ">=20"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "test": "vitest"
-  },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "vite": "^7.0.0",
-    "eslint": "^9.0.0",
-    "typescript": "^5.0.0",
-    "vitest": "^3.0.0"
-  }
-}
-
-Aunque hay muchos campos posibles, la mayoría de aplicaciones utilizan una estructura muy similar a esta.
-
-¿Quién utiliza cada campo?
-Campo	Quién lo utiliza
-name	npm, Registry
-version	npm
-scripts	npm, pnpm, Yarn
-dependencies	npm, pnpm, Yarn
-devDependencies	npm, pnpm, Yarn
-peerDependencies	Gestores de paquetes y librerías
-optionalDependencies	Gestores de paquetes
-main	Node.js
-exports	Node.js y herramientas modernas
-engines	npm, pnpm, Yarn
-private	npm
 Buenas prácticas
-Utiliza peerDependencies únicamente cuando desarrolles librerías o plugins.
-Define engines si tu proyecto depende de versiones concretas de Node.js.
-Mantén private: true en aplicaciones que no vayas a publicar.
-Publica solo los archivos necesarios utilizando files.
-Prefiere exports frente a main en librerías modernas para controlar mejor la API pública.
+Instala los paquetes localmente salvo que realmente necesites una herramienta global.
+No copies carpetas node_modules entre proyectos; utiliza npm install para recrearlas.
+Revisa periódicamente las actualizaciones y vulnerabilidades con npm outdated y npm audit.
+Mantén tu versión de Node.js actualizada para aprovechar mejoras de rendimiento y compatibilidad.
 Conceptos clave
-peerDependencies indica dependencias que deben ser proporcionadas por quien instala la librería.
-optionalDependencies permite que una instalación continúe aunque una dependencia opcional falle.
-engines documenta las versiones compatibles de Node.js y otras herramientas.
-main y exports definen cómo se expone una librería al exterior.
-files controla qué se publica en npm.
-Muchos de estos campos son esenciales al desarrollar librerías, aunque en aplicaciones React se utilicen con menos frecuencia.
+npm nació para resolver el problema de gestionar librerías y sus dependencias.
+Un gestor de paquetes descarga, instala, actualiza y elimina paquetes automáticamente.
+npm hace referencia a la herramienta de línea de comandos, al registro de paquetes y al ecosistema de librerías.
+Node.js y npm se instalan juntos.
+La mayoría de las dependencias de un proyecto deben instalarse localmente.

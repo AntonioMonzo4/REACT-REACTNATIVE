@@ -1,293 +1,377 @@
-Introducción
+Casos de uso de Node.js
 
-Cada proyecto moderno de JavaScript tiene un archivo llamado:
+Objetivo
 
-package.json
+Conocer los principales usos de Node.js en el desarrollo moderno, cuándo es una buena elección y cuándo conviene utilizar otras tecnologías.
 
-Lo encontrarás en proyectos de:
+Índice
+¿Por qué Node.js tuvo tanto éxito?
+Desarrollo Frontend
+Desarrollo Backend
+APIs REST
+Aplicaciones en tiempo real
+Microservicios
+Automatización
+Herramientas de desarrollo
+Server Side Rendering (SSR)
+¿Cuándo NO usar Node.js?
+Casos reales de empresas
+Resumen
+Ejercicios
+1. ¿Por qué Node.js tuvo tanto éxito?
 
-React
-React Native
-Next.js
-Vue
-Angular
+Antes de Node.js era habitual encontrar esta situación:
+
+Frontend
+│
+└── JavaScript
+
+Backend
+│
+├── Java
+├── PHP
+├── Python
+└── C#
+
+Esto implicaba:
+
+Dos lenguajes.
+Dos equipos especializados.
+Mayor tiempo de desarrollo.
+Mayor coste de mantenimiento.
+
+Con Node.js apareció la posibilidad de utilizar JavaScript en ambos lados.
+
+Frontend
+│
+└── JavaScript
+
+Backend
+│
+└── JavaScript (Node.js)
+
+Esto facilitó el trabajo de muchos equipos, aunque no significa que JavaScript sea siempre la mejor opción para el backend.
+
+2. Desarrollo Frontend
+
+Aunque parezca curioso, el uso más común de Node.js para un desarrollador frontend no es crear servidores, sino ejecutar herramientas.
+
+Cuando escribes:
+
+pnpm dev
+
+ocurre algo parecido a esto:
+
+Terminal
+      │
+      ▼
 Node.js
-Express
-NestJS
+      │
+      ▼
 Vite
-TypeScript
+      │
+      ▼
+Compila React
+      │
+      ▼
+Servidor de desarrollo
+      │
+      ▼
+http://localhost:5173
 
-Prácticamente cualquier proyecto del ecosistema JavaScript lo incluye.
+Node.js también ejecuta:
 
-La pregunta es:
-
-¿Por qué?
-
-El problema antes de package.json
-
-Imagina que desarrollas una aplicación React.
-
-Utilizas:
-
-React
-React DOM
 Vite
+Webpack
+Babel
 TypeScript
 ESLint
 Prettier
-Axios
+Vitest
+Jest
 
-Ahora envías el proyecto a un compañero.
+Sin Node.js, el desarrollo moderno con React sería muy diferente.
 
-¿Cómo sabe qué librerías tiene que instalar?
+3. Desarrollo Backend
 
-Antes no existía una respuesta estándar.
+Uno de los usos más conocidos.
 
-Cada proyecto podía depender de una documentación manual, lo que provocaba errores y diferencias entre entornos.
-
-La solución
-
-Necesitamos un archivo que responda preguntas como:
-
-¿Cómo se llama el proyecto?
-¿Qué versión tiene?
-¿Qué dependencias necesita?
-¿Qué scripts existen?
-¿Qué versión de Node.js requiere?
-¿Es un proyecto privado?
-¿Qué licencia tiene?
-
-Ese archivo es:
-
-package.json
-¿Qué es package.json?
-
-package.json es el archivo de configuración principal de un proyecto JavaScript.
-
-Podemos imaginarlo como el DNI o el pasaporte del proyecto.
-
-Contiene toda la información necesaria para que las herramientas del ecosistema sepan cómo trabajar con él.
-
-Una analogía
-
-Piensa en una persona.
-
-Tiene:
-
-Nombre.
-Fecha de nacimiento.
-Nacionalidad.
-Dirección.
-Profesión.
-
-Todo eso aparece en un documento de identidad.
-
-Un proyecto también necesita un documento equivalente.
-
-Proyecto
-│
-├── Nombre
-├── Versión
-├── Dependencias
-├── Scripts
-├── Licencia
-└── Configuración
-
-Ese documento es package.json.
-
-¿Quién crea este archivo?
-
-Normalmente se crea mediante:
-
-npm init
-
-o
-
-npm init -y
-
-También puede generarlo automáticamente una herramienta como Vite:
-
-npm create vite@latest
-
-o
-
-pnpm create vite
-
-En cualquier caso, el resultado es un package.json.
-
-¿Quién lee este archivo?
-
-No solo lo lee npm.
-
-Muchas herramientas lo utilizan.
-
-                 package.json
-                       │
-      ┌────────────────┼────────────────┐
-      ▼                ▼                ▼
-     npm             pnpm             Yarn
-      │                │                │
-      ├────────────┬───┴────────────┐
-      ▼            ▼                ▼
-    Vite      TypeScript       ESLint
-      │
-      ▼
-    React
-
-Es el punto de encuentro del ecosistema.
-
-¿Cuándo se utiliza?
-
-Cada vez que ejecutas un comando como:
-
-npm install
-
-o
-
-pnpm install
-
-el gestor de paquetes abre package.json para responder preguntas como:
-
-¿Qué dependencias debo instalar?
-¿Qué versiones?
-¿Hay scripts disponibles?
-¿Es un proyecto ESM o CommonJS?
-Anatomía básica
-
-Un package.json típico puede ser así:
-
-{
-  "name": "mi-proyecto",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build"
-  },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "vite": "^7.0.0"
-  }
-}
-
-A primera vista parece un simple objeto JSON.
-
-Pero cada propiedad tiene un propósito muy concreto.
-
-¿Por qué JSON?
-
-Antes de analizar los campos, debemos entender el formato.
-
-package.json está escrito en JSON (JavaScript Object Notation).
-
-JSON es un formato de intercambio de datos basado en pares clave-valor.
+Con Node.js puedes crear servidores web.
 
 Ejemplo:
 
-{
-  "nombre": "Antonio",
-  "edad": 25
-}
+import http from "node:http";
 
-En este caso:
+const server = http.createServer((req, res) => {
+    res.end("Hola Mundo");
+});
 
-"nombre" es la clave.
-"Antonio" es el valor.
+server.listen(3000);
 
-package.json sigue exactamente la misma estructura.
+En proyectos reales suele utilizarse un framework como:
 
-Primer campo: name
-{
-  "name": "mi-proyecto"
-}
+Express
+Fastify
+NestJS
+Hono
 
-Indica el nombre del proyecto o paquete.
+Estos frameworks simplifican la creación de APIs y aplicaciones web.
 
-Si publicas tu proyecto en el registro de npm, este será el nombre con el que otros desarrolladores podrán instalarlo.
+4. APIs REST
+
+Imagina una aplicación React.
+
+Cuando el usuario inicia sesión:
+
+React
+
+↓
+
+POST /login
+
+↓
+
+Servidor Node
+
+↓
+
+Base de datos
+
+↓
+
+Respuesta JSON
+
+↓
+
+React
+
+Node.js es muy utilizado para desarrollar este tipo de APIs porque maneja muy bien operaciones de entrada/salida (I/O).
+
+5. Aplicaciones en tiempo real
+
+Aquí es donde Node.js destaca especialmente.
+
+Ejemplos:
+
+Chats.
+Videojuegos online.
+Notificaciones.
+Colaboración en tiempo real.
+Edición compartida de documentos.
+Sistemas de seguimiento en directo.
+
+Ejemplo de un chat:
+
+Usuario A
+
+↓
+
+Servidor Node
+
+↓
+
+Usuario B
+
+Gracias a tecnologías como WebSockets, el servidor puede enviar información a los clientes sin que estos tengan que preguntar constantemente.
+
+6. Microservicios
+
+En lugar de tener una única aplicación enorme, muchas empresas dividen el sistema en pequeños servicios independientes.
 
 Por ejemplo:
 
-npm install react
+                API Gateway
+                     │
+ ┌──────────┬──────────┬──────────┐
+ ▼          ▼          ▼          ▼
+Usuarios   Pagos     Pedidos   Notificaciones
 
-react es el valor del campo name del paquete publicado.
+Cada servicio puede estar desarrollado con una tecnología distinta.
 
-Campo version
-{
-  "version": "1.0.0"
-}
+Node.js es una opción frecuente para servicios que realizan muchas operaciones de red.
 
-Representa la versión actual del proyecto.
+7. Automatización
 
-Sigue las reglas de Versionado Semántico (SemVer), que estudiaremos más adelante.
+Node.js también se utiliza para crear scripts.
 
-Por ahora basta con saber que:
+Por ejemplo:
 
-1.0.0
-│ │ │
-│ │ └── PATCH
-│ └──── MINOR
-└────── MAJOR
-Campo description
-{
-  "description": "Aplicación para gestionar tareas"
-}
+Renombrar miles de archivos.
+Generar documentación.
+Convertir imágenes.
+Leer archivos CSV.
+Enviar correos automáticamente.
+Generar informes.
 
-Es una breve descripción del proyecto.
+Ejemplo:
 
-No afecta al funcionamiento, pero es muy útil si el paquete se publica.
+Script Node
 
-Campo private
-{
-  "private": true
-}
+↓
 
-Cuando vale true, npm impide publicar el paquete por error.
+Lee carpeta
 
-Es muy recomendable en aplicaciones que no están destinadas a ser librerías públicas.
+↓
 
-Campo license
-{
-  "license": "MIT"
-}
+Procesa imágenes
 
-Indica bajo qué licencia se distribuye el proyecto.
+↓
 
-En proyectos personales o internos suele mantenerse el valor por defecto o adaptarse según las necesidades de la organización.
+Guarda resultados
+8. Herramientas de desarrollo
 
-Campo author
-{
-  "author": "Antonio Monzó"
-}
+Muchísimas herramientas que utilizas diariamente están escritas en Node.js.
 
-Identifica al autor o equipo responsable del proyecto.
+Algunos ejemplos:
 
-Campo type
+Vite
+ESLint
+Prettier
+TypeScript Compiler (tsc)
+npm
+pnpm
+Yarn
 
-Uno de los campos más importantes.
+Cuando ejecutas:
 
-{
-  "type": "module"
-}
+pnpm lint
 
-Determina cómo interpreta Node.js los archivos JavaScript del proyecto.
+o
 
-Si usamos:
+pnpm build
 
-{
-  "type": "module"
-}
+es Node.js quien ejecuta esas herramientas.
 
-podemos escribir:
+9. Server Side Rendering (SSR)
 
-import fs from "node:fs";
+React puede renderizarse de dos formas.
 
-Si el proyecto utiliza CommonJS (o no define type), la sintaxis habitual es:
+Renderizado en el navegador (CSR)
+Navegador
 
-const fs = require("node:fs");
+↓
 
-En proyectos modernos con React y Vite se utiliza casi siempre:
+Descarga JavaScript
 
-"type": "module"
+↓
+
+React genera el HTML
+Renderizado en el servidor (SSR)
+Cliente
+
+↓
+
+Servidor Node.js
+
+↓
+
+Genera HTML
+
+↓
+
+Envía HTML al navegador
+
+↓
+
+React se hidrata
+
+Este enfoque ofrece ventajas como:
+
+Mejor SEO.
+Primera carga más rápida.
+Mejor experiencia en conexiones lentas.
+
+Frameworks como Next.js utilizan Node.js para realizar este tipo de renderizado.
+
+10. ¿Cuándo NO usar Node.js?
+
+Aunque es una herramienta muy potente, no siempre es la mejor elección.
+
+No suele ser la opción ideal para:
+
+Cálculos intensivos
+
+Ejemplo:
+
+Simulaciones científicas.
+Procesamiento matemático complejo.
+Modelos físicos.
+
+¿Por qué?
+
+Porque esas tareas pueden bloquear el hilo principal.
+
+Procesamiento de vídeo
+
+Ejemplos:
+
+Edición de vídeo.
+Conversión de formatos.
+Renderizado 3D.
+
+Suelen utilizarse herramientas especializadas o lenguajes como C++ o Rust para estas tareas.
+
+Inteligencia Artificial
+
+Aunque puedes consumir modelos de IA desde Node.js, el entrenamiento y la mayoría de bibliotecas de ciencia de datos están más desarrollados en Python.
+
+11. Casos reales
+
+Piensa en una aplicación como una plataforma de streaming.
+
+React
+
+↓
+
+API Node.js
+
+↓
+
+Base de datos
+
+↓
+
+Servicio de autenticación
+
+↓
+
+Servicio de pagos
+
+↓
+
+Servicio de recomendaciones
+
+↓
+
+Almacenamiento de vídeos
+
+Node.js puede encargarse de:
+
+API.
+Autenticación.
+Notificaciones.
+Comunicación en tiempo real.
+
+Mientras que otros servicios especializados realizan tareas más exigentes.
+
+¿Qué usarás tú como desarrollador Frontend?
+
+En tu día a día utilizarás Node.js para:
+
+Crear proyectos con React.
+Instalar dependencias.
+Ejecutar Vite.
+Lanzar el servidor de desarrollo.
+Compilar la aplicación.
+Ejecutar pruebas.
+Ejecutar ESLint y Prettier.
+Automatizar tareas.
+
+Si más adelante desarrollas backend con Node.js, ya tendrás una base sólida para trabajar con frameworks como Express o NestJS.
+
+Conceptos clave
+Node.js se utiliza mucho más que para crear servidores.
+Es una pieza esencial del ecosistema moderno de JavaScript.
+Destaca en aplicaciones con muchas operaciones de entrada/salida y tiempo real.
+Es el motor que permite ejecutar herramientas de desarrollo como Vite o TypeScript.
+No es la mejor opción para todas las cargas de trabajo; conocer sus fortalezas y limitaciones es parte de elegir la tecnología adecuada.
