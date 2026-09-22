@@ -2,7 +2,7 @@
 
 Guía para alumnos: qué estudiar, en qué orden y con qué material disponible en este repositorio.
 
-**Roadmap oficial (22 módulos):** [`README.md`](README.md)
+**Roadmap oficial (24 módulos):** [`README.md`](README.md)
 
 ## Leyenda de estados
 
@@ -18,10 +18,10 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 
 1. **Prerrequisitos** (módulos 0–1, en otros repositorios)
 2. **Base técnica** (módulos 2–3): Node.js y TypeScript
-3. **React** (módulos 4–13)
-4. **React Native** (módulo 14)
-5. **Complementos** (módulos 15–20): backend, DevOps, calidad
-6. **Cierre profesional** (módulos 21–22): proyecto final y preparación
+3. **React** (módulos 4–15): de cero a Next.js/React moderno
+4. **React Native** (módulo 16)
+5. **Complementos** (módulos 17–22): backend, DevOps, calidad
+6. **Cierre profesional** (módulos 23–24): proyecto final y preparación
 
 ---
 
@@ -34,18 +34,18 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 | 0 | Fundamentos de la Web | ❌ | Repositorio externo (HTML, CSS, JS) — *pendiente de enlazar* |
 | 1 | Git Profesional | ❌ | Repositorio externo (Git, GitHub) — *pendiente de enlazar* |
 
-### React y React Native
+### Base
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
 | 2 | Node.js para Frontend | ✅ | [`MOD_2/Node.js/`](MOD_2/Node.js/) — 16 unidades: qué es Node, Event Loop, Node vs navegador, casos de uso, npm, package.json, dependencias, scripts, node_modules, lock files, SemVer, npx, pnpm |
 | 3 | TypeScript | ✅ | [`MOD_3/Typescript.md`](MOD_3/Typescript.md) + [`MOD_3/hello-world/`](MOD_3/hello-world/) (`pnpm run check` / `pnpm run build`) |
-| 4 | React desde Cero | ✅ | [`MOD_4/EJEMPLO_REACT/`](MOD_4/EJEMPLO_REACT/) — componentes (Props, Eventos, Hooks, useMemo), custom hook, estilos; `pnpm lint` y `pnpm build` OK. Ver también [`docs/extra.md`](MOD_4/EJEMPLO_REACT/docs/extra.md) |
 
-### React (continuación)
+### React
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
+| 4 | React desde Cero | ✅ | [`MOD_4/EJEMPLO_REACT/`](MOD_4/EJEMPLO_REACT/) — componentes (Props, Eventos, Hooks, useMemo), custom hook, estilos; `pnpm lint` y `pnpm build` OK. Ver también [`docs/extra.md`](MOD_4/EJEMPLO_REACT/docs/extra.md) |
 | 5 | React Intermedio | ❌ | — |
 | 6 | React Avanzado | ❌ | — |
 | 7 | React Router | ❌ | — |
@@ -55,47 +55,50 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 | 11 | Arquitectura | ❌ | — |
 | 12 | Diseño Profesional | ❌ | — |
 | 13 | Patrones Avanzados | ❌ | — |
+| 14 | TypeScript + React | ❌ | — (checklist en el README; combina M3 y M4) |
+| 15 | Next.js y React Moderno | ❌ | — (React 19, App Router, React Compiler) |
 
 ### React Native
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 14 | React Native | ⚠️ | [`MOD_14/ReactNative/`](MOD_14/ReactNative/) — [`doc.md`](MOD_14/ReactNative/doc.md) (Expo SDK 57), [`README.md`](MOD_14/ReactNative/README.md), app Expo Router [`MiAplicacion/`](MOD_14/ReactNative/MiAplicacion/). Faltan: navegación, estado, APIs del dispositivo, proyecto final. **Nota:** esta carpeta se llamaba `MOD_5`. |
+| 16 | React Native | ⚠️ | [`MOD_16/ReactNative/`](MOD_16/ReactNative/) — [`doc.md`](MOD_16/ReactNative/doc.md) (Expo SDK 57), [`README.md`](MOD_16/ReactNative/README.md), app Expo Router [`MiAplicacion/`](MOD_16/ReactNative/MiAplicacion/). Faltan: navegación, estado, APIs del dispositivo, proyecto final. **Nota:** carpeta antes `MOD_5` / `MOD_14`. |
 
 ### Backend para Frontend
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 15 | REST / GraphQL / FastAPI / WebSockets | ❌ | — |
+| 17 | REST / GraphQL / FastAPI / WebSockets | ❌ | — |
 
 ### DevOps
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 16 | Docker | ❌ | — |
-| 17 | CI/CD | ❌ | — |
+| 18 | Docker | ❌ | — |
+| 19 | CI/CD | ❌ | — |
 
 ### Optimización y calidad
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 18 | Optimización | ❌ | — |
-| 19 | Accesibilidad | ❌ | — |
-| 20 | Seguridad | ❌ | — |
+| 20 | Optimización | ❌ | — (incluye DevTools Profiler) |
+| 21 | Accesibilidad | ❌ | — |
+| 22 | Seguridad | ❌ | — |
 
 ### Cierre profesional
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 21 | Proyecto Final | ❌ | — |
-| 22 | Preparación Profesional | ❌ | — |
+| 23 | Proyecto Final | ❌ | — |
+| 24 | Preparación Profesional | ❌ | — |
 
 ---
 
 ## Faltantes consolidados
 
-- **Sin carpeta ni material:** módulos 0–1 (externos), 5–13, 15–22.
-- **Parcial:** módulo 14 — solo intro a Expo, componentes base de la plantilla y docs; faltan secciones del checklist del README (FlatList, navegación, estado, cámara/GPS, etc.).
+- **Sin carpeta ni material:** módulos 0–1 (externos), 5–15, 17–24.
+- **Parcial:** módulo 16 — solo intro a Expo, componentes base de la plantilla y docs; faltan secciones del checklist del README (FlatList, navegación, estado, cámara/GPS, etc.).
+- **Nuevos en el roadmap (añadidos tras revisar huecos):** M14 TypeScript + React y M15 Next.js/React Moderno — checklist en el README, sin material aún.
 - **Proyectos del roadmap sin empezar:** Calculadora (M4), CRUD (M5), Dashboard (M6), etc. — ver checklist en [`README.md`](README.md).
 - **Enlaces pendientes:** repositorios de los módulos 0 y 1 en el README.
 
@@ -127,8 +130,8 @@ pnpm install
 pnpm lint
 pnpm build
 
-# Módulo 14 — Expo (requiere leer docs Expo v57 antes de editar código)
-cd MOD_14/ReactNative/MiAplicacion
+# Módulo 16 — Expo (requiere leer docs Expo v57 antes de editar código)
+cd MOD_16/ReactNative/MiAplicacion
 pnpm install
 pnpm expo start
 ```

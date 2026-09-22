@@ -1,6 +1,6 @@
-# Módulo 14 — React Native (carpeta del ejemplo: `ReactNative/`)
+# Módulo 16 — React Native (carpeta del ejemplo: `ReactNative/`)
 
-> Alineado con el **Módulo 14** del roadmap (`README.md` de la raíz).
+> Alineado con el **Módulo 16** del roadmap (`README.md` de la raíz).
 > El proyecto de ejemplo es `MiAplicacion/`, creada con Expo SDK 57.
 
 ## Cómo usar este material
@@ -9,7 +9,7 @@
 2. Explora el código de `MiAplicacion/` → es una app Expo completa con
    expo-router, tema claro/oscuro y animaciones.
 3. Consulta la tabla inferior para saber qué concepto demuestra cada archivo.
-4. Revisa el temario oficial del Módulo 14 en el README de la raíz para ver
+4. Revisa el temario oficial del Módulo 16 en el README de la raíz para ver
    qué temas faltan por cubrir (están marcados en `GUIA_ESTUDIO.md`).
 
 ```bash
@@ -33,7 +33,7 @@ pnpm start
 | `src/hooks/use-theme.ts` | Custom hook de tema (claro/oscuro) |
 | `src/constants/theme.ts` | Paleta de colores, espaciado, `Platform.select` |
 
-## Temario del Módulo 14 — estado
+## Temario del Módulo 16 — estado
 
 ### Cubierto por el ejemplo
 

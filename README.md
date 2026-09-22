@@ -102,12 +102,15 @@ Incluye:
 - [ ] Virtual DOM
 - [ ] JSX
 - [ ] Babel
+- [ ] key y reconciliación
+- [ ] React Strict Mode
 
 ### Componentes
 
 - [ ] Functional Components
 - [ ] Props
 - [ ] Children
+- [ ] React DevTools
 
 ### Estado
 
@@ -135,6 +138,8 @@ Incluye:
 - [ ] useCallback
 - [ ] useReducer
 - [ ] useLayoutEffect
+- [ ] forwardRef
+- [ ] ref callback
 
 ### Formularios
 
@@ -286,9 +291,60 @@ Incluye:
 
 ---
 
+## Módulo 14 - TypeScript + React
+
+### Fundamentos
+
+- [ ] Componentes tipados (props y state)
+- [ ] Eventos tipados
+- [ ] Children y refs con tipos
+- [ ] Hooks con generics (`useState<T>`, `useRef<T>`)
+
+### Patrones
+
+- [ ] Custom Hooks tipados
+- [ ] Discriminated unions en props
+- [ ] Type guards en handlers
+- [ ] `satisfies` y `as const` con JSX
+- [ ] Errores comunes de JSX + TS y cómo resolverlos
+
+**Proyecto**
+
+- [ ] Migrar el ejemplo del Módulo 4 a TypeScript
+
+---
+
+## Módulo 15 - Next.js y React Moderno
+
+### React 19
+
+- [ ] `use()` para leer promesas
+- [ ] Server Actions
+- [ ] `ref` como prop (sin forwardRef)
+- [ ] Cambios de hooks y layout
+
+### Meta-framework (Next.js App Router)
+
+- [ ] Server Components vs Client Components
+- [ ] File-based routing y layouts
+- [ ] SSR, SSG, ISR y Streaming
+- [ ] Data fetching en el servidor
+- [ ] Route Handlers (API)
+
+### React Compiler
+
+- [ ] Memoización automática
+- [ ] Reglas y limitaciones actuales
+
+**Proyecto**
+
+- [ ] App full-stack con Next.js (render + API routes)
+
+---
+
 # 📱 React Native
 
-## Módulo 14 - React Native
+## Módulo 16 - React Native
 
 ### Introducción
 
@@ -340,7 +396,7 @@ Incluye:
 
 # 🌐 Backend para Frontend
 
-## Módulo 15
+## Módulo 17
 
 - [ ] REST
 - [ ] GraphQL
@@ -352,7 +408,7 @@ Incluye:
 
 # 🐳 DevOps
 
-## Módulo 16 - Docker
+## Módulo 18 - Docker
 
 - [ ] Dockerfile
 - [ ] Docker Compose
@@ -362,7 +418,7 @@ Incluye:
 
 ---
 
-## Módulo 17 - CI/CD
+## Módulo 19 - CI/CD
 
 - [ ] GitHub Actions
 - [ ] Vercel
@@ -373,19 +429,21 @@ Incluye:
 
 # 🚀 Optimización
 
-## Módulo 18
+## Módulo 20
 
 - [ ] Lighthouse
 - [ ] Lazy Loading
 - [ ] Memoización
 - [ ] Optimización de imágenes
 - [ ] Bundle Analyzer
+- [ ] React DevTools Profiler
+- [ ] why-did-you-render / trazas de render
 
 ---
 
 # ♿ Accesibilidad
 
-## Módulo 19
+## Módulo 21
 
 - [ ] WCAG
 - [ ] Navegación por teclado
@@ -395,7 +453,7 @@ Incluye:
 
 # 🔒 Seguridad
 
-## Módulo 20
+## Módulo 22
 
 - [ ] XSS
 - [ ] CSRF
@@ -407,7 +465,7 @@ Incluye:
 
 # 💼 Proyecto Final
 
-## Módulo 21
+## Módulo 23
 
 Construcción de una aplicación empresarial completa.
 
@@ -431,7 +489,7 @@ Construcción de una aplicación empresarial completa.
 
 # 🎯 Preparación Profesional
 
-## Módulo 22
+## Módulo 24
 
 ### Metodologías
 
@@ -489,9 +547,9 @@ Al finalizar este roadmap, el portfolio incluirá:
 | 2 - Node.js | [`MOD_2/Node.js/`](MOD_2/Node.js/) | 16 unidades (`Unidad_01.md` … `Unidad_16.md`) |
 | 3 - TypeScript | [`MOD_3/`](MOD_3/) | `Typescript.md` + proyecto `hello-world/` |
 | 4 - React desde Cero | [`MOD_4/EJEMPLO_REACT/`](MOD_4/EJEMPLO_REACT/) | Ejemplo Vite + React (components, hooks, CSS) |
-| 14 - React Native | [`MOD_14/ReactNative/`](MOD_14/ReactNative/) | Docs Expo SDK 57 + app `MiAplicacion/` (antes carpeta `MOD_5`) |
+| 16 - React Native | [`MOD_16/ReactNative/`](MOD_16/ReactNative/) | Docs Expo SDK 57 + app `MiAplicacion/` (antes `MOD_5`, luego `MOD_14`) |
 
-> **Nota:** la carpeta que era `MOD_5` (React Native) se renombró a `MOD_14` para coincidir con la numeración de este roadmap.
+> **Nota:** este roadmap tiene **24 módulos** (se añadieron M14 TS+React y M15 Next.js/React moderno). La carpeta de React Native, antes `MOD_5`/`MOD_14`, es ahora `MOD_16` para coincidir con la numeración.
 
 📖 **Guía de estudio completa:** [`GUIA_ESTUDIO.md`](GUIA_ESTUDIO.md)
 
@@ -515,6 +573,8 @@ Al finalizar este roadmap, el portfolio incluirá:
 | Arquitectura | ⬜ |
 | Diseño | ⬜ |
 | Patrones | ⬜ |
+| TS + React | ⬜ |
+| Next.js / React Moderno | ⬜ |
 | React Native | 🟡 |
 | Backend para Frontend | ⬜ |
 | Docker | ⬜ |
