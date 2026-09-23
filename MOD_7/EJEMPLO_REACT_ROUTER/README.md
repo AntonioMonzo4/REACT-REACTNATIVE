@@ -2,6 +2,21 @@
 
 Proyecto de práctica del **Módulo 7 (React Router)**. Vite + React + `react-router-dom`.
 
+## Qué practica este ejemplo
+
+Rutas con `BrowserRouter`, navegación con `NavLink`, params en la URL (`useParams`), filtros con `useSearchParams`, layouts anidados con `Outlet`, ruta protegida con `RequireAuth` y carga diferida de `/informe` con `React.lazy`.
+
+## Cómo recorrerlo
+
+Orden sugerido:
+
+1. `src/App.jsx` y `src/components/Layout.jsx` — estructura de rutas y navegación.
+2. `src/pages/Users.jsx` + `src/pages/UserDetail.jsx` — params (`/usuarios/:userId`).
+3. `src/pages/Search.jsx` — query params (`?q=&page=`).
+4. `src/pages/Dashboard.jsx` — rutas anidadas.
+5. `src/auth/` (`AuthContext.js`, `AuthProvider.jsx`, `useAuth.js`) + `src/components/RequireAuth.jsx` y `src/pages/Login.jsx` — sesión y rutas protegidas.
+6. `src/pages/Reporte.jsx` — lazy loading (chunk separado en el build).
+
 ## Comandos
 
 ```bash
