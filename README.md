@@ -182,38 +182,42 @@ Incluye:
 
 ## Módulo 7 - React Router
 
-- [ ] BrowserRouter
-- [ ] Routes
-- [ ] Params
-- [ ] Query Params
-- [ ] Nested Routes
-- [ ] Protected Routes
-- [ ] Lazy Routes
+- [x] BrowserRouter
+- [x] Routes
+- [x] Params
+- [x] Query Params
+- [x] Nested Routes
+- [x] Protected Routes
+- [x] Lazy Routes
 
 **Proyecto**
 
 - [ ] Sistema de autenticación
 
+📖 Material: [`MOD_7/`](MOD_7/)
+
 ---
 
 ## Módulo 8 - Consumo de APIs
 
-- [ ] HTTP
-- [ ] REST
-- [ ] Fetch
-- [ ] Axios
+- [x] HTTP
+- [x] REST
+- [x] Fetch
+- [x] Axios
 
 ### Autenticación
 
-- [ ] JWT
-- [ ] Refresh Tokens
-- [ ] Cookies
-- [ ] LocalStorage
-- [ ] SessionStorage
+- [x] JWT
+- [x] Refresh Tokens
+- [x] Cookies
+- [x] LocalStorage
+- [x] SessionStorage
 
 **Proyecto**
 
 - [ ] Frontend conectado a una API
+
+📖 Material: [`MOD_8/`](MOD_8/)
 
 ---
 
@@ -221,77 +225,87 @@ Incluye:
 
 ### Context API
 
-- [ ] Context
+- [x] Context
 
 ### Redux Toolkit
 
-- [ ] Store
-- [ ] Slice
-- [ ] Actions
-- [ ] AsyncThunk
+- [x] Store
+- [x] Slice
+- [x] Actions
+- [x] AsyncThunk
 
 ### Zustand
 
-- [ ] Introducción
-- [ ] Casos de uso
+- [x] Introducción
+- [x] Casos de uso
 
 ### Jotai
 
-- [ ] Introducción
-- [ ] Casos de uso
+- [x] Introducción
+- [x] Casos de uso
 
 **Proyecto**
 
 - [ ] E-commerce
 
+📖 Material: [`MOD_9/`](MOD_9/)
+
 ---
 
 ## Módulo 10 - Testing
 
-- [ ] Jest
-- [ ] React Testing Library
-- [ ] Mocking
-- [ ] Unit Testing
-- [ ] Integration Testing
+- [x] Jest
+- [x] React Testing Library
+- [x] Mocking
+- [x] Unit Testing
+- [x] Integration Testing
 
 **Proyecto**
 
 - [ ] Cobertura superior al 80%
 
+📖 Material: [`MOD_10/`](MOD_10/)
+
 ---
 
 ## Módulo 11 - Arquitectura
 
-- [ ] Atomic Design
-- [ ] Feature Based Architecture
-- [ ] Clean Architecture
-- [ ] Modularización
-- [ ] Introducción a DDD
+- [x] Atomic Design
+- [x] Feature Based Architecture
+- [x] Clean Architecture
+- [x] Modularización
+- [x] Introducción a DDD
+
+📖 Material: [`MOD_11/`](MOD_11/)
 
 ---
 
 ## Módulo 12 - Diseño Profesional
 
-- [ ] Tailwind CSS
-- [ ] Material UI
-- [ ] Chakra UI
-- [ ] shadcn/ui
-- [ ] CSS Modules
-- [ ] Styled Components
+- [x] Tailwind CSS
+- [x] Material UI
+- [x] Chakra UI
+- [x] shadcn/ui
+- [x] CSS Modules
+- [x] Styled Components
 
 **Proyecto**
 
 - [ ] Sistema de componentes reutilizables
 
+📖 Material: [`MOD_12/`](MOD_12/)
+
 ---
 
 ## Módulo 13 - Patrones Avanzados de React
 
-- [ ] Compound Components
-- [ ] Render Props
-- [ ] Higher Order Components (HOC)
-- [ ] Custom Hooks Avanzados
-- [ ] Dependency Injection
+- [x] Compound Components
+- [x] Render Props
+- [x] Higher Order Components (HOC)
+- [x] Custom Hooks Avanzados
+- [x] Dependency Injection
+
+📖 Material: [`MOD_13/`](MOD_13/)
 
 ---
 
@@ -299,22 +313,24 @@ Incluye:
 
 ### Fundamentos
 
-- [ ] Componentes tipados (props y state)
-- [ ] Eventos tipados
-- [ ] Children y refs con tipos
-- [ ] Hooks con generics (`useState<T>`, `useRef<T>`)
+- [x] Componentes tipados (props y state)
+- [x] Eventos tipados
+- [x] Children y refs con tipos
+- [x] Hooks con generics (`useState<T>`, `useRef<T>`)
 
 ### Patrones
 
-- [ ] Custom Hooks tipados
-- [ ] Discriminated unions en props
-- [ ] Type guards en handlers
-- [ ] `satisfies` y `as const` con JSX
-- [ ] Errores comunes de JSX + TS y cómo resolverlos
+- [x] Custom Hooks tipados
+- [x] Discriminated unions en props
+- [x] Type guards en handlers
+- [x] `satisfies` y `as const` con JSX
+- [x] Errores comunes de JSX + TS y cómo resolverlos
 
 **Proyecto**
 
 - [ ] Migrar el ejemplo del Módulo 4 a TypeScript
+
+📖 Material: [`MOD_14/`](MOD_14/)
 
 ---
 
@@ -322,27 +338,29 @@ Incluye:
 
 ### React 19
 
-- [ ] `use()` para leer promesas
-- [ ] Server Actions
-- [ ] `ref` como prop (sin forwardRef)
-- [ ] Cambios de hooks y layout
+- [x] `use()` para leer promesas
+- [x] Server Actions
+- [x] `ref` como prop (sin forwardRef)
+- [x] Cambios de hooks y layout
 
 ### Meta-framework (Next.js App Router)
 
-- [ ] Server Components vs Client Components
-- [ ] File-based routing y layouts
-- [ ] SSR, SSG, ISR y Streaming
-- [ ] Data fetching en el servidor
-- [ ] Route Handlers (API)
+- [x] Server Components vs Client Components
+- [x] File-based routing y layouts
+- [x] SSR, SSG, ISR y Streaming
+- [x] Data fetching en el servidor
+- [x] Route Handlers (API)
 
 ### React Compiler
 
-- [ ] Memoización automática
-- [ ] Reglas y limitaciones actuales
+- [x] Memoización automática
+- [x] Reglas y limitaciones actuales
 
 **Proyecto**
 
 - [ ] App full-stack con Next.js (render + API routes)
+
+📖 Material: [`MOD_15/`](MOD_15/)
 
 ---
 
@@ -400,13 +418,15 @@ Incluye:
 
 # 🌐 Backend para Frontend
 
-## Módulo 17
+## Módulo 17 - Backend para Frontend
 
-- [ ] REST
-- [ ] GraphQL
-- [ ] FastAPI (Conceptos básicos)
-- [ ] WebSockets
-- [ ] Autenticación
+- [x] REST
+- [x] GraphQL
+- [x] FastAPI (Conceptos básicos)
+- [x] WebSockets
+- [x] Autenticación
+
+📖 Material: [`MOD_17/`](MOD_17/)
 
 ---
 
@@ -414,20 +434,24 @@ Incluye:
 
 ## Módulo 18 - Docker
 
-- [ ] Dockerfile
-- [ ] Docker Compose
-- [ ] Variables de entorno
-- [ ] Volúmenes
-- [ ] Deploy
+- [x] Dockerfile
+- [x] Docker Compose
+- [x] Variables de entorno
+- [x] Volúmenes
+- [x] Deploy
+
+📖 Material: [`MOD_18/`](MOD_18/)
 
 ---
 
 ## Módulo 19 - CI/CD
 
-- [ ] GitHub Actions
-- [ ] Vercel
-- [ ] Netlify
-- [ ] Firebase Hosting
+- [x] GitHub Actions
+- [x] Vercel
+- [x] Netlify
+- [x] Firebase Hosting
+
+📖 Material: [`MOD_19/`](MOD_19/)
 
 ---
 
@@ -435,13 +459,15 @@ Incluye:
 
 ## Módulo 20
 
-- [ ] Lighthouse
-- [ ] Lazy Loading
-- [ ] Memoización
-- [ ] Optimización de imágenes
-- [ ] Bundle Analyzer
-- [ ] React DevTools Profiler
-- [ ] why-did-you-render / trazas de render
+- [x] Lighthouse
+- [x] Lazy Loading
+- [x] Memoización
+- [x] Optimización de imágenes
+- [x] Bundle Analyzer
+- [x] React DevTools Profiler
+- [x] why-did-you-render / trazas de render
+
+📖 Material: [`MOD_20/`](MOD_20/)
 
 ---
 
@@ -449,9 +475,11 @@ Incluye:
 
 ## Módulo 21
 
-- [ ] WCAG
-- [ ] Navegación por teclado
-- [ ] Screen Readers
+- [x] WCAG
+- [x] Navegación por teclado
+- [x] Screen Readers
+
+📖 Material: [`MOD_21/`](MOD_21/)
 
 ---
 
@@ -459,11 +487,13 @@ Incluye:
 
 ## Módulo 22
 
-- [ ] XSS
-- [ ] CSRF
-- [ ] CORS
-- [ ] OAuth
-- [ ] Buenas prácticas con JWT
+- [x] XSS
+- [x] CSRF
+- [x] CORS
+- [x] OAuth
+- [x] Buenas prácticas con JWT
+
+📖 Material: [`MOD_22/`](MOD_22/)
 
 ---
 
@@ -489,6 +519,8 @@ Construcción de una aplicación empresarial completa.
 - [ ] CI/CD
 - [ ] Deploy
 
+📖 Guía: [`MOD_23/`](MOD_23/)
+
 ---
 
 # 🎯 Preparación Profesional
@@ -497,31 +529,33 @@ Construcción de una aplicación empresarial completa.
 
 ### Metodologías
 
-- [ ] Scrum
-- [ ] Kanban
-- [ ] Jira
-- [ ] Azure DevOps
+- [x] Scrum
+- [x] Kanban
+- [x] Jira
+- [x] Azure DevOps
 
 ### Calidad del código
 
-- [ ] ESLint
-- [ ] Prettier
-- [ ] Husky
-- [ ] Commitlint
+- [x] ESLint
+- [x] Prettier
+- [x] Husky
+- [x] Commitlint
 
 ### Trabajo en equipo
 
-- [ ] Code Review
-- [ ] Pull Requests
-- [ ] Convenciones
+- [x] Code Review
+- [x] Pull Requests
+- [x] Convenciones
 
 ### Entrevistas técnicas
 
-- [ ] JavaScript
-- [ ] React
-- [ ] TypeScript
-- [ ] Algoritmos básicos
-- [ ] Pair Programming
+- [x] JavaScript
+- [x] React
+- [x] TypeScript
+- [x] Algoritmos básicos
+- [x] Pair Programming
+
+📖 Material: [`MOD_24/`](MOD_24/)
 
 ---
 
@@ -548,12 +582,29 @@ Al finalizar este roadmap, el portfolio incluirá:
 
 | Módulo | Carpeta | Contenido |
 |--------|---------|-----------|
-| 2 - Node.js | [`MOD_2/Node.js/`](MOD_2/Node.js/) | 16 unidades (`Unidad_01.md` … `Unidad_16.md`) |
-| 3 - TypeScript | [`MOD_3/`](MOD_3/) | `Typescript.md` + proyecto `hello-world/` |
-| 4 - React desde Cero | [`MOD_4/EJEMPLO_REACT/`](MOD_4/EJEMPLO_REACT/) | Ejemplo Vite + React (components, hooks, CSS) |
+| 2 - Node.js | [`MOD_2/`](MOD_2/) | 16 unidades de teoría (`docs/`: Node, Event Loop, npm…) |
+| 3 - TypeScript | [`MOD_3/`](MOD_3/) | 8 unidades de teoría (`docs/`) + proyecto `hello-world/` |
+| 4 - React desde Cero | [`MOD_4/`](MOD_4/) | 7 unidades de teoría (`docs/`) + [`EJEMPLO_REACT/`](MOD_4/EJEMPLO_REACT/) (components, hooks, CSS) |
 | 5 - React Intermedio | [`MOD_5/`](MOD_5/) | 6 unidades de teoría + `EJEMPLO_REACT_INTERMEDIO/` (hooks, forms, comunicación) |
 | 6 - React Avanzado | [`MOD_6/`](MOD_6/) | 6 unidades de teoría + `EJEMPLO_REACT_AVANZADO/` (Context, portals, lazy, errors, memo) |
-| 16 - React Native | [`MOD_16/ReactNative/`](MOD_16/ReactNative/) | Docs Expo SDK 57 + app `MiAplicacion/` (antes `MOD_5`, luego `MOD_14`) |
+| 7 - React Router | [`MOD_7/`](MOD_7/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_ROUTER/`](MOD_7/EJEMPLO_REACT_ROUTER/) (params, query, nested, protected, lazy) |
+| 8 - Consumo de APIs | [`MOD_8/`](MOD_8/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_API/`](MOD_8/EJEMPLO_REACT_API/) (fetch, axios, storage, token) |
+| 9 - Gestión de Estado | [`MOD_9/`](MOD_9/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_ESTADO/`](MOD_9/EJEMPLO_REACT_ESTADO/) (RTK, Zustand, Jotai) |
+| 10 - Testing | [`MOD_10/`](MOD_10/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_TESTING/`](MOD_10/EJEMPLO_REACT_TESTING/) (Vitest + RTL, 11 tests) |
+| 11 - Arquitectura | [`MOD_11/`](MOD_11/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_ARQUITECTURA/`](MOD_11/EJEMPLO_ARQUITECTURA/) (atomic + features + domain) |
+| 12 - Diseño Profesional | [`MOD_12/`](MOD_12/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_DISENO/`](MOD_12/EJEMPLO_DISENO/) (Tailwind v4 + ui kit con clsx) |
+| 13 - Patrones Avanzados | [`MOD_13/`](MOD_13/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_PATRONES/`](MOD_13/EJEMPLO_PATRONES/) (compound, render props, HOC, hooks, DI) |
+| 14 - TypeScript + React | [`MOD_14/`](MOD_14/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_TS_REACT/`](MOD_14/EJEMPLO_TS_REACT/) (Vite + TS, tsc + lint + build OK) |
+| 15 - Next.js / React Moderno | [`MOD_15/`](MOD_15/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_MODERNO/`](MOD_15/EJEMPLO_MODERNO/) (React 19: use, ref prop, actions, optimist) |
+| 16 - React Native | [`MOD_16/`](MOD_16/) | Teoría (`docs/`) + app Expo SDK 57 en `ReactNative/MiAplicacion/` (antes `MOD_5`, luego `MOD_14`) |
+| 17 - Backend | [`MOD_17/`](MOD_17/) | 4 unidades de teoría (`docs/`: REST/GraphQL, FastAPI, WebSockets, auth) |
+| 18 - Docker | [`MOD_18/`](MOD_18/) | 4 unidades (`docs/`) + [`plantillas/`](MOD_18/plantillas/) (Dockerfile, compose, nginx) |
+| 19 - CI/CD | [`MOD_19/`](MOD_19/) | 3 unidades (`docs/`) + [`plantillas/ci.yml`](MOD_19/plantillas/ci.yml) (GitHub Actions) |
+| 20 - Optimización | [`MOD_20/`](MOD_20/) | 3 unidades (`docs/`: Lighthouse, bundle, Profiler/WDUR) |
+| 21 - Accesibilidad | [`MOD_21/`](MOD_21/) | 3 unidades (`docs/`: WCAG, teclado, screen readers) |
+| 22 - Seguridad | [`MOD_22/`](MOD_22/) | 3 unidades (`docs/`: XSS/CSRF, CORS/OAuth, JWT) |
+| 23 - Proyecto Final | [`MOD_23/`](MOD_23/) | 3 unidades de guía (`docs/`: MVP, features, pipeline) |
+| 24 - Preparación | [`MOD_24/`](MOD_24/) | 4 unidades (`docs/`) + [`plantillas/`](MOD_24/plantillas/) (prettier, commitlint) |
 
 > **Nota:** este roadmap tiene **24 módulos** (se añadieron M14 TS+React y M15 Next.js/React moderno). La carpeta de React Native, antes `MOD_5`/`MOD_14`, es ahora `MOD_16` para coincidir con la numeración.
 
@@ -572,23 +623,23 @@ Al finalizar este roadmap, el portfolio incluirá:
 | React Básico | 🟢 |
 | React Intermedio | 🟢 |
 | React Avanzado | 🟢 |
-| React Router | ⬜ |
-| APIs | ⬜ |
-| Estado Global | ⬜ |
-| Testing | ⬜ |
-| Arquitectura | ⬜ |
-| Diseño | ⬜ |
-| Patrones | ⬜ |
-| TS + React | ⬜ |
-| Next.js / React Moderno | ⬜ |
+| React Router | 🟢 |
+| APIs | 🟢 |
+| Estado Global | 🟢 |
+| Testing | 🟢 |
+| Arquitectura | 🟢 |
+| Diseño | 🟢 |
+| Patrones | 🟢 |
+| TS + React | 🟢 |
+| Next.js / React Moderno | 🟢 |
 | React Native | 🟡 |
-| Backend para Frontend | ⬜ |
-| Docker | ⬜ |
-| CI/CD | ⬜ |
-| Optimización | ⬜ |
-| Accesibilidad | ⬜ |
-| Seguridad | ⬜ |
-| Proyecto Final | ⬜ |
-| Preparación Profesional | ⬜ |
+| Backend para Frontend | 🟢 |
+| Docker | 🟢 |
+| CI/CD | 🟢 |
+| Optimización | 🟢 |
+| Accesibilidad | 🟢 |
+| Seguridad | 🟢 |
+| Proyecto Final | 🟡 |
+| Preparación Profesional | 🟢 |
 
 🟢 = material en el repo · 🟡 = material parcial · ⬜ = pendiente
