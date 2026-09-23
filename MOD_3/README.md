@@ -2,6 +2,24 @@
 
 Material del **Módulo 3** del roadmap (tipado estático sobre JavaScript).
 
+## Para quién es este módulo
+
+**Alumnos que empiezan de cero.** No hace falta haber tocado TypeScript antes.  
+Solo necesitas haber completado los módulos previos del roadmap (o conocer lo básico de JavaScript) y tener `pnpm` disponible en la terminal.
+
+## Cómo estudiar (orden recomendado)
+
+Sigue las unidades **en orden**: cada una usa ideas de la anterior.
+
+| Fase | Unidades | Qué saldrás sabiendo |
+|------|----------|----------------------|
+| **1. Fundamentos** | 01 → 02 | Qué es TypeScript, `tsc`, `tsconfig` y los tipos básicos (primitivos, arrays, unions, `unknown`/`never`) |
+| **2. Estructuras** | 03 → 05 | Interfaces, Type Alias, enums, literales y cómo tipar funciones y clases |
+| **3. Avanzado** | 06 → 08 | Generics, Utility y Mapped Types, Conditional Types e `infer` |
+| **4. Práctica** | `hello-world/` | Instalar, comprobar (`pnpm run check`) y compilar (`pnpm run build`) el proyecto mínimo, más autoevaluaciones de cada unidad |
+
+> **Consejo:** tras cada unidad, responde a los “Conceptos clave” y a los ejercicios/autoevaluación sin mirar. Si fallas, relee solo esa sección.
+
 ## Contenido
 
 ### Teoría (`docs/`)
@@ -17,7 +35,7 @@ Material del **Módulo 3** del roadmap (tipado estático sobre JavaScript).
 | [07 — Utility y Mapped Types](docs/Unidad_07_Utility_y_Mapped_Types.md) | `Partial`, `Pick`, `Record`, `[K in keyof T]` |
 | [08 — Conditional Types e Infer](docs/Unidad_08_Conditional_Types_e_Infer.md) | `extends ? :`, `infer`, `keyof`, `T[K]` |
 
-### Práctica (`hello-world/`)
+## Práctica mínima del módulo
 
 Proyecto mínimo de TypeScript (`src/index.ts` + `src/fundamentals.ts`):
 
