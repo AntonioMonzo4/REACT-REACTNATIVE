@@ -125,7 +125,7 @@ const onSelect = useCallback((id) => setSelected(id), [])
 
 ## En el ejemplo del proyecto
 
-Ver `../EJEMPLO_REACT_INTERMEDIO/src/components/DemoUseCallback.jsx`: callback estable vs inline + `React.memo`, con "forzar render del padre" para comparar. Dentro verás dos hijos `memo` idéricos: uno recibe `increment` con `useCallback(..., [])` (no repinta su checksum al forzar renders del padre si no cambian sus props) y otro recibe `incrementUnstable` declarada inline (referencia nueva cada render → `memo` no filtra). También hay un `useMemo` para el "checksum" simulado, así que sirve de repaso cruzado con M4.
+Ver `../EJEMPLO_REACT_INTERMEDIO/src/components/DemoUseCallback.jsx`: callback estable vs inline + `React.memo`, con "forzar render del padre" para comparar. Dentro verás dos hijos `memo` idénticos: uno recibe `increment` con `useCallback(..., [])` (no repinta su checksum al forzar renders del padre si no cambian sus props) y otro recibe `incrementUnstable` declarada inline (referencia nueva cada render → `memo` no filtra). También hay un `useMemo` para el "checksum" simulado, así que sirve de repaso cruzado con M4.
 
 ## Errores comunes
 

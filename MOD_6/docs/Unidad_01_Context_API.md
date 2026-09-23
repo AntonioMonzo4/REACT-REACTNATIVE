@@ -350,7 +350,7 @@ const ThemeContext = createContext({
 - **Context API**: canal compartido ("radio") que da acceso a un valor global sin drills.
 - **`createContext(defaultValue)`**: crea el contexto; el default protege contra lecturas fuera del Provider.
 - **Provider**: componente que emite el `value`; debe quedar arriba y envolver a todos los consumidores.
-- **`value`**: el objeto/señal que reciben los consumidores; mémozalo con `useMemo` para evitar re-renders innecesarios.
+- **`value`**: el objeto/señal que reciben los consumidores; memoízalo con `useMemo` para evitar re-renders innecesarios.
 - **`useContext` / hook `useTheme`**: forma hooks de leer el contexto con nombre de dominio.
 - **5 reglas**: Provider arriba · `value` nuevo con cuidado (`useMemo`) · separar contextos · no es store mágico · default value seguro.
 - **Context vs Redux/Zustand**: Context para datos poco volátiles (tema, auth); stores (M9) para estado de negocio con updates frecuentes y devtools.

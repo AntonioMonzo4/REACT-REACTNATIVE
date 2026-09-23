@@ -74,7 +74,7 @@ Cuando el valor está en React, puedes hacer cosas imposibles (o muy incómodas)
 
 **Desventaja:**
 
-- Cada tecla provoca un re-render del componente. En formularios normales **no es un problema** —React es rápido—; solo notas el coste en listas gigantes o inputs con renders pesados (alla veremos la alternativa de validar en `blur`).
+- Cada tecla provoca un re-render del componente. En formularios normales **no es un problema** —React es rápido—; solo notas el coste en listas gigantes o inputs con renders pesados (allí veremos la alternativa de validar en `blur`).
 
 ---
 
