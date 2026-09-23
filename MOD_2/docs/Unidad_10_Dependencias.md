@@ -1,17 +1,32 @@
 # Unidad 10 — Dependencias
 
-Una dependencia es cualquier paquete que nuestro proyecto necesita.
+## Objetivos
+
+- Saber qué es una **dependencia**.
+- Diferenciar `dependencies` de `devDependencies`.
+- Conocer campos avanzados: `peerDependencies`, `engines`, `exports`, etc.
+
+---
+
+## 1. ¿Qué es una dependencia?
+
+Una **dependencia** es cualquier paquete que nuestro proyecto necesita para funcionar.
 
 Por ejemplo:
 
+```js
 import React from "react";
+```
 
-Como utilizamos React, debemos instalarlo.
+Como utilizamos React, debemos instalarlo. En ese momento, React pasa a ser una dependencia del proyecto.
 
-Campo dependencies
+---
+
+## 2. Campo `dependencies`
 
 Ejemplo:
 
+```json
 {
   "dependencies": {
     "react": "^19.0.0",
@@ -19,123 +34,107 @@ Ejemplo:
     "axios": "^1.8.0"
   }
 }
+```
 
-Estas librerías son necesarias para que la aplicación funcione.
+Estas librerías son necesarias para que la **aplicación funcione**.
 
 Si eliminamos React de una aplicación React, el proyecto dejará de funcionar.
 
-¿Qué ocurre al instalar una dependencia?
+### ¿Qué ocurre al instalar una dependencia?
 
 Supongamos:
 
+```bash
 npm install axios
+```
 
-Internamente npm hace varias cosas:
+Internamente npm hace varias cosas (todas automáticamente):
 
+```text
 Descarga Axios
-
-↓
-
+      ↓
 Lo instala en node_modules
-
-↓
-
-Añade Axios a dependencies
-
-↓
-
+      ↓
+Añade Axios a "dependencies" en package.json
+      ↓
 Actualiza package-lock.json
+```
 
-Todo automáticamente.
+El resultado en `package.json`:
 
-El resultado:
-
+```json
 {
   "dependencies": {
     "axios": "^1.8.0"
   }
 }
-¿Qué es devDependencies?
+```
 
-No todas las librerías son necesarias cuando la aplicación ya está funcionando en producción.
+---
 
-Ejemplo:
+## 3. ¿Qué es `devDependencies`?
 
-ESLint.
-Prettier.
-TypeScript.
-Vite.
-Vitest.
+No todas las librerías son necesarias cuando la aplicación ya está en **producción** (en el servidor o en el navegador del usuario final).
 
-Estas herramientas solo se utilizan durante el desarrollo.
+Ejemplos de herramientas solo de desarrollo:
 
-Por eso van aquí.
+- ESLint
+- Prettier
+- TypeScript
+- Vite
+- Vitest
 
+Estas herramientas solo se utilizan **mientras programas y construyes**. Por eso van aquí:
+
+```json
 {
   "devDependencies": {
     "vite": "^7.0.0",
     "eslint": "^9.0.0"
   }
 }
-Analogía
+```
 
-Imagina que eres carpintero.
+### Analogía (carpintero)
 
-Para fabricar una mesa necesitas:
+Para **fabricar una mesa** necesitas:
 
-madera,
-tornillos,
-cola.
+- Madera, tornillos, cola → serían **`dependencies`** (forman parte de la mesa terminada).
+- Martillo, sierra, taladro → serían **`devDependencies`** (herramientas para construirla; la mesa terminada no las “lleva dentro”).
 
-Esos serían:
+### Comparativa
 
-dependencies
+| | `dependencies` | `devDependencies` |
+|--|----------------|-------------------|
+| ¿Cuándo se usan? | Para **ejecutar** la app | Solo para **desarrollarla** |
+| ¿En producción? | Sí | No (se omiten con `npm ci --omit=dev`, etc.) |
+| Ejemplos | React, Axios, React Router | Vite, ESLint, TypeScript, Vitest |
 
-Pero también utilizas:
-
-martillo,
-sierra,
-taladro.
-
-Esas herramientas son necesarias para construir la mesa, pero no forman parte de la mesa terminada.
-
-Eso serían las:
-
-devDependencies
-Comparativa
-dependencies	devDependencies
-Necesarias para ejecutar la aplicación	Necesarias para desarrollarla
-Se utilizan en producción	Solo durante el desarrollo
-Ejemplos: React, Axios, React Router	Ejemplos: Vite, ESLint, TypeScript, Vitest
-¿Cómo se instalan?
+### ¿Cómo se instalan?
 
 Dependencias normales:
 
+```bash
 npm install react
-
-o
-
+# o con pnpm
 pnpm add react
+```
 
 Dependencias de desarrollo:
 
+```bash
 npm install --save-dev eslint
-
-Forma corta:
-
+# forma corta
 npm install -D eslint
-
-Con pnpm:
-
+# con pnpm
 pnpm add -D eslint
-Error muy común
+```
 
-Muchos desarrolladores meten todo en dependencies.
+### Error muy común
 
-No es lo correcto.
+Muchos desarrolladores meten **todo** en `dependencies`. No es lo correcto:
 
-Por ejemplo:
-
+```json
 {
   "dependencies": {
     "eslint": "...",
@@ -143,278 +142,221 @@ Por ejemplo:
     "vite": "..."
   }
 }
+```
 
 Aunque la aplicación funcione, estás indicando que esas herramientas son necesarias en producción, cuando en realidad solo las utilizas para desarrollar.
 
 Mantener una separación clara ayuda a entender el proyecto y evita instalar paquetes innecesarios en algunos entornos.
 
-Buenas prácticas
-Utiliza nombres de scripts claros (dev, build, test, lint son convenciones ampliamente aceptadas).
-Coloca en dependencies únicamente las librerías necesarias para ejecutar la aplicación.
-Coloca en devDependencies las herramientas de desarrollo.
-Evita crear scripts duplicados o con nombres ambiguos.
-Aprovecha los scripts para que todo el equipo ejecute las mismas tareas de la misma forma.
-Conceptos clave
-scripts permite asignar nombres sencillos a comandos complejos.
-npm run o pnpm run buscan el script correspondiente en package.json y lo ejecutan.
-dependencies contiene las librerías necesarias para que la aplicación funcione.
-devDependencies contiene herramientas utilizadas únicamente durante el desarrollo.
-Una buena organización del package.json facilita el mantenimiento del proyecto.
+### Buenas prácticas (dependencies vs devDependencies)
 
-¿Por qué existen campos avanzados?
+- Coloca en **dependencies** únicamente las librerías necesarias para **ejecutar** la aplicación en producción.
+- Coloca en **devDependencies** las herramientas que solo usas **mientras desarrollas** (Vite, ESLint, TypeScript, Vitest…).
+- Si no estás seguro, piensa: «¿La app en el servidor o en el navegador necesita este paquete **después del build**?» → dependencies. Si solo lo usas tú al programar → devDependencies.
+
+A continuación veremos campos más avanzados de `package.json` que aparecen en librerías y proyectos profesionales.
+
+---
+
+## 4. ¿Por qué existen campos avanzados?
 
 Hasta ahora hemos visto campos que aparecen en casi cualquier proyecto:
 
-name
-version
-scripts
-dependencies
-devDependencies
+- `name`
+- `version`
+- `scripts`
+- `dependencies`
+- `devDependencies`
 
-Pero si inspeccionas el package.json de React, Vite o cualquier librería popular, encontrarás muchos más.
+Pero si inspeccionas el `package.json` de React, Vite o cualquier librería popular, encontrarás muchos más.
 
-¿Por qué?
+**¿Por qué?** Porque `package.json` no solo describe **aplicaciones**, también describe **librerías** que otros desarrolladores instalarán.
 
-Porque package.json no solo describe aplicaciones, también describe librerías que otros desarrolladores instalarán.
+---
 
-peerDependencies
+## 4.1 `peerDependencies`
 
 Este es uno de los conceptos más difíciles para los principiantes.
 
-Supongamos que desarrollas una librería llamada:
+Supongamos que desarrollas una librería llamada `mi-react-ui` que internamente utiliza React:
 
+```text
 mi-react-ui
+      │
+      ▼
+   React
+```
 
-Internamente utiliza React.
+Una primera idea sería instalar React como dependencia:
 
-mi-react-ui
-
-↓
-
-React
-
-Una primera idea sería instalar React como dependencia.
-
+```json
 {
   "dependencies": {
     "react": "^19.0.0"
   }
 }
+```
 
-Parece correcto.
+Parece correcto… hasta que pasa esto en la app que usa tu librería:
 
-Pero aparece un problema.
-
-El problema
-
-Imagina esta aplicación.
-
+```text
 Mi aplicación
+      │
+      ├── React 19          ← copia 1
+      │
+      └── mi-react-ui
+              │
+              └── React 19   ← copia 2
+```
 
-↓
+**Problema:** existen **dos instalaciones** de React. React mantiene estado interno y espera ser **una única instancia compartida**. Dos copias = errores muy difíciles de depurar.
 
-React 19
+**La solución:** en vez de instalar React tú, declaras:
 
-↓
+> «Yo necesito React, pero espero que quien instale mi librería ya lo tenga.»
 
-mi-react-ui
-
-↓
-
-React 19
-
-Ahora existen dos instalaciones distintas de React.
-
-Eso puede provocar errores muy difíciles de depurar, especialmente porque React mantiene estado interno y espera ser una única instancia compartida.
-
-La solución
-
-En lugar de instalar React directamente, la librería dice:
-
-"Yo necesito React, pero espero que quien instale mi librería ya lo tenga."
-
-Eso se expresa así:
-
+```json
 {
   "peerDependencies": {
     "react": "^19.0.0"
   }
 }
+```
 
-Ahora el árbol queda así:
+Resultado:
 
+```text
 Aplicación
+   ├── React          ← solo una copia
+   └── mi-react-ui    ← usa el React de la app
+```
 
-│
+### ¿Cuándo usar `peerDependencies`?
 
-├── React
+- En **librerías**: componentes React, plugins de ESLint, Vite, Webpack, Babel…
+- **No** suele usarse en aplicaciones normales (tú ya eres la app).
 
-└── mi-react-ui
+---
 
-Solo existe una copia de React.
+## 4.2 `optionalDependencies`
 
-¿Cuándo usar peerDependencies?
+Algunas dependencias **no son imprescindibles**. Si fallan al instalarse, la app sigue funcionando con funciones reducidas.
 
-Normalmente en librerías.
-
-Ejemplos:
-
-Componentes React.
-Plugins de ESLint.
-Plugins de Vite.
-Plugins de Webpack.
-Plugins de Babel.
-
-No suele utilizarse en aplicaciones normales.
-
-optionalDependencies
-
-Algunas dependencias no son imprescindibles.
-
-Si no pueden instalarse, la aplicación puede seguir funcionando con funcionalidades reducidas.
-
-Ejemplo:
-
+```json
 {
   "optionalDependencies": {
     "sharp": "^0.34.0"
   }
 }
+```
 
-Si sharp falla durante la instalación, npm continúa sin detener el proceso.
+Si `sharp` falla (p. ej. binario incompatible con tu SO), npm **continúa** sin abortar. Útil para paquetes con compilaciones nativas.
 
-Esto es útil para paquetes que dependen de características específicas del sistema operativo o de compilaciones nativas.
+---
 
-engines
+## 4.3 `engines`
 
-Este campo indica qué versiones de herramientas son compatibles con el proyecto.
+Indica qué versiones de herramientas son **compatibles** con el proyecto:
 
-Ejemplo:
-
+```json
 {
   "engines": {
     "node": ">=20",
     "npm": ">=10"
   }
 }
+```
 
-Con esto comunicamos que el proyecto está pensado para ejecutarse con Node.js 20 o superior y npm 10 o superior.
+**¿Por qué importa?** Equipo real:
 
-Algunos gestores de paquetes mostrarán una advertencia si no se cumple este requisito.
+```text
+Ana → Node 24 → funciona
+Luis → Node 16 → error
+```
 
-¿Por qué es importante?
+Con `engines`, los gestores de paquetes avisan si tu versión no cumple.
 
-Imagina este equipo.
+---
 
-Ana
+## 4.4 `main`
 
-Node 24
+Cuando publicas una **librería**, `main` dice cuál es su **punto de entrada**:
 
-↓
-
-Funciona
-
---------------------
-
-Luis
-
-Node 16
-
-↓
-
-Error
-
-Definir engines ayuda a reducir este tipo de diferencias entre entornos.
-
-main
-
-Cuando publicas una librería, debes indicar cuál es su punto de entrada principal.
-
-Ejemplo:
-
+```json
 {
   "main": "index.js"
 }
+```
 
-Si alguien instala esa librería y hace:
+Si alguien hace `import miLibreria from "mi-libreria"`, Node abre ese archivo (o usa `exports`, más moderno).
 
-import miLibreria from "mi-libreria";
+En una app React + Vite casi **no** tocarás este campo.
 
-Node.js buscará el archivo indicado en main (o utilizará exports, que veremos a continuación).
+---
 
-En aplicaciones creadas con React y Vite normalmente no tendrás que modificar este campo.
+## 4.5 `exports`
 
-exports
+Evolución de `main`: controla **qué archivos** de la librería son públicos.
 
-exports es una evolución de main.
-
-Permite controlar exactamente qué archivos de una librería son públicos.
-
-Ejemplo:
-
+```json
 {
   "exports": {
     ".": "./dist/index.js"
   }
 }
+```
 
-Con este campo puedes impedir que los usuarios importen archivos internos que no forman parte de la API pública.
+Así impides que otros importen archivos internos que no forman parte de la API pública. Muy usado en librerías modernas.
 
-Es muy utilizado en librerías modernas.
+---
 
-files
+## 4.6 `files`
 
-Cuando publicas un paquete en npm, no siempre quieres subir todos los archivos del proyecto.
+Al publicar en npm, no siempre quieres subir **todo** el proyecto:
 
-Con files puedes indicar cuáles se incluirán.
-
+```json
 {
   "files": [
     "dist",
     "README.md"
   ]
 }
+```
 
-De este modo puedes excluir:
+Puedes excluir código fuente de prueba, configs internas, temporales, etc.
 
-Código fuente.
-Pruebas.
-Configuraciones internas.
-Archivos temporales.
-private
+---
 
-Ya vimos este campo brevemente, pero merece una mención adicional.
+## 4.7 `private`
 
+```json
 {
   "private": true
 }
+```
 
-Con este valor npm bloqueará cualquier intento de publicar el proyecto en el registro oficial.
+**Bloquea** `npm publish` por accidente. Muy recomendable en apps React/Next/React Native (no son librerías para el registry).
 
-En aplicaciones React, Next.js o React Native suele ser recomendable mantenerlo activado, ya que normalmente no queremos publicar la aplicación como una librería reutilizable.
+---
 
-Otros campos útiles
+## 4.8 Otros campos útiles
 
-Existen muchos más campos que puedes encontrar en proyectos reales.
-
-Por ejemplo:
-
+```json
 {
-  "homepage": "...",
-  "repository": "...",
-  "bugs": "...",
-  "keywords": [
-    "react",
-    "ui"
-  ]
+  "homepage": "https://mi-app.com",
+  "repository": "https://github.com/usuario/mi-app",
+  "bugs": "https://github.com/usuario/mi-app/issues",
+  "keywords": ["react", "ui"]
 }
+```
 
-Estos campos proporcionan información adicional para quienes utilizan o mantienen el proyecto.
+Aportan información a quien use o mantenga el proyecto.
 
-Un package.json profesional
+---
 
-Un proyecto profesional puede tener un aspecto parecido a este:
+## 4.9 Un `package.json` profesional
 
+```json
 {
   "name": "frontend-profesional",
   "version": "1.0.0",
@@ -440,32 +382,41 @@ Un proyecto profesional puede tener un aspecto parecido a este:
     "vitest": "^3.0.0"
   }
 }
+```
 
-Aunque hay muchos campos posibles, la mayoría de aplicaciones utilizan una estructura muy similar a esta.
+La mayoría de aplicaciones usan una estructura muy parecida a esta.
 
-¿Quién utiliza cada campo?
-Campo	Quién lo utiliza
-name	npm, Registry
-version	npm
-scripts	npm, pnpm, Yarn
-dependencies	npm, pnpm, Yarn
-devDependencies	npm, pnpm, Yarn
-peerDependencies	Gestores de paquetes y librerías
-optionalDependencies	Gestores de paquetes
-main	Node.js
-exports	Node.js y herramientas modernas
-engines	npm, pnpm, Yarn
-private	npm
-Buenas prácticas
-Utiliza peerDependencies únicamente cuando desarrolles librerías o plugins.
-Define engines si tu proyecto depende de versiones concretas de Node.js.
-Mantén private: true en aplicaciones que no vayas a publicar.
-Publica solo los archivos necesarios utilizando files.
-Prefiere exports frente a main en librerías modernas para controlar mejor la API pública.
-Conceptos clave
-peerDependencies indica dependencias que deben ser proporcionadas por quien instala la librería.
-optionalDependencies permite que una instalación continúe aunque una dependencia opcional falle.
-engines documenta las versiones compatibles de Node.js y otras herramientas.
-main y exports definen cómo se expone una librería al exterior.
-files controla qué se publica en npm.
-Muchos de estos campos son esenciales al desarrollar librerías, aunque en aplicaciones React se utilicen con menos frecuencia.
+### ¿Quién utiliza cada campo?
+
+| Campo | Quién lo utiliza |
+|-------|------------------|
+| `name` | npm, Registry |
+| `version` | npm |
+| `scripts` | npm, pnpm, Yarn |
+| `dependencies` | npm, pnpm, Yarn |
+| `devDependencies` | npm, pnpm, Yarn |
+| `peerDependencies` | Gestores de paquetes y librerías |
+| `optionalDependencies` | Gestores de paquetes |
+| `main` | Node.js |
+| `exports` | Node.js y herramientas modernas |
+| `engines` | npm, pnpm, Yarn |
+| `private` | npm |
+
+## Buenas prácticas
+
+- Utiliza `peerDependencies` únicamente cuando desarrolles librerías o plugins.
+- Define `engines` si tu proyecto depende de versiones concretas de Node.js.
+- Mantén `private: true` en aplicaciones que no vayas a publicar.
+- Publica solo los archivos necesarios utilizando `files`.
+- Prefiere `exports` frente a `main` en librerías modernas para controlar mejor la API pública.
+
+## Conceptos clave
+
+- Una **dependencia** es un paquete que el proyecto necesita.
+- `dependencies` → necesarias en **producción**; `devDependencies` → solo al **desarrollar**.
+- `peerDependencies` → dependencias que **otro proyecto** (o quien instala la librería) debe proveer (p. ej. React en un kit de UI).
+- `optionalDependencies` → si fallan, la instalación puede continuar.
+- `engines` → versiones de Node/npm compatibles.
+- `main` / `exports` → punto de entrada y API pública de una librería.
+- `files` → qué se sube a npm al publicar.
+- Muchos de estos campos son esenciales al desarrollar librerías; en una app React se usan con menos frecuencia.
