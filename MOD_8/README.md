@@ -2,6 +2,19 @@
 
 Material del **Módulo 8** del roadmap (HTTP/REST, fetch, axios, auth y storage).
 
+## Para quién es este módulo
+
+Para quien ya sabe crear componentes y hacer peticiones sueltas y quiere conectar su frontend a un backend de verdad: entender HTTP/REST, usar `fetch` y axios con manejo de errores, guardar sesión con JWT y elegir bien entre cookies y storage. Es el bloque previo al proyecto "Frontend conectado a una API propia".
+
+## Cómo estudiar (orden recomendado)
+
+| Fase | Unidades | Qué trabajas |
+|------|----------|--------------|
+| 1 | U01 | HTTP y REST: verbos, status codes, recursos, CORS |
+| 2 | U02 — U03 | Fetch y Axios: GET/POST, `res.ok`, abortar, interceptors |
+| 3 | U04 — U05 | JWT/refresh y dónde guardar el token (cookies vs storage) |
+| 4 | Práctica | Recorrer `EJEMPLO_REACT_API/` contra JSONPlaceholder |
+
 ## Contenido
 
 ### Teoría (`docs/`)
@@ -31,6 +44,13 @@ pnpm dev      # desarrollo
 pnpm lint     # ESLint
 pnpm build    # producción
 ```
+
+## Práctica mínima
+
+1. Leer la teoría siguiendo el orden de la tabla de arriba.
+2. Arrancar el ejemplo y recorrer lista → detalle → crear post.
+3. Mirar en Network cómo se ven GET/POST y el interceptor de token.
+4. Pasar `pnpm lint` y `pnpm build` antes de dar el módulo por terminado.
 
 ## Mapa con el README
 

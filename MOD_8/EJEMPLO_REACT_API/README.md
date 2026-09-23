@@ -4,6 +4,18 @@ Proyecto de práctica del **Módulo 8 (Consumo de APIs)**. Vite + React + axios 
 
 Usa la API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com) (sin backend propio).
 
+## Qué practica este ejemplo
+
+Peticiones HTTP reales (GET/POST) con `fetch` y axios, manejo de loading/error/cancelación, params de ruta para detalle, interceptor de token y almacenamiento en `localStorage` / `sessionStorage`.
+
+## Cómo recorrerlo
+
+1. `src/hooks/useFetch.js` — patrón base de GET con cancelación.
+2. `src/pages/Posts.jsx` → `PostDetail.jsx` — lista y detalle con `:postId`.
+3. `src/pages/CrearPost.jsx` — POST con JSON desde un form.
+4. `src/api/client.js` + `DemoAxios.jsx` — instancia axios, params y `err.response.status`.
+5. `src/auth/token.js` + `DemoStorage.jsx` — token simulado y storage.
+
 ## Comandos
 
 ```bash
