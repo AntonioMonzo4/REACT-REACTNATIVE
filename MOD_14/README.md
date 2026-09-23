@@ -2,6 +2,17 @@
 
 Material del **Módulo 14** del roadmap (tipos en componentes, eventos, hooks y patrones TS+JSX).
 
+## Para quién es este módulo
+
+Este módulo es para ti si:
+
+- Has completado **M4–M12** (React de JS) y **M3** (TypeScript básico: tipos, interfaces, unions, genéricos a nivel de función).
+- Quieres dejar de escribir React "a ciegas" y ganar autocompletado, refactor seguro y errores **antes** de ejecutar.
+- Vas a migrar proyectos existentes de JS a TS (hay un proyecto pendiente de migración en el *Mapa con el README*).
+- Te interesa el React moderno: `forwardRef`, custom hooks tipados, discriminated unions, `satisfies`.
+
+No hace falta saber React types a fondo: el módulo construye desde `Props` hasta `satisfies`, asumiendo solo los fundamentos de TS del M3 y tu experiencia de React en JS.
+
 ## Contenido
 
 ### Teoría (`docs/`)
@@ -31,6 +42,24 @@ pnpm run check
 pnpm lint
 pnpm build
 ```
+
+## Cómo estudiar
+
+| Fase | Qué haces | Duración orientativa |
+|------|-----------|----------------------|
+| 1. Leer | Lee las 6 unidades; en cada una, captá el **por qué** antes que la sintaxis | 1–2 sesiones |
+| 2. Ejecutar | `pnpm install` + `pnpm run check` + `pnpm dev` en `EJEMPLO_TS_REACT`; navega con el editor al lado | 1 sesión |
+| 3. Romper | Cambia tipos a propósito (pasa `tone="blu"`, quita `payload` del dispatch, borra `datos`) y lee los mensajes de `pnpm run check` | 1 sesión |
+| 4. Reescribir / Migrar | Migra un componente JS del M4 a `.tsx` tipado (ver proyecto pendiente) | 1 sesión |
+
+## Práctica mínima
+
+Lo mínimo para dar el módulo por entendido:
+
+1. `pnpm install` y `pnpm run check` en `EJEMPLO_TS_REACT` sin errores de TypeScript.
+2. Escribir un componente con props tipadas + un handler `React.FormEvent` correcto sin mirar.
+3. Tipar un reducer con discriminated union y verificar en runtime que un dispatch inválido no compila.
+4. Explicar la diferencia entre `as const` y `satisfies` con un ejemplo.
 
 ## Mapa con el README
 
