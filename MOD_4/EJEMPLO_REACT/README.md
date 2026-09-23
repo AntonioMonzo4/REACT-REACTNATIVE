@@ -3,6 +3,50 @@
 Proyecto de ejemplo del **Módulo 4 (React desde Cero)** del curso.
 Creado con Vite + React.
 
+Está pensado para **leerse y ejecutarse mientras estudias**: no hace
+falta que entiendas el 100 % de un archivo para pasar al siguiente.
+Ábrelo con tu editor a un lado y el navegador (o la terminal) al otro.
+
+## Qué practica este ejemplo
+
+Un solo vistazo a lo que vas a reforzar con este proyecto:
+
+- Cómo arranca una app React (`createRoot`, `StrictMode`) y se
+  compone un componente raíz con varios hijos.
+- Cómo se pasan datos con **props** (acceso directo,
+  desestructuración, listas con `key`).
+- Cómo se reacciona a **eventos** del usuario (`onClick`,
+  `onChange`, `onSubmit`).
+- Cómo se guarda estado con `useState` y se sincroniza con
+  `useEffect`, además de `useMemo` y un **custom hook**
+  (`useCounter`).
+- Cómo se conectan **estilos CSS** por capas (`index.css`,
+  `App.css`, `Navbar.css`).
+
+## Cómo recorrerlo
+
+Orden sugerido, de lo esencial a lo específico:
+
+1. `src/main.jsx` — punto de entrada: dónde se monta la app y por qué
+   `StrictMode`.
+2. `src/App.jsx` — componente raíz: aquí verás **todos** los ejemplos
+   montados y cómo se pasan props entre ellos.
+3. `src/components/Navbar.jsx` — componente sencillo: `className`,
+   interpolación y `Fragment`.
+4. `src/components/Props.jsx` — props en profundidad: acceso,
+   desestructuración, inmutabilidad y `key`.
+5. `src/components/Eventos.jsx` — manejadores de eventos y catálogo
+   de eventos de React.
+6. `src/components/ComponenteHooks.jsx` — `useState` (varios estados,
+   arrays de dependencias de `useEffect`, inputs controlados).
+7. `src/components/ComponenteUseMemo.jsx` — `useMemo` para no
+   recalcular sin necesidad.
+8. `src/hooks/CustomHooks.js` — el custom hook `useCounter`
+   (convención `use...`).
+
+Si algo no te cuadra, vuelve a la unidad teórica correspondiente
+(ver enlace más abajo) y retoma el archivo donde lo dejaste.
+
 ## Comandos
 
 ```bash
