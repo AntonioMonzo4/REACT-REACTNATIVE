@@ -2,6 +2,14 @@
 
 Proyecto de práctica del **Módulo 6 (React Avanzado)**. Vite + React.
 
+## Qué practica este ejemplo
+
+Los seis bloques del Módulo 6 en una sola app: Context API con Provider y hook (tema claro/oscuro), custom hooks (`useLocalStorage`, `useDebounce`), un modal montado con `createPortal`, un ErrorBoundary de clase que captura un error lanzado a propósito, carga diferida con `React.lazy` + `Suspense` (chunk aparte) y optimización de renders con `React.memo`, `useCallback` y `useMemo`.
+
+## Cómo recorrerlo
+
+Orden sugerido: `ThemeContext`/`ThemeProvider` → hooks (`useTheme`, `useLocalStorage`, `useDebounce`) → `DemoPortal` → `ErrorBoundary`/`DemoErrorBoundary` → `DemoLazy` → `DemoOptimizacion`.
+
 ## Comandos
 
 ```bash
