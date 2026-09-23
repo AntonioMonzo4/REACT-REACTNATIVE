@@ -5,7 +5,7 @@
 
 ## Cómo usar este material
 
-1. Lee `doc.md` → comandos de creación y ejecución.
+1. Lee [`../docs/Unidad_01_ReactNative_Expo.md`](../docs/Unidad_01_ReactNative_Expo.md) → comandos de creación y ejecución.
 2. Explora el código de `MiAplicacion/` → es una app Expo completa con
    expo-router, tema claro/oscuro y animaciones.
 3. Consulta la tabla inferior para saber qué concepto demuestra cada archivo.

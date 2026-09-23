@@ -27,7 +27,8 @@ pnpm preview                # previsualizar el build
 | `src/components/ComponenteUseMemo.jsx` | `useMemo` para memorizar cálculos |
 | `src/hooks/CustomHooks.js` | Custom hook `useCounter` (convención `use...`) |
 | `src/style/` | Estilos CSS por capa (global, app, navbar) |
-| `docs/extra.md` | Apuntes: iterar con `map` y pasar props |
+
+> Teoría completa: [`../docs/`](../docs/) — ver [Unidad 03 — Props, children y listas](../docs/Unidad_03_Props_children_y_map.md)
 
 ## Temario de referencia (Módulo 4 del README)
 

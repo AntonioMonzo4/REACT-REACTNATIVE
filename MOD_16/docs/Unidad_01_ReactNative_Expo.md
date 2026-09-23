@@ -1,4 +1,4 @@
-# React Native — comandos esenciales (Expo SDK 57)
+# Unidad 01 — React Native y Expo (SDK 57)
 
 ## Crear un proyecto
 

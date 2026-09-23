@@ -1,4 +1,4 @@
-¿Qué son las dependencias?
+# Unidad 10 — Dependencias
 
 Una dependencia es cualquier paquete que nuestro proyecto necesita.
 

@@ -1,4 +1,4 @@
-¿Qué es un Runtime?
+# Unidad 02 — ¿Qué es un Runtime?
 
 Un Runtime Environment (entorno de ejecución) es el software encargado de proporcionar todo lo necesario para que un programa pueda ejecutarse.
 
