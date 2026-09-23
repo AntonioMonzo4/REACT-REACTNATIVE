@@ -1,6 +1,16 @@
 # Módulo 5 — React Intermedio
 
-Material del **Módulo 5** del roadmap (hooks avanzados, formularios y comunicación).
+Material del **Módulo 5** del roadmap: hooks avanzados, formularios y comunicación entre componentes.
+
+Aquí pasas de "sé crear componentes" a "sé controlar el DOM, el estado complejo y los formularios".
+
+## Para quién es este módulo
+
+- Si ya has hecho el **Módulo 1 a 4** (JSX, props, estado, `useState` y `useEffect`) y quieres dar el siguiente paso.
+- Si entiendes lo básico de React pero todavía no dominas `useRef`, `useReducer` o los formularios con validación.
+- Si prefieres aprender **poco a poco**: cada unidad tiene teoría + práctica en el ejemplo.
+
+No hace falta que sepas TypeScript todavía: las demos usan `.jsx` para que te centres en los hooks.
 
 ## Contenido
 
@@ -33,6 +43,24 @@ pnpm dev      # desarrollo
 pnpm lint     # ESLint
 pnpm build    # producción
 ```
+
+## Cómo estudiar (orden recomendado)
+
+| Fase | Unidades | Qué harás |
+|------|----------|-----------|
+| 1 | U01 – U02 | Referencias (`useRef`) y estado complejo (`useReducer`) |
+| 2 | U03 – U04 | Memoización (`useCallback`) y medidas de layout (`useLayoutEffect`) |
+| 3 | U05 | Formularios controlados y validaciones |
+| 4 | U06 + práctica | Comunicación padre/hijo y proyecto `EJEMPLO_REACT_INTERMEDIO` |
+
+Sugerencia: tras cada fase, abre la demo correspondiente en `EJEMPLO_REACT_INTERMEDIO` y cambia código para ver qué pasa.
+
+## Práctica mínima
+
+- Ejecuta `pnpm dev` y recorre las 6 demos del ejemplo.
+- Reescribe el todo list de `DemoUseReducer` con una acción nueva (p. ej. "editar").
+- Añade una validación extra a `FormularioValidado`.
+- Crea una comunicación hijo → padre nueva en `Comunicacion`.
 
 ## Mapa con el README
 
