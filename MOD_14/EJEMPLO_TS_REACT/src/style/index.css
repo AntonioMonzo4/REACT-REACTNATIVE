@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: #111827;
+  background: #f4f6fb;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+input,
+select {
+  font: inherit;
+}
+
+code {
+  background: #eef1f8;
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+}
