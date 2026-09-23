@@ -1,0 +1,49 @@
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e6f0;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 6%);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 320px;
+}
+
+button {
+  border: 1px solid #3b5bdb;
+  background: #3b5bdb;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+}
+
+.error {
+  color: #c92a2a;
+}
+
+.muted {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+code {
+  background: #eef1f8;
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+}

@@ -1,0 +1,70 @@
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+
+.header h1 {
+  font-size: 1.3rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e6f0;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 6%);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.btn {
+  border: 1px solid #3b5bdb;
+  background: #3b5bdb;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #3b5bdb;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.badge {
+  display: inline-block;
+  background: #e7f5ff;
+  color: #1971c2;
+  border-radius: 999px;
+  padding: 0.05rem 0.55rem;
+  font-size: 0.85rem;
+}
+
+.muted {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.list {
+  padding-left: 1.1rem;
+}
+
+.producto {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.35rem 0;
+}
