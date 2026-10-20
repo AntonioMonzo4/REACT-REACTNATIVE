@@ -2,7 +2,7 @@
 
 Guía para alumnos: qué estudiar, en qué orden y con qué material disponible en este repositorio.
 
-**Roadmap oficial (24 módulos):** [`README.md`](README.md)
+**Roadmap oficial (25 módulos):** [`README.md`](README.md)
 
 ## Leyenda de estados
 
@@ -22,6 +22,7 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 4. **React Native** (módulo 16)
 5. **Complementos** (módulos 17–22): backend, DevOps, calidad
 6. **Cierre profesional** (módulos 23–24): proyecto final y preparación
+7. **Data & Forms modernos** (módulo 25): TanStack Query, RHF, Zod — recomendable tras M8/M9 (puede estudiarse en paralelo a M16–M22)
 
 ---
 
@@ -38,69 +39,75 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 2 | Node.js para Frontend | ✅ | [`MOD_2/`](MOD_2/) — teoría (`docs/`: 16 unidades: Node, Event Loop, npm, package.json, SemVer, npx, pnpm…) |
-| 3 | TypeScript | ✅ | [`MOD_3/`](MOD_3/) — teoría (`docs/`: 8 unidades: tipos, interfaces, enums, generics, utility/mapped/conditional types) + [`hello-world/`](MOD_3/hello-world/) (`pnpm run check` / `pnpm run build`) |
+| 2 | Node.js para Frontend | ✅ | [`tema_001/`](tema_001/) — teoría (`docs/`: 16 unidades: Node, Event Loop, npm, package.json, SemVer, npx, pnpm…) |
+| 3 | TypeScript | ✅ | [`tema_002/`](tema_002/) — teoría (`docs/`: 8 unidades: tipos, interfaces, enums, generics, utility/mapped/conditional types) + [`hello-world/`](tema_002/hello-world/) (`pnpm run check` / `pnpm run build`) |
 
 ### React
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 4 | React desde Cero | ✅ | [`MOD_4/`](MOD_4/) — teoría (`docs/`: 7 unidades: React intro, componentes, props/map, eventos, useState, hooks, estilos) + [`EJEMPLO_REACT/`](MOD_4/EJEMPLO_REACT/) — componentes (Props, Eventos, Hooks, useMemo), custom hook, estilos; `pnpm lint` y `pnpm build` OK |
-| 5 | React Intermedio | ✅ | [`MOD_5/`](MOD_5/) — teoría (`docs/`: useRef, useReducer, useCallback, useLayoutEffect, formularios, comunicación) + [`EJEMPLO_REACT_INTERMEDIO/`](MOD_5/EJEMPLO_REACT_INTERMEDIO/) (`pnpm lint` / `pnpm build` OK). Pendiente: CRUD completo |
-| 6 | React Avanzado | ✅ | [`MOD_6/`](MOD_6/) — teoría (`docs/`: Context, custom hooks, portals, lazy/Suspense, error boundaries, optimización) + [`EJEMPLO_REACT_AVANZADO/`](MOD_6/EJEMPLO_REACT_AVANZADO/) con chunk `HeavyPanel` separado. Pendiente: Dashboard |
-| 7 | React Router | ✅ | [`MOD_7/`](MOD_7/) — teoría (`docs/`: BrowserRouter, params, query, nested, protected, lazy) + [`EJEMPLO_REACT_ROUTER/`](MOD_7/EJEMPLO_REACT_ROUTER/) (`pnpm lint` / `pnpm build` OK). Pendiente: proyecto Sistema de autenticación |
-| 8 | Consumo de APIs | ✅ | [`MOD_8/`](MOD_8/) — teoría (`docs/`: HTTP/REST, fetch, axios, JWT, storage) + [`EJEMPLO_REACT_API/`](MOD_8/EJEMPLO_REACT_API/) contra JSONPlaceholder (`pnpm lint` / `pnpm build` OK). Pendiente: proyecto con API propia |
-| 9 | Gestión de Estado | ✅ | [`MOD_9/`](MOD_9/) — teoría (`docs/`: Context, RTK, Zustand, Jotai, comparativa) + [`EJEMPLO_REACT_ESTADO/`](MOD_9/EJEMPLO_REACT_ESTADO/) (`pnpm lint` / `pnpm build` OK). Pendiente: proyecto E-commerce |
-| 10 | Testing | ✅ | [`MOD_10/`](MOD_10/) — teoría (`docs/`: Jest/Vitest, RTL, mocking, unit, integration) + [`EJEMPLO_REACT_TESTING/`](MOD_10/EJEMPLO_REACT_TESTING/) (11 tests OK: `pnpm test:run`, lint y build OK). Pendiente: cobertura > 80 % en proyecto real |
-| 11 | Arquitectura | ✅ | [`MOD_11/`](MOD_11/) — teoría (`docs/`: Atomic, Feature Based, Clean, modularización, DDD) + [`EJEMPLO_ARQUITECTURA/`](MOD_11/EJEMPLO_ARQUITECTURA/) (`pnpm lint` / `pnpm build` OK) |
-| 12 | Diseño Profesional | ✅ | [`MOD_12/`](MOD_12/) — teoría (`docs/`: Tailwind, MUI, Chakra, shadcn, CSS Modules, styled) + [`EJEMPLO_DISENO/`](MOD_12/EJEMPLO_DISENO/) Tailwind v4 (`pnpm lint` / `pnpm build` OK). Pendiente: proyecto Sistema de componentes |
-| 13 | Patrones Avanzados | ✅ | [`MOD_13/`](MOD_13/) — teoría (`docs/`: compound, render props, HOC, hooks avanzados, DI) + [`EJEMPLO_PATRONES/`](MOD_13/EJEMPLO_PATRONES/) (`pnpm lint` / `pnpm build` OK) |
-| 14 | TypeScript + React | ✅ | [`MOD_14/`](MOD_14/) — teoría (`docs/`: componentes, eventos, hooks generics, unions, JSX+TS) + [`EJEMPLO_TS_REACT/`](MOD_14/EJEMPLO_TS_REACT/) (`pnpm run check` / lint / build OK). Pendiente: migrar M4 a TS |
-| 15 | Next.js y React Moderno | ✅ | [`MOD_15/`](MOD_15/) — teoría (`docs/`: React 19, server/client, routing, SSR/SSG/ISR, route handlers, compiler) + [`EJEMPLO_MODERNO/`](MOD_15/EJEMPLO_MODERNO/) React 19 (`pnpm lint` / `pnpm build` OK). Pendiente: proyecto App full-stack Next (pasos en README M15) |
+| 4 | React desde Cero | ✅ | [`tema_003/`](tema_003/) — teoría (`docs/`: 7 unidades: React intro, componentes, props/map, eventos, useState, hooks, estilos) + [`EJEMPLO_REACT/`](tema_003/EJEMPLO_REACT/) — componentes (Props, Eventos, Hooks, useMemo), custom hook, estilos; `pnpm lint` y `pnpm build` OK |
+| 5 | React Intermedio | ✅ | [`tema_004/`](tema_004/) — teoría (`docs/`: useRef, useReducer, useCallback, useLayoutEffect, formularios, comunicación) + [`EJEMPLO_REACT_INTERMEDIO/`](tema_004/EJEMPLO_REACT_INTERMEDIO/) (`pnpm lint` / `pnpm build` OK). Pendiente: CRUD completo |
+| 6 | React Avanzado | ✅ | [`tema_005/`](tema_005/) — teoría (`docs/`: Context, custom hooks, portals, lazy/Suspense, error boundaries, optimización) + [`EJEMPLO_REACT_AVANZADO/`](tema_005/EJEMPLO_REACT_AVANZADO/) con chunk `HeavyPanel` separado. Pendiente: Dashboard |
+| 7 | React Router | ✅ | [`tema_006/`](tema_006/) — teoría (`docs/`: BrowserRouter, params, query, nested, protected, lazy) + [`EJEMPLO_REACT_ROUTER/`](tema_006/EJEMPLO_REACT_ROUTER/) (`pnpm lint` / `pnpm build` OK). Pendiente: proyecto Sistema de autenticación |
+| 8 | Consumo de APIs | ✅ | [`tema_007/`](tema_007/) — teoría (`docs/`: HTTP/REST, fetch, axios, JWT, storage) + [`EJEMPLO_REACT_API/`](tema_007/EJEMPLO_REACT_API/) contra JSONPlaceholder (`pnpm lint` / `pnpm build` OK). Pendiente: proyecto con API propia |
+| 9 | Gestión de Estado | ✅ | [`tema_008/`](tema_008/) — teoría (`docs/`: Context, RTK, Zustand, Jotai, comparativa) + [`EJEMPLO_REACT_ESTADO/`](tema_008/EJEMPLO_REACT_ESTADO/) (`pnpm lint` / `pnpm build` OK). Pendiente: proyecto E-commerce |
+| 10 | Testing | ✅ | [`tema_009/`](tema_009/) — teoría (`docs/`: Jest/Vitest, RTL, mocking, unit, integration) + [`EJEMPLO_REACT_TESTING/`](tema_009/EJEMPLO_REACT_TESTING/) (11 tests OK: `pnpm test:run`, lint y build OK). Pendiente: cobertura > 80 % en proyecto real |
+| 11 | Arquitectura | ✅ | [`tema_010/`](tema_010/) — teoría (`docs/`: Atomic, Feature Based, Clean, modularización, DDD) + [`EJEMPLO_ARQUITECTURA/`](tema_010/EJEMPLO_ARQUITECTURA/) (`pnpm lint` / `pnpm build` OK) |
+| 12 | Diseño Profesional | ✅ | [`tema_011/`](tema_011/) — teoría (`docs/`: Tailwind, MUI, Chakra, shadcn, CSS Modules, styled) + [`EJEMPLO_DISENO/`](tema_011/EJEMPLO_DISENO/) Tailwind v4 (`pnpm lint` / `pnpm build` OK). Pendiente: proyecto Sistema de componentes |
+| 13 | Patrones Avanzados | ✅ | [`tema_012/`](tema_012/) — teoría (`docs/`: compound, render props, HOC, hooks avanzados, DI) + [`EJEMPLO_PATRONES/`](tema_012/EJEMPLO_PATRONES/) (`pnpm lint` / `pnpm build` OK) |
+| 14 | TypeScript + React | ✅ | [`tema_013/`](tema_013/) — teoría (`docs/`: componentes, eventos, hooks generics, unions, JSX+TS) + [`EJEMPLO_TS_REACT/`](tema_013/EJEMPLO_TS_REACT/) (`pnpm run check` / lint / build OK). Pendiente: migrar M4 a TS |
+| 15 | Next.js y React Moderno | ✅ | [`tema_014/`](tema_014/) — teoría (`docs/`: React 19, server/client, routing, SSR/SSG/ISR, route handlers, compiler) + [`EJEMPLO_MODERNO/`](tema_014/EJEMPLO_MODERNO/) React 19 (`pnpm lint` / `pnpm build` OK). Pendiente: proyecto App full-stack Next (pasos en README M15) |
 
 ### React Native
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 16 | React Native | ⚠️ | [`MOD_16/`](MOD_16/) — teoría (`docs/`: Expo SDK 57) + [`ReactNative/`](MOD_16/ReactNative/) ([`README.md`](MOD_16/ReactNative/README.md), app Expo Router [`MiAplicacion/`](MOD_16/ReactNative/MiAplicacion/)). Faltan: navegación, estado, APIs del dispositivo, proyecto final. **Nota:** carpeta antes `MOD_5` / `MOD_14`. |
+| 16 | React Native | ✅ | [`tema_015/`](tema_015/) — teoría (`docs/`: 6 unidades: Expo SDK 57, FlatList/SectionList, Stack/Drawer, estado, APIs del dispositivo, EAS) + [`ReactNative/`](tema_015/ReactNative/) (app Expo Router [`MiAplicacion/`](tema_015/ReactNative/MiAplicacion/) con Stack + tabs, listas y Zustand). El proyecto "app móvil completa" queda como ejercicio final del roadmap. **Nota:** carpeta antes `MOD_5` / `MOD_14` / `MOD_16`, ahora `tema_015`. |
+
+### Data Fetching y Formularios Modernos
+
+| # | Módulo | Estado | Material en el repo |
+|---|--------|--------|---------------------|
+| 25 | TanStack Query + RHF + Zod | ✅ | [`tema_024/`](tema_024/) — teoría (`docs/`: 5 unidades: Query, mutaciones, RHF, Zod, integración) + [`EJEMPLO_QUERY_FORMS/`](tema_024/EJEMPLO_QUERY_FORMS/) (Vite + TS contra JSONPlaceholder; `pnpm run check` / lint / build OK). |
 
 ### Backend para Frontend
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 17 | REST / GraphQL / FastAPI / WebSockets | ✅ | [`MOD_17/`](MOD_17/) — teoría (`docs/`: REST/GraphQL, FastAPI, WebSockets, autenticación). Práctica: backend propio con snippets de los docs (fuera del repo) |
+| 17 | REST / GraphQL / FastAPI / WebSockets | ✅ | [`tema_016/`](tema_016/) — teoría (`docs/`: REST/GraphQL, FastAPI, WebSockets, autenticación). Práctica: backend propio con snippets de los docs (fuera del repo) |
 
 ### DevOps
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 18 | Docker | ✅ | [`MOD_18/`](MOD_18/) — teoría (`docs/`) + [`plantillas/`](MOD_18/plantillas/) (Dockerfile multi-stage, compose, nginx SPA). Ejecución: requiere Docker Desktop local |
-| 19 | CI/CD | ✅ | [`MOD_19/`](MOD_19/) — teoría (`docs/`) + [`plantillas/ci.yml`](MOD_19/plantillas/ci.yml). Pipeline real: requiere push a GitHub (*confirmar*) |
+| 18 | Docker | ✅ | [`tema_017/`](tema_017/) — teoría (`docs/`) + [`plantillas/`](tema_017/plantillas/) (Dockerfile multi-stage, compose, nginx SPA). Ejecución: requiere Docker Desktop local |
+| 19 | CI/CD | ✅ | [`tema_018/`](tema_018/) — teoría (`docs/`) + [`plantillas/ci.yml`](tema_018/plantillas/ci.yml). Pipeline real: requiere push a GitHub (*confirmar*) |
 
 ### Optimización y calidad
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 20 | Optimización | ✅ | [`MOD_20/`](MOD_20/) — teoría (`docs/`: Lighthouse, bundle/analyser, memo/Profiler/WDUR). Práctica: medir cualquier `EJEMPLO_*` |
-| 21 | Accesibilidad | ✅ | [`MOD_21/`](MOD_21/) — teoría (`docs/`: WCAG, teclado, screen readers/ARIA). Auditoría manual pendiente en un ejemplo |
-| 22 | Seguridad | ✅ | [`MOD_22/`](MOD_22/) — teoría (`docs/`: XSS/CSRF, CORS/OAuth, JWT) |
+| 20 | Optimización | ✅ | [`tema_019/`](tema_019/) — teoría (`docs/`: Lighthouse, bundle/analyser, memo/Profiler/WDUR). Práctica: medir cualquier `EJEMPLO_*` |
+| 21 | Accesibilidad | ✅ | [`tema_020/`](tema_020/) — teoría (`docs/`: WCAG, teclado, screen readers/ARIA). Auditoría manual pendiente en un ejemplo |
+| 22 | Seguridad | ✅ | [`tema_021/`](tema_021/) — teoría (`docs/`: XSS/CSRF, CORS/OAuth, JWT) |
 
 ### Cierre profesional
 
 | # | Módulo | Estado | Material en el repo |
 |---|--------|--------|---------------------|
-| 23 | Proyecto Final | ⚠️ | [`MOD_23/`](MOD_23/) — guía de integración (`docs/`: MVP, features, Docker/CI). La app completa es el **proyecto del curso** (checklist en README) |
-| 24 | Preparación Profesional | ✅ | [`MOD_24/`](MOD_24/) — teoría (`docs/`: Scrum/Kanban, calidad, reviews, entrevistas) + [`plantillas/`](MOD_24/plantillas/) (prettier, commitlint) |
+| 23 | Proyecto Final | ⚠️ | [`tema_022/`](tema_022/) — guía de integración (`docs/`: MVP, features, Docker/CI). La app completa es el **proyecto del curso** (checklist en README) |
+| 24 | Preparación Profesional | ✅ | [`tema_023/`](tema_023/) — teoría (`docs/`: Scrum/Kanban, calidad, reviews, entrevistas) + [`plantillas/`](tema_023/plantillas/) (prettier, commitlint) |
 
 ---
 
 ## Faltantes consolidados
 
 - **Sin carpeta ni material:** módulos 0–1 (externos, *pendiente de enlazar*).
-- **Parcial:** módulo 16 — solo intro a Expo, componentes base de la plantilla y docs; faltan secciones del checklist del README (FlatList, navegación, estado, cámara/GPS, etc.). Módulo 23 — guía ✅, la app empresarial sigue pendiente. Módulos 5 y 6: checklists de hooks/forms/avanzado cubiertos, faltan los **proyectos** (CRUD y Dashboard). Módulos 7–10: temario cubierto, faltan los **proyectos** (auth, API propia, E-commerce, cobertura > 80 %).
-- **Nuevos en el roadmap (añadidos tras revisar huecos):** M14 TypeScript + React y M15 Next.js/React moderno — ambos con material ✅ en el repo.
-- **Proyectos del roadmap sin empezar:** Calculadora (M4), CRUD (M5), Dashboard (M6), Sistema de autenticación (M7), Frontend con API (M8), E-commerce (M9), cobertura > 80 % (M10), migrar M4 a TS (M14), App full-stack Next (M15), App empresarial completa (M23), etc. — ver checklist en [`README.md`](README.md).
-- **Ejecución local pendiente (requiere acción externa):** build Docker (M18), pipeline GitHub Actions (M19, necesita push), hooks Husky (M24, necesita commit), backend FastAPI propio (M17), proyecto M16 Expo.
+- **Cerrado en esta revisión:** módulo 16 — teoría completa (6 unidades: Expo/CLI, listas, navegación, estado, dispositivo, EAS) y práctica ampliada (Stack + tabs, FlatList/SectionList, detalle dinámico, Zustand). Módulo 25 nuevo — TanStack Query + React Hook Form + Zod con docs y ejemplo verificado.
+- **Parcial:** módulo 23 — guía ✅, la app empresarial sigue pendiente. Módulos 5 y 6: checklists de hooks/forms/avanzado cubiertos, faltan los **proyectos** (CRUD y Dashboard). Módulos 7–10: temario cubierto, faltan los **proyectos** (auth, API propia, E-commerce, cobertura > 80 %).
+- **Proyectos del roadmap sin empezar:** Calculadora (M4), CRUD (M5), Dashboard (M6), Sistema de autenticación (M7), Frontend con API (M8), E-commerce (M9), cobertura > 80 % (M10), migrar M4 a TS (M14), App full-stack Next (M15), App móvil completa (M16/portfolio), App empresarial completa (M23), mini-CRUD extendido M25, etc. — ver checklist en [`README.md`](README.md).
+- **Ejecución local pendiente (requiere acción externa):** build Docker (M18), pipeline GitHub Actions (M19, necesita push), hooks Husky (M24, necesita commit), backend FastAPI propio (M17), proyecto M16 Expo en dispositivo, EAS build real (M16 U06).
 - **Enlaces pendientes:** repositorios de los módulos 0 y 1 en el README.
 - **Commit del material nuevo:** sin confirmar (no hacer push/commit sin tu OK).
 
@@ -121,101 +128,111 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 
 ```bash
 # Módulo 3 — TypeScript
-cd MOD_3/hello-world
+cd tema_002/hello-world
 pnpm install
 pnpm run check   # typecheck
 pnpm run build   # compila a dist/
 
 # Módulo 4 — React (Vite)
-cd MOD_4/EJEMPLO_REACT
+cd tema_003/EJEMPLO_REACT
 pnpm install
 pnpm lint
 pnpm build
 
 # Módulo 5 — React Intermedio
-cd MOD_5/EJEMPLO_REACT_INTERMEDIO
+cd tema_004/EJEMPLO_REACT_INTERMEDIO
 pnpm install
 pnpm lint
 pnpm build
 
 # Módulo 6 — React Avanzado
-cd MOD_6/EJEMPLO_REACT_AVANZADO
+cd tema_005/EJEMPLO_REACT_AVANZADO
 pnpm install
 pnpm lint
 pnpm build
 
 # Módulo 7 — React Router
-cd MOD_7/EJEMPLO_REACT_ROUTER
+cd tema_006/EJEMPLO_REACT_ROUTER
 pnpm install
 pnpm lint
 pnpm build
 
 # Módulo 8 — Consumo de APIs
-cd MOD_8/EJEMPLO_REACT_API
+cd tema_007/EJEMPLO_REACT_API
 pnpm install
 pnpm lint
 pnpm build
 
 # Módulo 9 — Gestión de Estado
-cd MOD_9/EJEMPLO_REACT_ESTADO
+cd tema_008/EJEMPLO_REACT_ESTADO
 pnpm install
 pnpm lint
 pnpm build
 
 # Módulo 10 — Testing
-cd MOD_10/EJEMPLO_REACT_TESTING
+cd tema_009/EJEMPLO_REACT_TESTING
 pnpm install
 pnpm test:run
 pnpm lint
 pnpm build
 
 # Módulo 11 — Arquitectura
-cd MOD_11/EJEMPLO_ARQUITECTURA
+cd tema_010/EJEMPLO_ARQUITECTURA
 pnpm install
 pnpm lint
 pnpm build
 
 # Módulo 12 — Diseño Profesional
-cd MOD_12/EJEMPLO_DISENO
+cd tema_011/EJEMPLO_DISENO
 pnpm install
 pnpm lint
 pnpm build
 
 # Módulo 13 — Patrones Avanzados
-cd MOD_13/EJEMPLO_PATRONES
+cd tema_012/EJEMPLO_PATRONES
 pnpm install
 pnpm lint
 pnpm build
 
 # Módulo 14 — TypeScript + React
-cd MOD_14/EJEMPLO_TS_REACT
+cd tema_013/EJEMPLO_TS_REACT
 pnpm install
 pnpm run check
 pnpm lint
 pnpm build
 
-# Módulo 15 — React Moderno (Vite) / Next: ver MOD_15/README.md
-cd MOD_15/EJEMPLO_MODERNO
+# Módulo 15 — React Moderno (Vite) / Next: ver tema_014/README.md
+cd tema_014/EJEMPLO_MODERNO
 pnpm install
 pnpm lint
 pnpm build
 
 # Módulo 16 — Expo (requiere leer docs Expo v57 antes de editar código)
-cd MOD_16/ReactNative/MiAplicacion
+cd tema_015/ReactNative/MiAplicacion
 pnpm install
 pnpm expo start
+# Práctica: botón "Abrir práctica Listas / Stack" en Home (FlatList/SectionList,
+# ruta detalle/[id], store Zustand en src/store/favoritos.ts)
 
-# Módulo 17 — FastAPI (snippet en MOD_17/docs/Unidad_02; venv aparte)
+# Módulo 17 — FastAPI (snippet en tema_016/docs/Unidad_02; venv aparte)
 pip install fastapi "uvicorn[standard]"
 uvicorn main:app --reload
 
 # Módulo 18 — Docker (requiere Docker Desktop)
-docker build -t curso-react:vite -f MOD_18/plantillas/Dockerfile.frontend .
-docker compose -f MOD_18/plantillas/compose.yaml config
+docker build -t curso-react:vite -f tema_017/plantillas/Dockerfile.frontend .
+docker compose -f tema_017/plantillas/compose.yaml config
 
 # Módulo 19 — CI/CD: copiar plantilla y hacer push (pedir confirmación)
-# cp MOD_19/plantillas/ci.yml .github/workflows/ci.yml
+# cp tema_018/plantillas/ci.yml .github/workflows/ci.yml
 
 # Módulo 24 — Calidad (en un ejemplo, tras configurar husky)
 pnpm add -D prettier husky lint-staged @commitlint/cli @commitlint/config-conventional
+
+# Módulo 25 — TanStack Query + RHF + Zod
+cd tema_024/EJEMPLO_QUERY_FORMS
+pnpm install
+pnpm run check
+pnpm lint
+pnpm build
+pnpm dev
 ```

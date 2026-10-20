@@ -1,4 +1,4 @@
-﻿# 🚀 Roadmap Profesional de React y React Native
+# 🚀 Roadmap Profesional de React y React Native
 
 > Repositorio donde documentaré todo mi aprendizaje sobre **React** y **React Native**, desde los fundamentos hasta un nivel profesional orientado al desarrollo frontend y móvil.
 
@@ -156,7 +156,7 @@ Incluye:
 
 - [ ] CRUD completo
 
-📖 Material: [`MOD_5/`](MOD_5/)
+📖 Material: [`tema_004/`](tema_004/)
 
 ---
 
@@ -176,7 +176,7 @@ Incluye:
 
 - [ ] Dashboard empresarial
 
-📖 Material: [`MOD_6/`](MOD_6/)
+📖 Material: [`tema_005/`](tema_005/)
 
 ---
 
@@ -194,7 +194,7 @@ Incluye:
 
 - [ ] Sistema de autenticación
 
-📖 Material: [`MOD_7/`](MOD_7/)
+📖 Material: [`tema_006/`](tema_006/)
 
 ---
 
@@ -217,7 +217,7 @@ Incluye:
 
 - [ ] Frontend conectado a una API
 
-📖 Material: [`MOD_8/`](MOD_8/)
+📖 Material: [`tema_007/`](tema_007/)
 
 ---
 
@@ -248,7 +248,7 @@ Incluye:
 
 - [ ] E-commerce
 
-📖 Material: [`MOD_9/`](MOD_9/)
+📖 Material: [`tema_008/`](tema_008/)
 
 ---
 
@@ -264,7 +264,7 @@ Incluye:
 
 - [ ] Cobertura superior al 80%
 
-📖 Material: [`MOD_10/`](MOD_10/)
+📖 Material: [`tema_009/`](tema_009/)
 
 ---
 
@@ -276,7 +276,7 @@ Incluye:
 - [x] Modularización
 - [x] Introducción a DDD
 
-📖 Material: [`MOD_11/`](MOD_11/)
+📖 Material: [`tema_010/`](tema_010/)
 
 ---
 
@@ -293,7 +293,7 @@ Incluye:
 
 - [ ] Sistema de componentes reutilizables
 
-📖 Material: [`MOD_12/`](MOD_12/)
+📖 Material: [`tema_011/`](tema_011/)
 
 ---
 
@@ -305,7 +305,7 @@ Incluye:
 - [x] Custom Hooks Avanzados
 - [x] Dependency Injection
 
-📖 Material: [`MOD_13/`](MOD_13/)
+📖 Material: [`tema_012/`](tema_012/)
 
 ---
 
@@ -330,7 +330,7 @@ Incluye:
 
 - [ ] Migrar el ejemplo del Módulo 4 a TypeScript
 
-📖 Material: [`MOD_14/`](MOD_14/)
+📖 Material: [`tema_013/`](tema_013/)
 
 ---
 
@@ -360,7 +360,7 @@ Incluye:
 
 - [ ] App full-stack con Next.js (render + API routes)
 
-📖 Material: [`MOD_15/`](MOD_15/)
+📖 Material: [`tema_014/`](tema_014/)
 
 ---
 
@@ -370,49 +370,55 @@ Incluye:
 
 ### Introducción
 
-- [ ] ¿Qué es React Native?
-- [ ] Expo
-- [ ] React Native CLI
-- [ ] Diferencias con React
+- [x] ¿Qué es React Native?
+- [x] Expo
+- [x] React Native CLI (Expo vs CLI, `expo prebuild`)
+- [x] Diferencias con React
 
 ### Componentes
 
-- [ ] View
-- [ ] Text
-- [ ] Image
-- [ ] ScrollView
-- [ ] FlatList
-- [ ] SectionList
-- [ ] Pressable
+- [x] View
+- [x] Text
+- [x] Image
+- [x] ScrollView
+- [x] FlatList
+- [x] SectionList
+- [x] Pressable
 
 ### Estilos
 
-- [ ] Flexbox
-- [ ] Responsive
-- [ ] Safe Area
+- [x] Flexbox
+- [x] Responsive
+- [x] Safe Area
 
 ### Navegación
 
-- [ ] Stack Navigation
-- [ ] Bottom Tabs
-- [ ] Drawer Navigation
+- [x] Stack Navigation
+- [x] Bottom Tabs
+- [x] Drawer Navigation
 
 ### Estado
 
-- [ ] Context
-- [ ] Redux
+- [x] Context
+- [x] Redux (Zustand + RTK compatible; ver tema_015 U04)
 
 ### APIs del dispositivo
 
-- [ ] Cámara
-- [ ] GPS
-- [ ] Archivos
-- [ ] Notificaciones
-- [ ] Permisos
+- [x] Cámara
+- [x] GPS
+- [x] Archivos
+- [x] Notificaciones
+- [x] Permisos
+
+### Publicación
+
+- [x] EAS Build / Submit / Update (OTA)
 
 **Proyecto**
 
 - [ ] Aplicación móvil completa
+
+📖 Material: [`tema_015/`](tema_015/)
 
 ---
 
@@ -426,7 +432,7 @@ Incluye:
 - [x] WebSockets
 - [x] Autenticación
 
-📖 Material: [`MOD_17/`](MOD_17/)
+📖 Material: [`tema_016/`](tema_016/)
 
 ---
 
@@ -440,7 +446,7 @@ Incluye:
 - [x] Volúmenes
 - [x] Deploy
 
-📖 Material: [`MOD_18/`](MOD_18/)
+📖 Material: [`tema_017/`](tema_017/)
 
 ---
 
@@ -451,7 +457,7 @@ Incluye:
 - [x] Netlify
 - [x] Firebase Hosting
 
-📖 Material: [`MOD_19/`](MOD_19/)
+📖 Material: [`tema_018/`](tema_018/)
 
 ---
 
@@ -467,7 +473,7 @@ Incluye:
 - [x] React DevTools Profiler
 - [x] why-did-you-render / trazas de render
 
-📖 Material: [`MOD_20/`](MOD_20/)
+📖 Material: [`tema_019/`](tema_019/)
 
 ---
 
@@ -479,7 +485,7 @@ Incluye:
 - [x] Navegación por teclado
 - [x] Screen Readers
 
-📖 Material: [`MOD_21/`](MOD_21/)
+📖 Material: [`tema_020/`](tema_020/)
 
 ---
 
@@ -493,7 +499,7 @@ Incluye:
 - [x] OAuth
 - [x] Buenas prácticas con JWT
 
-📖 Material: [`MOD_22/`](MOD_22/)
+📖 Material: [`tema_021/`](tema_021/)
 
 ---
 
@@ -519,7 +525,7 @@ Construcción de una aplicación empresarial completa.
 - [ ] CI/CD
 - [ ] Deploy
 
-📖 Guía: [`MOD_23/`](MOD_23/)
+📖 Guía: [`tema_022/`](tema_022/)
 
 ---
 
@@ -555,7 +561,41 @@ Construcción de una aplicación empresarial completa.
 - [x] Algoritmos básicos
 - [x] Pair Programming
 
-📖 Material: [`MOD_24/`](MOD_24/)
+📖 Material: [`tema_023/`](tema_023/)
+
+---
+
+# 🗄️ Data Fetching y Formularios Modernos
+
+## Módulo 25 - TanStack Query, React Hook Form y Zod
+
+Módulo añadido tras revisar huecos: el estándar actual de datos remotos y forms.
+
+### TanStack Query
+
+- [x] `useQuery` y claves de caché
+- [x] Estados de carga y error
+- [x] `useMutation` e invalidación
+- [x] Actualización optimista
+
+### React Hook Form
+
+- [x] `register`, `handleSubmit`, `formState`
+- [x] Campos controlados (`Controller`)
+- [x] Estados de envío y reset
+
+### Zod
+
+- [x] Esquemas y validación
+- [x] Tipos derivados (`z.infer`)
+- [x] `safeParse` y composición
+
+### Integración
+
+- [x] `zodResolver` + `useMutation`
+- [x] CRUD de ejemplo con invalidación de lista
+
+📖 Material: [`tema_024/`](tema_024/)
 
 ---
 
@@ -582,31 +622,32 @@ Al finalizar este roadmap, el portfolio incluirá:
 
 | Módulo | Carpeta | Contenido |
 |--------|---------|-----------|
-| 2 - Node.js | [`MOD_2/`](MOD_2/) | 16 unidades de teoría (`docs/`: Node, Event Loop, npm…) |
-| 3 - TypeScript | [`MOD_3/`](MOD_3/) | 8 unidades de teoría (`docs/`) + proyecto `hello-world/` |
-| 4 - React desde Cero | [`MOD_4/`](MOD_4/) | 7 unidades de teoría (`docs/`) + [`EJEMPLO_REACT/`](MOD_4/EJEMPLO_REACT/) (components, hooks, CSS) |
-| 5 - React Intermedio | [`MOD_5/`](MOD_5/) | 6 unidades de teoría + `EJEMPLO_REACT_INTERMEDIO/` (hooks, forms, comunicación) |
-| 6 - React Avanzado | [`MOD_6/`](MOD_6/) | 6 unidades de teoría + `EJEMPLO_REACT_AVANZADO/` (Context, portals, lazy, errors, memo) |
-| 7 - React Router | [`MOD_7/`](MOD_7/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_ROUTER/`](MOD_7/EJEMPLO_REACT_ROUTER/) (params, query, nested, protected, lazy) |
-| 8 - Consumo de APIs | [`MOD_8/`](MOD_8/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_API/`](MOD_8/EJEMPLO_REACT_API/) (fetch, axios, storage, token) |
-| 9 - Gestión de Estado | [`MOD_9/`](MOD_9/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_ESTADO/`](MOD_9/EJEMPLO_REACT_ESTADO/) (RTK, Zustand, Jotai) |
-| 10 - Testing | [`MOD_10/`](MOD_10/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_TESTING/`](MOD_10/EJEMPLO_REACT_TESTING/) (Vitest + RTL, 11 tests) |
-| 11 - Arquitectura | [`MOD_11/`](MOD_11/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_ARQUITECTURA/`](MOD_11/EJEMPLO_ARQUITECTURA/) (atomic + features + domain) |
-| 12 - Diseño Profesional | [`MOD_12/`](MOD_12/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_DISENO/`](MOD_12/EJEMPLO_DISENO/) (Tailwind v4 + ui kit con clsx) |
-| 13 - Patrones Avanzados | [`MOD_13/`](MOD_13/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_PATRONES/`](MOD_13/EJEMPLO_PATRONES/) (compound, render props, HOC, hooks, DI) |
-| 14 - TypeScript + React | [`MOD_14/`](MOD_14/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_TS_REACT/`](MOD_14/EJEMPLO_TS_REACT/) (Vite + TS, tsc + lint + build OK) |
-| 15 - Next.js / React Moderno | [`MOD_15/`](MOD_15/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_MODERNO/`](MOD_15/EJEMPLO_MODERNO/) (React 19: use, ref prop, actions, optimist) |
-| 16 - React Native | [`MOD_16/`](MOD_16/) | Teoría (`docs/`) + app Expo SDK 57 en `ReactNative/MiAplicacion/` (antes `MOD_5`, luego `MOD_14`) |
-| 17 - Backend | [`MOD_17/`](MOD_17/) | 4 unidades de teoría (`docs/`: REST/GraphQL, FastAPI, WebSockets, auth) |
-| 18 - Docker | [`MOD_18/`](MOD_18/) | 4 unidades (`docs/`) + [`plantillas/`](MOD_18/plantillas/) (Dockerfile, compose, nginx) |
-| 19 - CI/CD | [`MOD_19/`](MOD_19/) | 3 unidades (`docs/`) + [`plantillas/ci.yml`](MOD_19/plantillas/ci.yml) (GitHub Actions) |
-| 20 - Optimización | [`MOD_20/`](MOD_20/) | 3 unidades (`docs/`: Lighthouse, bundle, Profiler/WDUR) |
-| 21 - Accesibilidad | [`MOD_21/`](MOD_21/) | 3 unidades (`docs/`: WCAG, teclado, screen readers) |
-| 22 - Seguridad | [`MOD_22/`](MOD_22/) | 3 unidades (`docs/`: XSS/CSRF, CORS/OAuth, JWT) |
-| 23 - Proyecto Final | [`MOD_23/`](MOD_23/) | 3 unidades de guía (`docs/`: MVP, features, pipeline) |
-| 24 - Preparación | [`MOD_24/`](MOD_24/) | 4 unidades (`docs/`) + [`plantillas/`](MOD_24/plantillas/) (prettier, commitlint) |
+| 2 - Node.js | [`tema_001/`](tema_001/) | 16 unidades de teoría (`docs/`: Node, Event Loop, npm…) |
+| 3 - TypeScript | [`tema_002/`](tema_002/) | 8 unidades de teoría (`docs/`) + proyecto `hello-world/` |
+| 4 - React desde Cero | [`tema_003/`](tema_003/) | 7 unidades de teoría (`docs/`) + [`EJEMPLO_REACT/`](tema_003/EJEMPLO_REACT/) (components, hooks, CSS) |
+| 5 - React Intermedio | [`tema_004/`](tema_004/) | 6 unidades de teoría + `EJEMPLO_REACT_INTERMEDIO/` (hooks, forms, comunicación) |
+| 6 - React Avanzado | [`tema_005/`](tema_005/) | 6 unidades de teoría + `EJEMPLO_REACT_AVANZADO/` (Context, portals, lazy, errors, memo) |
+| 7 - React Router | [`tema_006/`](tema_006/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_ROUTER/`](tema_006/EJEMPLO_REACT_ROUTER/) (params, query, nested, protected, lazy) |
+| 8 - Consumo de APIs | [`tema_007/`](tema_007/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_API/`](tema_007/EJEMPLO_REACT_API/) (fetch, axios, storage, token) |
+| 9 - Gestión de Estado | [`tema_008/`](tema_008/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_ESTADO/`](tema_008/EJEMPLO_REACT_ESTADO/) (RTK, Zustand, Jotai) |
+| 10 - Testing | [`tema_009/`](tema_009/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_REACT_TESTING/`](tema_009/EJEMPLO_REACT_TESTING/) (Vitest + RTL, 11 tests) |
+| 11 - Arquitectura | [`tema_010/`](tema_010/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_ARQUITECTURA/`](tema_010/EJEMPLO_ARQUITECTURA/) (atomic + features + domain) |
+| 12 - Diseño Profesional | [`tema_011/`](tema_011/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_DISENO/`](tema_011/EJEMPLO_DISENO/) (Tailwind v4 + ui kit con clsx) |
+| 13 - Patrones Avanzados | [`tema_012/`](tema_012/) | 5 unidades de teoría (`docs/`) + [`EJEMPLO_PATRONES/`](tema_012/EJEMPLO_PATRONES/) (compound, render props, HOC, hooks, DI) |
+| 14 - TypeScript + React | [`tema_013/`](tema_013/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_TS_REACT/`](tema_013/EJEMPLO_TS_REACT/) (Vite + TS, tsc + lint + build OK) |
+| 15 - Next.js / React Moderno | [`tema_014/`](tema_014/) | 6 unidades de teoría (`docs/`) + [`EJEMPLO_MODERNO/`](tema_014/EJEMPLO_MODERNO/) (React 19: use, ref prop, actions, optimist) |
+| 16 - React Native | [`tema_015/`](tema_015/) | 6 unidades (`docs/`: Expo, listas, navegación, estado, dispositivo, EAS) + app Expo SDK 57 en `ReactNative/MiAplicacion/` con Stack + tabs, listas y Zustand (antes `MOD_5`, luego `MOD_14`) |
+| 17 - Backend | [`tema_016/`](tema_016/) | 4 unidades de teoría (`docs/`: REST/GraphQL, FastAPI, WebSockets, auth) |
+| 18 - Docker | [`tema_017/`](tema_017/) | 4 unidades (`docs/`) + [`plantillas/`](tema_017/plantillas/) (Dockerfile, compose, nginx) |
+| 19 - CI/CD | [`tema_018/`](tema_018/) | 3 unidades (`docs/`) + [`plantillas/ci.yml`](tema_018/plantillas/ci.yml) (GitHub Actions) |
+| 20 - Optimización | [`tema_019/`](tema_019/) | 3 unidades (`docs/`: Lighthouse, bundle, Profiler/WDUR) |
+| 21 - Accesibilidad | [`tema_020/`](tema_020/) | 3 unidades (`docs/`: WCAG, teclado, screen readers) |
+| 22 - Seguridad | [`tema_021/`](tema_021/) | 3 unidades (`docs/`: XSS/CSRF, CORS/OAuth, JWT) |
+| 23 - Proyecto Final | [`tema_022/`](tema_022/) | 3 unidades de guía (`docs/`: MVP, features, pipeline) |
+| 24 - Preparación | [`tema_023/`](tema_023/) | 4 unidades (`docs/`) + [`plantillas/`](tema_023/plantillas/) (prettier, commitlint) |
+| 25 - Query + Forms | [`tema_024/`](tema_024/) | 5 unidades (`docs/`: TanStack Query, RHF, Zod, integración) + [`EJEMPLO_QUERY_FORMS/`](tema_024/EJEMPLO_QUERY_FORMS/) (Vite + TS, check/lint/build OK) |
 
-> **Nota:** este roadmap tiene **24 módulos** (se añadieron M14 TS+React y M15 Next.js/React moderno). La carpeta de React Native, antes `MOD_5`/`MOD_14`, es ahora `MOD_16` para coincidir con la numeración.
+> **Nota:** este roadmap tiene **25 módulos** (se añadieron M14 TS+React, M15 Next.js/React moderno y M25 TanStack Query + RHF + Zod). Las carpetas se numeran como **`tema_001`…`tema_024`** (`tema_001` = antiguo `MOD_2`, etc.); la carpeta de React Native fue `MOD_5` → `MOD_14` → `MOD_16` y hoy es `tema_015`. Cada `.md` incluye enlaces «← Anterior / Siguiente →» para leer el curso en línea.
 
 📖 **Guía de estudio completa:** [`GUIA_ESTUDIO.md`](GUIA_ESTUDIO.md)
 
@@ -632,7 +673,7 @@ Al finalizar este roadmap, el portfolio incluirá:
 | Patrones | 🟢 |
 | TS + React | 🟢 |
 | Next.js / React Moderno | 🟢 |
-| React Native | 🟡 |
+| React Native | 🟢 |
 | Backend para Frontend | 🟢 |
 | Docker | 🟢 |
 | CI/CD | 🟢 |
@@ -641,5 +682,6 @@ Al finalizar este roadmap, el portfolio incluirá:
 | Seguridad | 🟢 |
 | Proyecto Final | 🟡 |
 | Preparación Profesional | 🟢 |
+| Query + Forms (TanStack/RHF/Zod) | 🟢 |
 
 🟢 = material en el repo · 🟡 = material parcial · ⬜ = pendiente
