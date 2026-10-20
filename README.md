@@ -599,6 +599,47 @@ Módulo añadido tras revisar huecos: el estándar actual de datos remotos y for
 
 ---
 
+# 🧪 Testing E2E y Escalabilidad
+
+## Módulo 26 - Testing E2E con Playwright
+
+Módulo añadido tras revisar huecos: M10 cubre unit/integration, pero el curso no tenía E2E.
+
+### Fundamentos E2E
+
+- [x] Pirámide de testing y cuándo (no) usar E2E
+- [x] Flaky tests y determinismo
+
+### Playwright
+
+- [x] Configuración, projects y `webServer`
+- [x] Locators recomendados y auto-waiting
+- [x] Asertiones, esperas y mock de red (`page.route`)
+- [x] Page Objects, fixtures/`storageState` y CI
+
+📖 Material: [`tema_025/`](tema_025/)
+
+## Módulo 27 - Monorepos con pnpm workspaces y Turborepo
+
+Módulo añadido tras revisar huecos: pnpm (M2) y arquitectura (M11) no cubrían el patrón multi-app de los equipos.
+
+### Monorepo
+
+- [x] Mono vs multi-repo; estructura `apps/` + `packages/`
+- [x] pnpm workspaces y el protocolo `workspace:*`
+- [x] `--filter` y ejecución por paquete
+
+### Turborepo
+
+- [x] Pipeline (`turbo.json`), `dependsOn: ["^build"]` y outputs
+- [x] Caché local y remota
+- [x] tsconfig heredado y peerDependencies en libs compartidas
+- [x] CI con caché de `.turbo` y release con changesets
+
+📖 Material: [`tema_026/`](tema_026/)
+
+---
+
 # 🏆 Portfolio
 
 Al finalizar este roadmap, el portfolio incluirá:
@@ -646,8 +687,10 @@ Al finalizar este roadmap, el portfolio incluirá:
 | 23 - Proyecto Final | [`tema_022/`](tema_022/) | 3 unidades de guía (`docs/`: MVP, features, pipeline) |
 | 24 - Preparación | [`tema_023/`](tema_023/) | 4 unidades (`docs/`) + [`plantillas/`](tema_023/plantillas/) (prettier, commitlint) |
 | 25 - Query + Forms | [`tema_024/`](tema_024/) | 5 unidades (`docs/`: TanStack Query, RHF, Zod, integración) + [`EJEMPLO_QUERY_FORMS/`](tema_024/EJEMPLO_QUERY_FORMS/) (Vite + TS, check/lint/build OK) |
+| 26 - Testing E2E | [`tema_025/`](tema_025/) | 4 unidades (`docs/`: pirámide, Playwright, asertiones, Page Objects) + [`EJEMPLO_PLAYWRIGHT/`](tema_025/EJEMPLO_PLAYWRIGHT/) (Vite + React 19, 6 tests E2E en verde) |
+| 27 - Monorepos | [`tema_026/`](tema_026/) | 4 unidades (`docs/`: monorepo, pnpm workspaces, Turborepo, packages+CI) + [`EJEMPLO_MONOREPO/`](tema_026/EJEMPLO_MONOREPO/) (Turborepo: web + ui + tsconfig, turbo check/lint/build OK) |
 
-> **Nota:** este roadmap tiene **25 módulos** (se añadieron M14 TS+React, M15 Next.js/React moderno y M25 TanStack Query + RHF + Zod). Las carpetas se numeran como **`tema_001`…`tema_024`** (`tema_001` = antiguo `MOD_2`, etc.); la carpeta de React Native fue `MOD_5` → `MOD_14` → `MOD_16` y hoy es `tema_015`. Cada `.md` incluye enlaces «← Anterior / Siguiente →» para leer el curso en línea.
+> **Nota:** este roadmap tiene **27 módulos** (se añadieron M14 TS+React, M15 Next.js/React moderno, M25 TanStack Query + RHF + Zod, M26 Testing E2E y M27 Monorepos). Las carpetas se numeran como **`tema_001`…`tema_026`** (`tema_001` = antiguo `MOD_2`, etc.); la carpeta de React Native fue `MOD_5` → `MOD_14` → `MOD_16` y hoy es `tema_015`. Cada `.md` incluye enlaces «← Anterior / Siguiente →» para leer el curso en línea.
 
 📖 **Guía de estudio completa:** [`GUIA_ESTUDIO.md`](GUIA_ESTUDIO.md)
 
@@ -683,5 +726,7 @@ Al finalizar este roadmap, el portfolio incluirá:
 | Proyecto Final | 🟡 |
 | Preparación Profesional | 🟢 |
 | Query + Forms (TanStack/RHF/Zod) | 🟢 |
+| Testing E2E (Playwright) | 🟢 |
+| Monorepos (Turborepo) | 🟢 |
 
 🟢 = material en el repo · 🟡 = material parcial · ⬜ = pendiente

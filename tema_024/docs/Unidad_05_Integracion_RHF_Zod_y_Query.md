@@ -1,5 +1,5 @@
 # Unidad 05 — Integración: RHF + Zod + TanStack Query
-> 🧭 **Navegación:** [← Anterior: Unidad 04 — Zod: validación con esquemas](Unidad_04_Zod_validacion.md) · [Índice del tema](../README.md) · [🏁 Fin del curso →](../../README.md)
+> 🧭 **Navegación:** [← Anterior: Unidad 04 — Zod: validación con esquemas](Unidad_04_Zod_validacion.md) · [Índice del tema](../README.md) · [Siguiente: Unidad 01 — ¿Qué es testing E2E y dónde encaja en la pirámide? →](../../tema_025/docs/Unidad_01_Que_es_E2E_y_Pyramide.md)
 
 ## Objetivos
 
@@ -178,4 +178,4 @@ componentes custom vía `Controller`).
 
 ---
 
-> 🧭 **Navegación:** [← Anterior: Unidad 04 — Zod: validación con esquemas](Unidad_04_Zod_validacion.md) · [Índice del tema](../README.md) · [🏁 Fin del curso →](../../README.md)
+> 🧭 **Navegación:** [← Anterior: Unidad 04 — Zod: validación con esquemas](Unidad_04_Zod_validacion.md) · [Índice del tema](../README.md) · [Siguiente: Unidad 01 — ¿Qué es testing E2E y dónde encaja en la pirámide? →](../../tema_025/docs/Unidad_01_Que_es_E2E_y_Pyramide.md)

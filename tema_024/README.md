@@ -1,5 +1,5 @@
 # Módulo 25 — TanStack Query, React Hook Form y Zod
-> 🧭 **Navegación:** [← Anterior: tema_023 — Preparación Profesional](../tema_023/README.md) · [Índice del curso](../GUIA_ESTUDIO.md) · [🏁 Índice general →](../README.md)
+> 🧭 **Navegación:** [← Anterior: tema_023 — Preparación Profesional](../tema_023/README.md) · [Índice del curso](../GUIA_ESTUDIO.md) · [Siguiente: tema_025 — Testing E2E con Playwright →](../tema_025/README.md)
 
 Material del **Módulo 25** del roadmap (data fetching moderno y formularios
 profesionales). Módulo añadido tras revisar huecos del curso: M8 enseña
@@ -96,4 +96,4 @@ pnpm dev         # http://localhost:5173
 
 ---
 
-> 🧭 **Navegación:** [← Anterior: tema_023 — Preparación Profesional](../tema_023/README.md) · [Índice del curso](../GUIA_ESTUDIO.md) · [🏁 Índice general →](../README.md)
+> 🧭 **Navegación:** [← Anterior: tema_023 — Preparación Profesional](../tema_023/README.md) · [Índice del curso](../GUIA_ESTUDIO.md) · [Siguiente: tema_025 — Testing E2E con Playwright →](../tema_025/README.md)

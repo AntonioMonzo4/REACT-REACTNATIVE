@@ -2,7 +2,7 @@
 
 Guía para alumnos: qué estudiar, en qué orden y con qué material disponible en este repositorio.
 
-**Roadmap oficial (25 módulos):** [`README.md`](README.md)
+**Roadmap oficial (27 módulos):** [`README.md`](README.md)
 
 ## Leyenda de estados
 
@@ -23,6 +23,7 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 5. **Complementos** (módulos 17–22): backend, DevOps, calidad
 6. **Cierre profesional** (módulos 23–24): proyecto final y preparación
 7. **Data & Forms modernos** (módulo 25): TanStack Query, RHF, Zod — recomendable tras M8/M9 (puede estudiarse en paralelo a M16–M22)
+8. **Testing E2E y Escalabilidad** (módulos 26–27): Playwright y monorepos (pnpm workspaces + Turborepo) — recomendable tras M10 (testing), M11 (arquitectura) y M19 (CI)
 
 ---
 
@@ -71,6 +72,13 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 |---|--------|--------|---------------------|
 | 25 | TanStack Query + RHF + Zod | ✅ | [`tema_024/`](tema_024/) — teoría (`docs/`: 5 unidades: Query, mutaciones, RHF, Zod, integración) + [`EJEMPLO_QUERY_FORMS/`](tema_024/EJEMPLO_QUERY_FORMS/) (Vite + TS contra JSONPlaceholder; `pnpm run check` / lint / build OK). |
 
+### Testing E2E y Escalabilidad
+
+| # | Módulo | Estado | Material en el repo |
+|---|--------|--------|---------------------|
+| 26 | Testing E2E con Playwright | ✅ | [`tema_025/`](tema_025/) — teoría (`docs/`: 4 unidades: pirámide E2E, Playwright/config/locators, asertiones/`page.route`, Page Objects/fixtures/CI) + [`EJEMPLO_PLAYWRIGHT/`](tema_025/EJEMPLO_PLAYWRIGHT/) (Vite + React 19; `pnpm run check` / lint / build OK y **6 tests E2E en verde**) |
+| 27 | Monorepos (pnpm + Turborepo) | ✅ | [`tema_026/`](tema_026/) — teoría (`docs/`: 4 unidades: conceptos de monorepo, pnpm workspaces, Turborepo, packages+CI) + [`EJEMPLO_MONOREPO/`](tema_026/EJEMPLO_MONOREPO/) (Turborepo: `apps/web` + `packages/ui` + `tsconfig`; `pnpm build` / check / lint OK con **caché turbo**) |
+
 ### Backend para Frontend
 
 | # | Módulo | Estado | Material en el repo |
@@ -104,9 +112,9 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 ## Faltantes consolidados
 
 - **Sin carpeta ni material:** módulos 0–1 (externos, *pendiente de enlazar*).
-- **Cerrado en esta revisión:** módulo 16 — teoría completa (6 unidades: Expo/CLI, listas, navegación, estado, dispositivo, EAS) y práctica ampliada (Stack + tabs, FlatList/SectionList, detalle dinámico, Zustand). Módulo 25 nuevo — TanStack Query + React Hook Form + Zod con docs y ejemplo verificado.
+- **Cerrado en esta revisión:** módulo 16 — teoría completa (6 unidades: Expo/CLI, listas, navegación, estado, dispositivo, EAS) y práctica ampliada (Stack + tabs, FlatList/SectionList, detalle dinámico, Zustand). Módulo 25 nuevo — TanStack Query + React Hook Form + Zod con docs y ejemplo verificado. Módulos 26 y 27 nuevos — Testing E2E con Playwright (docs + ejemplo con 6 tests en verde) y Monorepos con pnpm workspaces + Turborepo (docs + ejemplo turbo verificado).
 - **Parcial:** módulo 23 — guía ✅, la app empresarial sigue pendiente. Módulos 5 y 6: checklists de hooks/forms/avanzado cubiertos, faltan los **proyectos** (CRUD y Dashboard). Módulos 7–10: temario cubierto, faltan los **proyectos** (auth, API propia, E-commerce, cobertura > 80 %).
-- **Proyectos del roadmap sin empezar:** Calculadora (M4), CRUD (M5), Dashboard (M6), Sistema de autenticación (M7), Frontend con API (M8), E-commerce (M9), cobertura > 80 % (M10), migrar M4 a TS (M14), App full-stack Next (M15), App móvil completa (M16/portfolio), App empresarial completa (M23), mini-CRUD extendido M25, etc. — ver checklist en [`README.md`](README.md).
+- **Proyectos del roadmap sin empezar:** Calculadora (M4), CRUD (M5), Dashboard (M6), Sistema de autenticación (M7), Frontend con API (M8), E-commerce (M9), cobertura > 80 % (M10), migrar M4 a TS (M14), App full-stack Next (M15), App móvil completa (M16/portfolio), App empresarial completa (M23), mini-CRUD extendido M25, suite E2E en CI real (M26), publicar `@miorg/ui` con changesets (M27), etc. — ver checklist en [`README.md`](README.md).
 - **Ejecución local pendiente (requiere acción externa):** build Docker (M18), pipeline GitHub Actions (M19, necesita push), hooks Husky (M24, necesita commit), backend FastAPI propio (M17), proyecto M16 Expo en dispositivo, EAS build real (M16 U06).
 - **Enlaces pendientes:** repositorios de los módulos 0 y 1 en el README.
 - **Commit del material nuevo:** sin confirmar (no hacer push/commit sin tu OK).
@@ -235,4 +243,20 @@ pnpm run check
 pnpm lint
 pnpm build
 pnpm dev
+
+# Módulo 26 — Testing E2E (requiere: pnpm exec playwright install chromium)
+cd tema_025/EJEMPLO_PLAYWRIGHT
+pnpm install
+pnpm run check
+pnpm lint
+pnpm build
+pnpm exec playwright test
+
+# Módulo 27 — Monorepos (Turborepo + pnpm workspaces)
+cd tema_026/EJEMPLO_MONOREPO
+pnpm install
+pnpm build            # turbo: ui -> web, con caché (2ª pasada: FULL TURBO)
+pnpm check
+pnpm lint
+pnpm --filter @miorg/web dev
 ```
