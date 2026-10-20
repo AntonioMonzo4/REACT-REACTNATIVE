@@ -117,7 +117,7 @@ Guía para alumnos: qué estudiar, en qué orden y con qué material disponible 
 - **Proyectos del roadmap sin empezar:** Calculadora (M4), CRUD (M5), Dashboard (M6), Sistema de autenticación (M7), Frontend con API (M8), E-commerce (M9), cobertura > 80 % (M10), migrar M4 a TS (M14), App full-stack Next (M15), App móvil completa (M16/portfolio), App empresarial completa (M23), mini-CRUD extendido M25, suite E2E en CI real (M26), publicar `@miorg/ui` con changesets (M27), etc. — ver checklist en [`README.md`](README.md).
 - **Ejecución local pendiente (requiere acción externa):** build Docker (M18), pipeline GitHub Actions (M19, necesita push), hooks Husky (M24, necesita commit), backend FastAPI propio (M17), proyecto M16 Expo en dispositivo, EAS build real (M16 U06).
 - **Enlaces pendientes:** repositorios de los módulos 0 y 1 en el README.
-- **Commit del material nuevo:** sin confirmar (no hacer push/commit sin tu OK).
+- **Commit del material nuevo:** completado — renombrado/navegación en `20129d5` y módulos 26–27 en `ef17eb4` (ambos pushados a `main`).
 
 ---
 
