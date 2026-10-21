@@ -21,7 +21,7 @@
 
 ### Módulo 0 - Fundamentos de la Web
 
-📂 **Repositorio:** *(Añadir aquí el enlace a tu repositorio de HTML, CSS y JavaScript)*
+📂 **Repositorio:** *https://github.com/AntonioMonzo4/HTML_CSS_BOOTSTRAP_LMM* + *https://github.com/AntonioMonzo4/JavaScript_DWEC*
 
 Incluye:
 
@@ -34,7 +34,7 @@ Incluye:
 
 ### Módulo 1 - Git Profesional
 
-📂 **Repositorio:** *(Añadir aquí el enlace a tu repositorio de Git y GitHub)*
+📂 **Repositorio:** *NO DISPONIBLE*
 
 Incluye:
 
